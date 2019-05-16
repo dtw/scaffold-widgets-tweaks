@@ -29,13 +29,13 @@ if ( ! defined( 'WPINC' ) ) {
 	require_once('includes/post-editor.php');
 
 	// 2. SHORTCODES
-	require_once('includes/shortcodes.php'); 
+	require_once('includes/shortcodes.php');
 
 	// 3. MEDIA LIBRARY
-	require_once('includes/media-library.php'); 
+	require_once('includes/media-library.php');
 
 	// 4. DASHBOARD
-	require_once('includes/dash.php'); 
+	require_once('includes/dash.php');
 
 /* Widgets
 ------------------------------------------- */
