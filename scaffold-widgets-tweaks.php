@@ -54,3 +54,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 	// e. WIDGET for link buttons
 	require_once('includes/widget-bootstrap-button.php');
+
+	// f. WIDGET for displaying a FEATURED PAGE
+	require_once('includes/widget-featured-page-hwbucks.php');
