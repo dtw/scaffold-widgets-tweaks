@@ -7,7 +7,7 @@ Based on code by Jason King - http://kingjason.com - cheers Jason
 /**
  * Register the widget
  */
-function SF_register_widget_featured_page() {
+function SF_register_widget_hwbucks_featured_page() {
 	register_widget( 'SF_HWBucks_Featured_Page_Widget' );
 }
 add_action( 'widgets_init', 'SF_register_widget_hwbucks_featured_page' );
