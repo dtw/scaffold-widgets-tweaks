@@ -8,25 +8,25 @@ Based on code by Jason King - http://kingjason.com - cheers Jason
  * Register the widget
  */
 function SF_register_widget_featured_page() {
-	register_widget( 'SF_Featured_Page_Widget' );
+	register_widget( 'SF_HWBucks_Featured_Page_Widget' );
 }
-add_action( 'widgets_init', 'SF_register_widget_featured_page' );
+add_action( 'widgets_init', 'SF_register_widget_hwbucks_featured_page' );
 /**
  * A Featured Page Widget
  * Feature a page, showing its excerpt and thumbnail.
  *
  */
-class SF_Featured_Page_Widget extends WP_Widget {
+class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	/**
 	 * Sets up a new widget instance.
 	 *
 	 * @access public
 	 */
-	function SF_Featured_Page_Widget() {
-		parent::WP_Widget( 'SF_Featured_Page_Widget',
+	function SF_HWBucks_Featured_Page_Widget() {
+		parent::WP_Widget( 'SF_HWBucks_Featured_Page_Widget',
 		$name = 'SF Featured Page',
 		array(
-			'classname'   => 'scaffold_widget_featured_page widget_featured_page',
+			'classname'   => 'scaffold_widget_hwbucks_featured_page widget_featured_page',
 			'description' => 'Display a specific page title, excerpt and featured image'
 	)
 		);
