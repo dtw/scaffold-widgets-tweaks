@@ -43,6 +43,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		extract( $args );
 		if ( isset( $instance['page'] ) && $instance['page'] != -1 ) {
 			$page_id = (int) $instance['page'];
+			$title = wp_strip_all_tags( $new_instance['title'] ) ;
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
 				$p->the_post();
@@ -52,7 +53,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 
 				<div class="col-md-12 col-sm-12 col-xs-12 panel panel-orange">
 					<div class="col-md-12 panel-title">
-						<h2>Hot news</h2>
+						<h2><?php echo $title ?><h2>
 					</div>
 					<div class="col-md-9 col-sm-9 col-xs-12">
 						<a class="title-link" href="
@@ -78,11 +79,17 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
+		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		return $instance;
 	}
 	function form( $instance ) {
 		$page = isset( $instance['page'] ) ? (int) $instance['page'] : 0;
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content Title:</label>
+			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'page' ); ?>">Which page?</label>
 
