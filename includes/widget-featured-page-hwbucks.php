@@ -24,7 +24,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	 */
 	function SF_HWBucks_Featured_Page_Widget() {
 		parent::WP_Widget( 'SF_HWBucks_Featured_Page_Widget',
-		$name = 'SF HW Bucks Featured Page',
+		$name = 'HW Featured Page',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_featured_page widget_featured_page',
 			'description' => 'Display a specific page title, excerpt and featured image'
