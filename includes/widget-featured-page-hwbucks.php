@@ -79,7 +79,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
-		$instance['title'] = ( $new_instance['title'] );
+		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		return $instance;
 	}
 	function form( $instance ) {
