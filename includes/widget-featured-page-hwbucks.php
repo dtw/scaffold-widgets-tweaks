@@ -98,12 +98,14 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 				<select class='widefat' id="<?php echo $this->get_field_id('panel_colour'); ?>"
 						 name="<?php echo $this->get_field_name('panel_colour'); ?>" type="text">
 					<?php
-					/* This loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
 					$colourArray = ["Orange", "Blue", "Green", "Pink", "Turquoise"];
-					foreach ($colourArray as $colour)  {
-						echo "<option value='" . strtolower($colour) . "'";
-						echo ($panel_colour==strtolower($colour))?'selected':'';
-						echo ">" . $colour . "</option>";}?>
+						foreach ($colourArray as $colour)  {
+							echo "<option value='" . strtolower($colour) . "'";
+							echo ($panel_colour==strtolower($colour))?'selected':'';
+							echo ">" . $colour . "</option>";
+						}
+					?>
 				</select>
 			</label>
 		</p>
