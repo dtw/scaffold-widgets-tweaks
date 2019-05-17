@@ -44,6 +44,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		if ( isset( $instance['page'] ) && $instance['page'] != -1 ) {
 			$page_id = (int) $instance['page'];
 			$title = $instance['title'] ;
+			$panel_colour = $instance['panel_colour'] ;
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
 				$p->the_post();
@@ -51,7 +52,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 				echo $before_widget;
 				?>
 
-				<div class="col-md-12 col-sm-12 col-xs-12 panel panel-orange">
+				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
 					<div class="col-md-12 panel-title">
 						<h2><?php echo $title ?><h2>
 					</div>
@@ -80,15 +81,21 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
+		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
 		return $instance;
 	}
 	function form( $instance ) {
 		$page = isset( $instance['page'] ) ? (int) $instance['page'] : 0;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
+		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content Title:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'panel_colour' ); ?>">Panel colour:</label>
+			<input type="text" id="<?php echo $this->get_field_id( 'panel_colour' ); ?>" name="<?php echo $this->get_field_name( 'panel_colour' ); ?>" value="<?php echo esc_attr( $panel_colour ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'page' ); ?>">Which page?</label>
