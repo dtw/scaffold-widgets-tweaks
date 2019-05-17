@@ -43,7 +43,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		extract( $args );
 		if ( isset( $instance['page'] ) && $instance['page'] != -1 ) {
 			$page_id = (int) $instance['page'];
-			$title = wp_strip_all_tags( $new_instance['title'] ) ;
+			$title = $instance['title'] ;
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
 				$p->the_post();
@@ -79,7 +79,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
-		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
+		$instance['title'] = ( $new_instance['title'] );
 		return $instance;
 	}
 	function form( $instance ) {
