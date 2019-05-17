@@ -61,8 +61,8 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 							<?php the_title(); ?>
 						</a>
 						<?php the_excerpt(); ?>
-						<!-- <p><a href="
-						<?php echo get_the_permalink(); ?>">Read more &raquo;</a></p> -->
+						<p><a href="
+						<?php echo get_the_permalink(); ?>">Read more &raquo;</a></p>
 					</div>
 					<div class="col-md-3 hidden-sm hidden-xs panel-icon">
 						<a href="
