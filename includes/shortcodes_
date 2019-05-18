@@ -225,6 +225,30 @@ function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 
 add_shortcode('bootstrap_accordion', 'scaffold_shortcode_bootstrap_accordion');
 
+function scaffold_shortcode_accordion_panel( $atts, $content = null  ) {
+		$a = shortcode_atts( array(
+			'title' => 'Title',
+			'panel_id' => (int)'1',
+		), $atts );
+
+		$accordion_output = '
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#' . $a['panel_id'] . '">' . $a['title'] . '</a>
+			</h4>
+		</div>
+		<div id="' . $a['panel_id'] . '" class="panel-collapse collapse">
+			<div class="panel-body">
+				' . do_shortcode($content) . '
+			</div>
+		</div>
+	</div>';
+	return $accordion_output;
+}
+
+add_shortcode('accordion_panel', 'scaffold_shortcode_accordion_panel');
+
 function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
 		$a = shortcode_atts( array(
 			'title' => 'Step',
