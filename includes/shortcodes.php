@@ -249,20 +249,26 @@ add_shortcode('accordion_panel', 'scaffold_shortcode_accordion_panel');
 
 function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
 		$a = shortcode_atts( array(
-			'title' => 'Step',
-			'signpost_id' => (int)'12',
+			'title' => 'Step 1',
+			'signpost_id' => (int)'49784', //this is the A&E signpost
 		), $atts );
+
+		// fetch the signpost
+		$content_post = get_post($a['signpost_id']);
+		// get the content and title
+		$content = $content_post->post_content;
+		$title = $content_post->post_title;
+		// clean up the content
+		$content = apply_filters('the_content', $content);
+		$content = do_shortcode($content);
 
 		$accordion_output = '
 	<div class="panel panel-default">
-		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
-			<h4 class="panel-title">' . $a['title'] . '</h4>
+		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
+			<h4 class="panel-title">' . $a['title'] . ': ' . $title . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse">
-			<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-			minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-			commodo consequat.</div>
+			<div class="panel-body">' . $content . '</div>
 		</div>
 	</div>';
 	return $accordion_output;
