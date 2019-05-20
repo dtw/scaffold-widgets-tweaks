@@ -274,12 +274,23 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) 
 		$content = apply_filters('the_content', $content);
 		$content = do_shortcode($content);
 
+		// this depends on the user
+		// if the expanded attribute is set to true the panel will be expanded automatically.
+		if ($a['expanded'] == 'true') {
+			$panel_heading_class = '';
+			$panel_collapse_class = ' in';
+		} else {
+		// bootstrap JS adds the collapsed class on toggle but we want to start with it so we can style panels collapsed on load without the JS firing
+			$panel_heading_class = ' collapsed';
+			$panel_collapse_class = '';
+		}
+
 		$accordion_output = '
 	<div class="panel panel-default">
-		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
+		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
 			<h4 class="panel-title">' . $a['title'] . '</h4>
 		</div>
-		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse">
+		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 			<div class="panel-body">' . $content . '</div>
 		</div>
 	</div>';
