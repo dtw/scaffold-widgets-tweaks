@@ -265,7 +265,7 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
 		$accordion_output = '
 	<div class="panel panel-default">
 		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
-			<h4 class="panel-title">' . $a['title'] . ': ' . $title . '</h4>
+			<h4 class="panel-title">' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse">
 			<div class="panel-body">' . $content . '</div>
