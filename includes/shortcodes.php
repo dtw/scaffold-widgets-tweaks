@@ -258,11 +258,11 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 
 add_shortcode('accordion_panel', 'scaffold_shortcode_bootstrap_accordion_panel');
 
-function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
+function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
 			'title' => 'Step 1',
 			'signpost_id' => (int)'49784', // this is the A&E signpost
-			'expanded' => (bool)'false', // set true to expand first panel
+			'expanded' => 'false', // set true to expand first panel
 		), $atts );
 
 		// fetch the signpost
