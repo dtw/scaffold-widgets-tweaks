@@ -243,16 +243,16 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 		}
 
 		$accordion_output = '
-	<div class="panel panel-default">
-		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
-			<h4 class="panel-title">' . $a['title'] . '</h4>
-		</div>
-		<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
-			<div class="panel-body">
-				' . do_shortcode($content) . '
+		<div class="panel panel-default">
+			<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
+				<h4 class="panel-title">' . $a['title'] . '</h4>
 			</div>
-		</div>
-	</div>';
+			<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
+				<div class="panel-body">
+					' . do_shortcode($content) . '
+				</div>
+			</div>
+		</div>';
 	return $accordion_output;
 }
 
