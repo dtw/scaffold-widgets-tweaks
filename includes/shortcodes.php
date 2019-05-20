@@ -231,12 +231,16 @@ function scaffold_shortcode_accordion_panel( $atts, $content = null  ) {
 			'panel_id' => (int)'1',
 		), $atts );
 
+		if ($a['panel_id'] == '1') {
+			$panel_collapse_class = ' in';
+		}
+
 		$accordion_output = '
 	<div class="panel panel-default">
 		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
 			<h4 class="panel-title">' . $a['title'] . '</h4>
 		</div>
-		<div id="' . $a['panel_id'] . '" class="panel-collapse collapse">
+		<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 			<div class="panel-body">
 				' . do_shortcode($content) . '
 			</div>
@@ -250,7 +254,8 @@ add_shortcode('accordion_panel', 'scaffold_shortcode_accordion_panel');
 function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
 		$a = shortcode_atts( array(
 			'title' => 'Step 1',
-			'signpost_id' => (int)'49784', //this is the A&E signpost
+			'signpost_id' => (int)'49784', // this is the A&E signpost
+			'expanded' => (bool)'false', // set true to expand first panel
 		), $atts );
 
 		// fetch the signpost
