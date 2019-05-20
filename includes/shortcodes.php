@@ -245,7 +245,7 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 		$accordion_output = '
 		<div class="panel panel-default">
 			<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
-				<h4 class="panel-title">' . $a['title'] . '</h4>
+				<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
 			</div>
 			<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 				<div class="panel-body">
@@ -288,7 +288,7 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) 
 		$accordion_output = '
 	<div class="panel panel-default">
 		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
-			<h4 class="panel-title">' . $a['title'] . '</h4>
+			<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 			<div class="panel-body">' . $content . '</div>
