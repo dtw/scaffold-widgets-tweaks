@@ -225,7 +225,7 @@ function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 
 add_shortcode('bootstrap_accordion', 'scaffold_shortcode_bootstrap_accordion');
 
-function scaffold_shortcode_accordion_panel( $atts, $content = null  ) {
+function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
 			'title' => 'Title',
 			'panel_id' => (int)'1',
@@ -249,7 +249,7 @@ function scaffold_shortcode_accordion_panel( $atts, $content = null  ) {
 	return $accordion_output;
 }
 
-add_shortcode('accordion_panel', 'scaffold_shortcode_accordion_panel');
+add_shortcode('accordion_panel', 'scaffold_shortcode_bootstrap_accordion_panel');
 
 function hwbucks_shortcode_complaints_accordion_panel( $atts ) {
 		$a = shortcode_atts( array(
