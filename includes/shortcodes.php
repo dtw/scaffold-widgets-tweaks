@@ -232,12 +232,16 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 		), $atts );
 
 		if ($a['panel_id'] == '1') {
+			$panel_heading_class = '';
 			$panel_collapse_class = ' in';
+		} else {
+			$panel_heading_class = ' collapsed';
+			$panel_collapse_class = '';
 		}
 
 		$accordion_output = '
 	<div class="panel panel-default">
-		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
+		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
 			<h4 class="panel-title">' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
