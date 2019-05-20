@@ -228,13 +228,16 @@ add_shortcode('bootstrap_accordion', 'scaffold_shortcode_bootstrap_accordion');
 function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
 			'title' => 'Title',
-			'panel_id' => (int)'1',
+			'panel_id' => (int)'1', // setting to 1 means that the panel is expanded on load
 		), $atts );
 
+		// this depends on the user
+		// if the panel_id attribute is set to 1 the panel will be expanded on load
 		if ($a['panel_id'] == '1') {
 			$panel_heading_class = '';
 			$panel_collapse_class = ' in';
 		} else {
+		// bootstrap JS adds the collapsed class on toggle but we want to start with it so we can style panels collapsed on load without the JS firing
 			$panel_heading_class = ' collapsed';
 			$panel_collapse_class = '';
 		}
