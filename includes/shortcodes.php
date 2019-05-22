@@ -320,4 +320,25 @@ function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
 
 add_shortcode( 'signpost_address', 'hwbucks_shortcode_signpost_address_icon' );
 
+/* Media object location icon
+------------------------ */
+
+function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'location' => '', // location for the signpost
+	), $atts );
+
+	$location_icon = '
+	<div class="media">
+		<div class="media-left">
+				<i class="media-object fas fa-map-marker-alt fas-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body">' . $a['location'] . '</div>
+	</div>';
+
+	return $location_icon;
+}
+
+add_shortcode( 'signpost_location', 'hwbucks_shortcode_signpost_location_icon' );
+
 ?>
