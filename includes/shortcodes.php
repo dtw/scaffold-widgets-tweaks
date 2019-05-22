@@ -299,4 +299,25 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) 
 
 add_shortcode('complaints_panel', 'hwbucks_shortcode_complaints_accordion_panel');
 
+/* Media object ADDRESS icon
+------------------------ */
+
+function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'address' => '', // address for the signpost
+	), $atts );
+
+	$address_icon = '
+	<div class="media">
+		<div class="media-left">
+				<i class="media-object fa fa-pencil-alt fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body">' . $a['address'] . '</div>
+	</div>';
+
+	return $address_icon;
+}
+
+add_shortcode( 'signpost_address', 'hwbucks_shortcode_signpost_address_icon' );
+
 ?>
