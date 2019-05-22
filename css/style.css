@@ -1,0 +1,17 @@
+/* CSS for changes to plugin */
+
+.media.signpost-address,
+.media.signpost-location {
+  padding: 0px;
+  border: 0px;
+}
+
+.media.signpost-address .media-left,
+.media.signpost-location .media-left{
+  padding-right: 0px;
+}
+
+.media.signpost-address .media-body,
+.media.signpost-location .media-body{
+  font-size:16px;
+}

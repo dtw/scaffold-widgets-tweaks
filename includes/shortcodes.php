@@ -308,7 +308,7 @@ function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
 	), $atts );
 
 	$address_icon = '
-	<div class="media">
+	<div class="media signpost-address">
 		<div class="media-left">
 				<i class="media-object fa fa-pencil-alt fa-lg shortcode-icon"></i>
 		</div>
@@ -329,7 +329,7 @@ function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
 	), $atts );
 
 	$location_icon = '
-	<div class="media">
+	<div class="media signpost-location">
 		<div class="media-left">
 				<i class="media-object fas fa-map-marker-alt fas-lg shortcode-icon"></i>
 		</div>

@@ -57,3 +57,11 @@ if ( ! defined( 'WPINC' ) ) {
 
 	// f. WIDGET for displaying a FEATURED PAGE
 	require_once('includes/widget-featured-page-hwbucks.php');
+
+	// Add CUSTOM CSS to the SHORTCODES
+
+	function scaffold_shortcode_css() {
+		wp_enqueue_style('shortcode_styles' , plugins_url().'/scaffold-widgets-tweaks/css/style.css');
+		}
+
+		add_action('wp_enqueue_scripts', 'scaffold_shortcode_css');
