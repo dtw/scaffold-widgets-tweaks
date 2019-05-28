@@ -204,7 +204,11 @@ function scaffold_shortcode_bootstrap_column_end() {
 /* 3. Other SHORTCODES
 ------------------------ */
 
+/* this isn't a callback so I assume get_search_form is decalred elsewhere */
+
 add_shortcode('search', 'get_search_form');
+
+/*  Adds a search form with scaffold styles */
 
 function scaffold_searchform( $form ) {
 
@@ -213,6 +217,8 @@ function scaffold_searchform( $form ) {
 }
 
 add_shortcode('search', 'scaffold_searchform');
+
+/* Start a bootstrao accordion with [bootstrap_accordion] this requires a closing tag [/bootstrap_accordion] and wraps around accordion_panel (see below) */
 
 function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 
@@ -224,6 +230,8 @@ function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 }
 
 add_shortcode('bootstrap_accordion', 'scaffold_shortcode_bootstrap_accordion');
+
+/* Add a panel with [accordion_panel title="Title for the panel" panel_id="1"]Contents of the panel[/accordion_panel] */
 
 function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
@@ -257,6 +265,11 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 }
 
 add_shortcode('accordion_panel', 'scaffold_shortcode_bootstrap_accordion_panel');
+
+/*  Add a panel with [complaints_panel title="Step 1 of X" signpost_id="54673"] - this tag is self-closing
+		Based on the supplied signpost_id, this fetches a signpost Post and displays the content (without the tite)
+		in an accordion panel
+*/
 
 function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
