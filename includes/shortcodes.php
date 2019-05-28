@@ -398,8 +398,6 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 		</div>';
 	}
 
-
-
 	return $website_object;
 }
 
