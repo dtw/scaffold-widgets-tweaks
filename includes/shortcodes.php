@@ -299,15 +299,15 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) 
 
 add_shortcode('complaints_panel', 'hwbucks_shortcode_complaints_accordion_panel');
 
-/* Media object ADDRESS icon
+/* Media object ADDRESS
 ------------------------ */
 
-function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
+function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'address' => 'Mail address for the signpost', // address for the signpost
 	), $atts );
 	if ( empty( $content ) ) {
-		$address_icon = '
+		$address_object = '
 		<div class="media signpost-address">
 			<div class="media-left">
 					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
@@ -315,7 +315,7 @@ function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
 			<div class="media-body">' . $a['address'] . '</div>
 		</div>';
 	} else {
-		$address_icon = '
+		$address_object = '
 		<div class="media signpost-address">
 			<div class="media-left">
 					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
@@ -324,20 +324,20 @@ function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
 		</div>';
 	}
 
-	return $address_icon;
+	return $address_object;
 }
 
-add_shortcode( 'signpost_address', 'hwbucks_shortcode_signpost_address_icon' );
+add_shortcode( 'signpost_address', 'hwbucks_shortcode_signpost_address_object' );
 
-/* Media object LOCATION icon
+/* Media object LOCATION
 ------------------------ */
 
-function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
+function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'location' => 'Physical location for the signpost', // location for the signpost
 	), $atts );
 	if ( empty( $content ) ) {
-		$location_icon = '
+		$location_object = '
 		<div class="media signpost-location">
 			<div class="media-left">
 					<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
@@ -345,7 +345,7 @@ function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
 			<div class="media-body">' . $a['location'] . '</div>
 		</div>';
 	} else {
-		$location_icon = '
+		$location_object = '
 		<div class="media signpost-location">
 			<div class="media-left">
 					<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
@@ -354,21 +354,21 @@ function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
 		</div>';
 	}
 
-	return $location_icon;
+	return $location_object;
 }
 
-add_shortcode( 'signpost_location', 'hwbucks_shortcode_signpost_location_icon' );
+add_shortcode( 'signpost_location', 'hwbucks_shortcode_signpost_location_object' );
 
-/* Media object WEBSITE icon
+/* Media object WEBSITE
 ------------------------ */
 
-function hwbucks_shortcode_signpost_website_icon( $atts, $content = null ) {
+function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'website' => 'https://healthwatchbucks.co.uk/', // website for the signpost
 	), $atts );
 
 	if ( empty( $content ) ) {
-		$website_icon = '
+		$website_object = '
 		<div class="media signpost-website">
 			<div class="media-left">
 					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
@@ -376,7 +376,7 @@ function hwbucks_shortcode_signpost_website_icon( $atts, $content = null ) {
 			<div class="media-body"><a href="' . $a['website'] . '">' . $a['website'] . '</a></div>
 		</div>';
 	} else {
-		$website_icon = '
+		$website_object = '
 		<div class="media signpost-location">
 			<div class="media-left">
 					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
@@ -387,9 +387,9 @@ function hwbucks_shortcode_signpost_website_icon( $atts, $content = null ) {
 
 
 
-	return $website_icon;
+	return $website_object;
 }
 
-add_shortcode( 'signpost_website', 'hwbucks_shortcode_signpost_website_icon' );
+add_shortcode( 'signpost_website', 'hwbucks_shortcode_signpost_website_object' );
 
 ?>
