@@ -163,7 +163,7 @@ function scaffold_shortcode_address_icon() {
 ------------------------ */
 
 function scaffold_shortcode_website_icon() {
-	$website_icon = "<i class='fa fa-link fa-lg shortcode-icon'></i> ";
+	$website_icon = "<i class='fas fa-external-link-alt fa-lg shortcode-icon'></i> ";
 		return $website_icon;
 		}
 	add_shortcode( 'website', 'scaffold_shortcode_website_icon' );
