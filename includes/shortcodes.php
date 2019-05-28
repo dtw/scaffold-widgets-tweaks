@@ -231,7 +231,9 @@ function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 
 add_shortcode('bootstrap_accordion', 'scaffold_shortcode_bootstrap_accordion');
 
-/* Add a panel with [accordion_panel title="Title for the panel" panel_id="1"]Contents of the panel[/accordion_panel] */
+/*	Add a bootstrap accordion panel with [accordion_panel title="Title for the panel" panel_id="1"]Contents of the panel[/accordion_panel]
+		This can be used for any content you want to put into an accordion.
+*/
 
 function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
@@ -266,9 +268,9 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 
 add_shortcode('accordion_panel', 'scaffold_shortcode_bootstrap_accordion_panel');
 
-/*  Add a panel with [complaints_panel title="Step 1 of X" signpost_id="54673"] - this tag is self-closing
-		Based on the supplied signpost_id, this fetches a signpost Post and displays the content (without the tite)
-		in an accordion panel
+/*	Add a special bootstrap accordion panel with [signpost_panel title="Step 1 of X" signpost_id="54673"] - this tag is self-closing
+		Based on the supplied signpost_id, this fetches a signpost Post and displays the content (without the title)
+		in a bootstrap accordion panel
 */
 
 function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
