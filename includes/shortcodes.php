@@ -271,7 +271,7 @@ add_shortcode('accordion_panel', 'scaffold_shortcode_bootstrap_accordion_panel')
 		in an accordion panel
 */
 
-function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) {
+function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 		$a = shortcode_atts( array(
 			'title' => 'Step 1',
 			'signpost_id' => (int)'49784', // this is the A&E signpost
@@ -310,7 +310,7 @@ function hwbucks_shortcode_complaints_accordion_panel( $atts, $content = null ) 
 	return $accordion_output;
 }
 
-add_shortcode('complaints_panel', 'hwbucks_shortcode_complaints_accordion_panel');
+add_shortcode('signpost_panel', 'hwbucks_shortcode_signpost_accordion_panel');
 
 /* Media object ADDRESS
 ------------------------ */
