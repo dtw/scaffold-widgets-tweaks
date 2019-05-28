@@ -359,4 +359,37 @@ function hwbucks_shortcode_signpost_location_icon( $atts, $content = null ) {
 
 add_shortcode( 'signpost_location', 'hwbucks_shortcode_signpost_location_icon' );
 
+/* Media object WEBSITE icon
+------------------------ */
+
+function hwbucks_shortcode_signpost_website_icon( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'website' => 'https://healthwatchbucks.co.uk/', // website for the signpost
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$website_icon = '
+		<div class="media signpost-website">
+			<div class="media-left">
+					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+			</div>
+			<div class="media-body"><a href="' . $a['website'] . '">' . $a['website'] . '</a></div>
+		</div>';
+	} else {
+		$website_icon = '
+		<div class="media signpost-location">
+			<div class="media-left">
+					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+			</div>
+			<div class="media-body"><a href="' . $content . '">' . $content . '</a></div>
+		</div>';
+	}
+
+
+
+	return $website_icon;
+}
+
+add_shortcode( 'signpost_website', 'hwbucks_shortcode_signpost_website_icon' );
+
 ?>
