@@ -304,16 +304,25 @@ add_shortcode('complaints_panel', 'hwbucks_shortcode_complaints_accordion_panel'
 
 function hwbucks_shortcode_signpost_address_icon( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'address' => '', // address for the signpost
+		'address' => 'Mail address for the signpost', // address for the signpost
 	), $atts );
-
-	$address_icon = '
-	<div class="media signpost-address">
-		<div class="media-left">
-				<i class="media-object fa fa-pencil-alt fa-lg shortcode-icon"></i>
-		</div>
-		<div class="media-body">' . $a['address'] . '</div>
-	</div>';
+	if ( empty( $content ) ) {
+		$address_icon = '
+		<div class="media signpost-address">
+			<div class="media-left">
+					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
+			</div>
+			<div class="media-body">' . $a['address'] . '</div>
+		</div>';
+	} else {
+		$address_icon = '
+		<div class="media signpost-address">
+			<div class="media-left">
+					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
+			</div>
+			<div class="media-body">' . $content . '</div>
+		</div>';
+	}
 
 	return $address_icon;
 }
