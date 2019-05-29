@@ -45,6 +45,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 			$page_id = (int) $instance['page'];
 			$title = $instance['title'] ;
 			$panel_colour = $instance['panel_colour'] ;
+			$btn_text = $instance['btn_text'] ;
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
 				$p->the_post();
@@ -62,8 +63,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 							<?php the_title(); ?>
 						</a>
 						<?php the_excerpt(); ?>
-						<p style="clear: both;"><a class="btn btn-primary" href="
-						<?php echo get_the_permalink(); ?>">Read more</a></p>
+						<p style="clear: both;"><a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>"><?php echo $btn_text; ?></a></p>
 					</div>
 					<div class="col-md-3 hidden-sm hidden-xs panel-icon">
 						<a href="
@@ -82,12 +82,14 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$instance['page'] = (int)( $new_instance['page'] );
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
+		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
 		return $instance;
 	}
 	function form( $instance ) {
 		$page = isset( $instance['page'] ) ? (int) $instance['page'] : 0;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
+		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content Title:</label>
@@ -108,6 +110,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 					?>
 				</select>
 			</label>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text:</label>
+			<input type="text" id="<?php echo $this->get_field_id( 'btn_text' ); ?>" name="<?php echo $this->get_field_name( 'btn_text' ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'page' ); ?>">Which page?</label>
