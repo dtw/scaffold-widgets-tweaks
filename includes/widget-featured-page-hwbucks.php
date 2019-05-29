@@ -92,7 +92,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content title:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
