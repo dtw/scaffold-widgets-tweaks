@@ -282,11 +282,9 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 
 		// fetch the signpost
 		$content_post = get_post($a['signpost_id']);
-		// get the content and title
-		$content = $content_post->post_content;
-		$title = $content_post->post_title;
-		// clean up the content
-		$content = apply_filters('the_content', $content);
+		// get and clean up the content and title
+		$content = apply_filters('the_content', $content_post->post_content);
+		$title = apply_filters('the_title', $content_post->post_title);
 		$content = do_shortcode($content);
 
 		// this depends on the user
