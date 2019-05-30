@@ -449,18 +449,25 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 			$panel_collapse_class = '';
 		}
 
-		$accordion_output = '
+		$accordion_output_start = '
 	<div class="panel panel-default">
 		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
 			<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
-			<div class="panel-body">' . $content?>
-			<?php edit_post_link( 'Edit signpost', '<p class="edit-signpost">','</p>','$a["signpost_id"]'); ?><?php '
+			<div class="panel-body">' . $content;
+
+		$accordion_output_end = '
+			</div>
 			</div>
 		</div>
 	</div>';
-	return $accordion_output;
+
+	if(is_user_logged_in()){
+		$accordion_output_start .= '<p class="edit-signpost"><a href="'. get_edit_post_link($content_post->post_id) . '">Edit signpost</a></p>';
+	};
+
+	return $accordion_output_start . $accordion_output_end;
 }
 
 add_shortcode('signpost_panel', 'hwbucks_shortcode_signpost_accordion_panel');
