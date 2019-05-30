@@ -455,7 +455,9 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 			<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
-			<div class="panel-body">' . $content . '<p class="edit-signpost"><a href="'. get_edit_post_link($a['signpost_id']) . '">Edit signpost</a></p></div>
+			<div class="panel-body">' . $content?>
+			<?php edit_post_link( 'Edit signpost', '<p class="edit-signpost">','</p>','$a["signpost_id"]'); ?><?php '
+			</div>
 		</div>
 	</div>';
 	return $accordion_output;
