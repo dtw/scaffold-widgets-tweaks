@@ -463,7 +463,7 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 	</div>';
 
 	if(is_user_logged_in()){
-		$accordion_output_start .= '<p class="edit-signpost"><a href="'. get_edit_post_link($content_post->post_id) . '">Edit signpost</a></p>';
+		$accordion_output_start .= '<p class="edit-signpost"><a href="'. get_edit_post_link($a['signpost_id']) . '">Edit signpost</a></p>';
 	};
 
 	return $accordion_output_start . $accordion_output_end;
