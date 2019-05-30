@@ -459,7 +459,6 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 
 		$accordion_output_end = '
 			</div>
-			</div>
 		</div>
 	</div>';
 
