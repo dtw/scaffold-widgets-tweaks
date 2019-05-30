@@ -54,26 +54,35 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 				?>
 
 				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
-					<div class="col-md-12 panel-title">
-						<h2><?php echo $title ?><h2>
+					<div class="row">
+						<div class="col-md-8 col-sm-6 col-xs-12 panel-text">
+							<div class="row">
+								<div class="col-md-12 panel-title">
+									<h2><?php echo $title ?><h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<a class="title-link" href="
+										<?php the_permalink(); ?>" rel="bookmark">
+										<?php the_title(); ?>
+									</a>
+									<?php the_excerpt(); ?>
+									<p style="clear: both;"><a class="btn btn-primary" href="<?php echo get_the_permalink();
+										echo '">';
+										echo $btn_text; ?>
+									</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 hidden-xs panel-icon">
+							<a href="
+								<?php the_permalink(); ?>" rel="bookmark">
+								<?php the_post_thumbnail([auto,240]); ?>
+							</a>
+						</div>
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-12">
-						<a class="title-link" href="
-							<?php the_permalink(); ?>" rel="bookmark">
-							<?php the_title(); ?>
-						</a>
-						<?php the_excerpt(); ?>
-						<p style="clear: both;"><a class="btn btn-primary" href="<?php echo get_the_permalink();
-							echo '">';
-							echo $btn_text; ?>
-						</a></p>
-					</div>
-					<div class="col-md-3 hidden-sm hidden-xs panel-icon">
-						<a href="
-							<?php the_permalink(); ?>" rel="bookmark">
-							<?php the_post_thumbnail([auto,180]); ?>
-						</a>
-					</div>
+				</div>
 				<?php
 				echo $after_widget;
 				wp_reset_postdata();
