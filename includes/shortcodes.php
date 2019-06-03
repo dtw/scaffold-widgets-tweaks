@@ -536,7 +536,7 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	}
 	$display_url = preg_replace("(^https?://)", "", $cleaned_url );
 	$website_object = '
-	<div class="media signpost-location">
+	<div class="media signpost-website">
 		<div class="media-left">
 				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
 		</div>
@@ -562,7 +562,7 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 		$cleaned_email = wp_strip_all_tags($content);
 	}
 	$email_object = '
-	<div class="media signpost-location">
+	<div class="media signpost-email">
 		<div class="media-left">
 				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
 		</div>
