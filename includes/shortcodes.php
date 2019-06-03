@@ -505,7 +505,6 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 	), $atts );
 	if ( empty( $content ) ) {
 		$output_location = $a['location'];
-
 	} else {
 		$output_location = $content;
 	}
