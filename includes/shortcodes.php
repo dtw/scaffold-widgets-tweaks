@@ -564,7 +564,7 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 	$email_object = '
 	<div class="media signpost-email">
 		<div class="media-left">
-				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+				<i class="media-object far fa-envelope fa-lg shortcode-icon"></i>
 		</div>
 		<div class="media-body"><a href="mailto:' . $cleaned_email . '">' . $cleaned_email . '</a></div>
 	</div>';
