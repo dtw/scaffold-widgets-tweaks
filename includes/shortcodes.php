@@ -574,4 +574,30 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 
 add_shortcode( 'signpost_email', 'hwbucks_shortcode_signpost_email_object' );
 
+/* Media object EMAIL
+------------------------ */
+
+function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'phone' => '01844 348 839', // email for the signpost
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$cleaned_phone = wp_strip_all_tags($a['phone']);
+	} else {
+		$cleaned_phone = wp_strip_all_tags($content);
+	}
+	$phone_object = '
+	<div class="media signpost-email">
+		<div class="media-left">
+				<i class="media-object fa fa-phone fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $cleaned_phone . '</p></div>
+	</div>';
+
+	return $phone_object;
+}
+
+add_shortcode( 'signpost_phone', 'hwbucks_shortcode_signpost_phone_object' );
+
 ?>
