@@ -540,22 +540,18 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	), $atts );
 
 	if ( empty( $content ) ) {
-		$website_object = '
-		<div class="media signpost-website">
-			<div class="media-left">
-					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body"><a href="' . $a['website'] . '">' . $a['website'] . '</a></div>
-		</div>';
+		$cleaned_url = wp_strip_all_tags($a['website']);
 	} else {
-		$website_object = '
-		<div class="media signpost-location">
-			<div class="media-left">
-					<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body"><a href="' . $content . '">' . $content . '</a></div>
-		</div>';
+		$cleaned_url = wp_strip_all_tags($content);
 	}
+	$display_url = preg_replace("(^https?://)", "", $cleaned_url );
+	$website_object = '
+	<div class="media signpost-location">
+		<div class="media-left">
+				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body"><a href="' . $cleaned_url . '">' . $display_url . '</a></div>
+	</div>';
 
 	return $website_object;
 }
