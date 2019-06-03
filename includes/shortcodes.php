@@ -548,4 +548,30 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 
 add_shortcode( 'signpost_website', 'hwbucks_shortcode_signpost_website_object' );
 
+/* Media object EMAIL
+------------------------ */
+
+function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'email' => 'info@healthwatchbucks.co.uk', // email for the signpost
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$cleaned_email = wp_strip_all_tags($a['email']);
+	} else {
+		$cleaned_email = wp_strip_all_tags($content);
+	}
+	$email_object = '
+	<div class="media signpost-location">
+		<div class="media-left">
+				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body"><a href="mailto:' . $cleaned_email . '">' . $cleaned_email . '</a></div>
+	</div>';
+
+	return $email_object;
+}
+
+add_shortcode( 'signpost_email', 'hwbucks_shortcode_signpost_email_object' );
+
 ?>
