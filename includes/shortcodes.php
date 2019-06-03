@@ -509,22 +509,18 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 		'location' => 'Physical location for the signpost', // location for the signpost
 	), $atts );
 	if ( empty( $content ) ) {
-		$location_object = '
-		<div class="media signpost-location">
-			<div class="media-left">
-					<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body">' . $a['location'] . '</div>
-		</div>';
+		$output_location = $a['location'];
+
 	} else {
-		$location_object = '
-		<div class="media signpost-location">
-			<div class="media-left">
-					<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body">' . $content . '</div>
-		</div>';
+		$output_location = $content;
 	}
+	$location_object = '
+	<div class="media signpost-location">
+		<div class="media-left">
+				<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body">' .$output_location . '</div>
+	</div>';
 
 	return $location_object;
 }
