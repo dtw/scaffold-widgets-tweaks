@@ -9,6 +9,14 @@
   border: 0px;
 }
 
+.media.signpost-phone .media-body p,
+.media.signpost-email .media-body p,
+.media.signpost-website .media-body p,
+.media.signpost-address .media-body p,
+.media.signpost-location .media-body p {
+  margin-bottom: 0px;
+}
+
 .media.signpost-phone .media-left,
 .media.signpost-email .media-left,
 .media.signpost-website .media-left,
