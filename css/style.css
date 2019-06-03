@@ -1,16 +1,25 @@
 /* CSS for changes to plugin */
 
+.media.signpost-phone,
+.media.signpost-email,
+.media.signpost-website,
 .media.signpost-address,
 .media.signpost-location {
   padding: 0px;
   border: 0px;
 }
 
+.media.signpost-phone .media-left,
+.media.signpost-email .media-left,
+.media.signpost-website .media-left,
 .media.signpost-address .media-left,
 .media.signpost-location .media-left{
   padding-right: 0px;
 }
 
+.media.signpost-phone .media-body,
+.media.signpost-email .media-body,
+.media.signpost-website .media-body,
 .media.signpost-address .media-body,
 .media.signpost-location .media-body{
   font-size:16px;
