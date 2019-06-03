@@ -488,7 +488,7 @@ function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 		<div class="media-left">
 				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
 		</div>
-		<div class="media-body">' . $output_address . '</div>
+		<div class="media-body"><p>' . $output_address . '</p></div>
 	</div>';
 
 	return $address_object;
@@ -513,7 +513,7 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 		<div class="media-left">
 				<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
 		</div>
-		<div class="media-body">' .$output_location . '</div>
+		<div class="media-body"><p>' .$output_location . '</p></div>
 	</div>';
 
 	return $location_object;
