@@ -538,7 +538,7 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	$website_object = '
 	<div class="media signpost-website">
 		<div class="media-left">
-				<i class="media-object fas fa-external-link-alt  fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon"></i>
 		</div>
 		<div class="media-body"><a href="' . $cleaned_url . '">' . $display_url . '</a></div>
 	</div>';
