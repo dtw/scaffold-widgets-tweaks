@@ -479,22 +479,17 @@ function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 		'address' => 'Mail address for the signpost', // address for the signpost
 	), $atts );
 	if ( empty( $content ) ) {
-		$address_object = '
-		<div class="media signpost-address">
-			<div class="media-left">
-					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body">' . $a['address'] . '</div>
-		</div>';
+		$output_address = $a['address'];
 	} else {
-		$address_object = '
-		<div class="media signpost-address">
-			<div class="media-left">
-					<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
-			</div>
-			<div class="media-body">' . $content . '</div>
-		</div>';
+		$output_address = $content;
 	}
+	$address_object = '
+	<div class="media signpost-address">
+		<div class="media-left">
+				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body">' . $output_address . '</div>
+	</div>';
 
 	return $address_object;
 }
