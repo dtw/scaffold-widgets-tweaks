@@ -600,4 +600,31 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 
 add_shortcode( 'signpost_phone', 'hwbucks_shortcode_signpost_phone_object' );
 
+/* Media object NOTE
+
+This adds simple formatting to draw attention to key information with a note icon
+
+------------------------ */
+
+function hwbucks_shortcode_note_object( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => 'This is a note', // content of the note
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$content = $a['text'];
+	}
+	$note_object = '
+	<div class="media callout-note">
+		<div class="media-left">
+				<i class="media-object far fa-sticky-note fa-2x shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $content . '</p></div>
+	</div>';
+
+	return $note_object;
+}
+
+add_shortcode( 'callout_note', 'hwbucks_shortcode_note_object' );
+
 ?>

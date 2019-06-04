@@ -55,3 +55,22 @@
 .edit-signpost {
   text-align:right;
 }
+
+.media.callout-note {
+  border: 1px solid gold;
+  background-color: #fff9db;
+  padding: 0px;
+}
+
+.media.callout-note .media-left {
+  padding: 1rem 0 0 1rem;
+  text-align: center;
+}
+
+.media.callout-note .media-left .far.shortcode-icon {
+  font-weight: 400;
+}
+
+.media.callout-note .media-body {
+  padding: 1rem;
+}
