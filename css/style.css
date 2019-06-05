@@ -66,3 +66,8 @@
   border: 1px solid #1CFFEF;
   background-color: rgba(179, 255, 249, .8);
 }
+
+.media.callout-signpost {
+  border: 1px solid rgba(0, 0, 0, 0.2;
+  background-color: rgba(0, 0, 0, 0.03);
+}
