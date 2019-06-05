@@ -40,40 +40,25 @@
   text-align:right;
 }
 
-.media.callout-note {
-  border: 1px solid gold;
-  background-color: #fff9db;
-  padding: 0px;
-}
-
-.media.callout-note .media-left {
+.media.callout .media-left {
   padding: 1rem 0 0 1rem;
   text-align: center;
 }
 
 .media.callout-note .media-left .far.shortcode-icon {
   font-weight: 400;
+.media.callout .media-body {
+  padding: 1rem;
 }
 
-.media.callout-note .media-body {
-  padding: 1rem;
+.media.callout-note {
+  border: 1px solid gold;
+  background-color: #fff9db;
+  padding: 0px;
 }
 
 .media.callout-question {
   border: 1px solid #1CFFEF;
   background-color: rgba(179, 255, 249, .8);;
   padding: 0px;
-}
-
-.media.callout-question .media-left {
-  padding: 1rem 0 0 1rem;
-  text-align: center;
-}
-
-.media.callout-question .media-left .far.shortcode-icon {
-  font-weight: 400;
-}
-
-.media.callout-question .media-body {
-  padding: 1rem;
 }
