@@ -606,7 +606,7 @@ This adds simple formatting to draw attention to key information with a note ico
 
 ------------------------ */
 
-function hwbucks_shortcode_note_object( $atts, $content = null ) {
+function hwbucks_shortcode_note_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'text' => 'This is a note', // content of the note
 	), $atts );
@@ -625,7 +625,7 @@ function hwbucks_shortcode_note_object( $atts, $content = null ) {
 	return $note_object;
 }
 
-add_shortcode( 'callout_note', 'hwbucks_shortcode_note_object' );
+add_shortcode( 'callout_note', 'hwbucks_shortcode_note_callout' );
 
 /* Media object question
 
@@ -633,7 +633,7 @@ This adds simple formatting to draw attention to key information with a question
 
 ------------------------ */
 
-function hwbucks_shortcode_question_object( $atts, $content = null ) {
+function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'text' => 'This is a question', // content of the question
 	), $atts );
@@ -652,6 +652,6 @@ function hwbucks_shortcode_question_object( $atts, $content = null ) {
 	return $question_object;
 }
 
-add_shortcode( 'callout_question', 'hwbucks_shortcode_question_object' );
+add_shortcode( 'callout_question', 'hwbucks_shortcode_question_callout' );
 
 ?>
