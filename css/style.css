@@ -1,10 +1,6 @@
 /* CSS for changes to plugin */
 
-.media.signpost-phone,
-.media.signpost-email,
-.media.signpost-website,
-.media.signpost-address,
-.media.signpost-location {
+.media.signpost {
   padding: 0px;
   border: 0px;
 }
@@ -28,27 +24,15 @@
   hyphens: auto;
 }
 
-.media.signpost-phone .media-body p,
-.media.signpost-email .media-body p,
-.media.signpost-website .media-body p,
-.media.signpost-address .media-body p,
-.media.signpost-location .media-body p {
+.media.signpost .media-body p {
   margin-bottom: 0px;
 }
 
-.media.signpost-phone .media-left,
-.media.signpost-email .media-left,
-.media.signpost-website .media-left,
-.media.signpost-address .media-left,
-.media.signpost-location .media-left{
+.media.signpost .media-left {
   padding-right: 0px;
 }
 
-.media.signpost-phone .media-body,
-.media.signpost-email .media-body,
-.media.signpost-website .media-body,
-.media.signpost-address .media-body,
-.media.signpost-location .media-body{
+.media.signpost .media-body {
   font-size:16px;
 }
 
