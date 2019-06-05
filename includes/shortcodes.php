@@ -615,7 +615,7 @@ function hwbucks_shortcode_note_object( $atts, $content = null ) {
 		$content = $a['text'];
 	}
 	$note_object = '
-	<div class="media callout-note">
+	<div class="media callout callout-note">
 		<div class="media-left">
 				<i class="media-object far fa-sticky-note fa-2x shortcode-icon"></i>
 		</div>
@@ -642,7 +642,7 @@ function hwbucks_shortcode_question_object( $atts, $content = null ) {
 		$content = $a['text'];
 	}
 	$question_object = '
-	<div class="media callout-question">
+	<div class="media callout callout-question">
 		<div class="media-left">
 				<i class="media-object fas fa-question fa-2x shortcode-icon"></i>
 		</div>
