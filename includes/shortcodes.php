@@ -588,7 +588,7 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 		$cleaned_phone = wp_strip_all_tags($content);
 	}
 	$phone_object = '
-	<div class="media signpost-email">
+	<div class="media signpost signpost-phone">
 		<div class="media-left">
 				<i class="media-object fa fa-phone fa-lg shortcode-icon"></i>
 		</div>
