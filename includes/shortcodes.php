@@ -671,7 +671,7 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 		<div class="media-left">
 				<i class="media-object fas fa-map-signs fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body"><p>'. $content . '</p></div>
+		<div class="media-body"><h3>' . $title . '</h3><p>'. $content . '</p></div>
 	</div>';
 
 	return $signpost_object;
