@@ -654,4 +654,29 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_question', 'hwbucks_shortcode_question_callout' );
 
+function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'signpost_id' => (int)'49784', // this is the A&E signpost
+	), $atts );
+
+	// fetch the signpost
+	$content_post = get_post($a['signpost_id']);
+	// get and clean up the content and title
+	$content = apply_filters('the_content', $content_post->post_content);
+	$title = apply_filters('the_title', $content_post->post_title);
+	$content = do_shortcode($content);
+
+	$signpost_object = '
+	<div class="media callout callout-signpost">
+		<div class="media-left">
+				<i class="media-object fas fa-map-signs fa-2x shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $content . '</p></div>
+	</div>';
+
+	return $signpost_object;
+}
+
+add_shortcode( 'callout_signpost', 'hwbucks_shortcode_signpost_callout' );
+
 ?>
