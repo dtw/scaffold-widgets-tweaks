@@ -40,6 +40,10 @@
   text-align:right;
 }
 
+.media.callout p:last-child {
+  margin-bottom: 0px;
+}
+
 .media.callout .media-left {
   padding: 1rem 0 0 1rem;
   text-align: center;
