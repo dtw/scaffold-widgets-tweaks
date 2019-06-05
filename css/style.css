@@ -40,6 +40,10 @@
   text-align:right;
 }
 
+.media.callout {
+  padding: 0px;
+}
+
 .media.callout p:last-child {
   margin-bottom: 0px;
 }
@@ -56,11 +60,9 @@
 .media.callout-note {
   border: 1px solid gold;
   background-color: #fff9db;
-  padding: 0px;
 }
 
 .media.callout-question {
   border: 1px solid #1CFFEF;
   background-color: rgba(179, 255, 249, .8);;
-  padding: 0px;
 }
