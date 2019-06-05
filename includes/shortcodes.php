@@ -627,4 +627,31 @@ function hwbucks_shortcode_note_object( $atts, $content = null ) {
 
 add_shortcode( 'callout_note', 'hwbucks_shortcode_note_object' );
 
+/* Media object question
+
+This adds simple formatting to draw attention to key information with a question icon
+
+------------------------ */
+
+function hwbucks_shortcode_question_object( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => 'This is a question', // content of the question
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$content = $a['text'];
+	}
+	$question_object = '
+	<div class="media callout-question">
+		<div class="media-left">
+				<i class="media-object fas fa-question fa-2x shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $content . '</p></div>
+	</div>';
+
+	return $question_object;
+}
+
+add_shortcode( 'callout_question', 'hwbucks_shortcode_question_object' );
+
 ?>
