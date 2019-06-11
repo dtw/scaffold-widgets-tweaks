@@ -196,6 +196,15 @@ function old_scaffold_shortcode_website_icon() {
 			}
 		add_shortcode( 'icon_telephone', 'scaffold_shortcode_telephone_icon' );
 
+	/* TEXT icon
+	------------------------ */
+
+	function scaffold_shortcode_text_icon() {
+		$text_icon = "<i class='fas fa-sms fa-lg shortcode-icon'></i> ";
+			return $text_icon;
+			}
+		add_shortcode( 'icon_text', 'scaffold_shortcode_text_icon' );
+
 	/* EMAIL icon
 	------------------------ */
 
