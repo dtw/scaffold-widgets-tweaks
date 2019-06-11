@@ -10,6 +10,8 @@ Many improvements to the way the post editor and admin screens work in WordPress
 
 Many improvements to the way the post editor and admin screens work in WordPress.
 
+And more, including additional shortcodes.
+
 == Changelog ==
 
 = 1.1 =
