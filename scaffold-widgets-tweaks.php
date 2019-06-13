@@ -65,3 +65,14 @@ if ( ! defined( 'WPINC' ) ) {
 		}
 
 		add_action('wp_enqueue_scripts', 'scaffold_shortcode_css');
+
+	// add accordion_scroll script
+	function add_accordion_scroll() {
+	    wp_enqueue_script(
+	        'accordion_scroll.js', // name your script so that you can attach other scripts and de-register, etc.
+	        get_plugin_directory_uri() . '/js/accordion_scroll.js', // this is the location of your script file
+	        array('jquery') // this array lists the scripts upon which your script depends
+	    );
+	}
+
+	add_action( 'wp_enqueue_scripts', 'add_accordion_scroll' );
