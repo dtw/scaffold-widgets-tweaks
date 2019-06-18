@@ -583,7 +583,7 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 
 add_shortcode( 'signpost_email', 'hwbucks_shortcode_signpost_email_object' );
 
-/* Media object EMAIL
+/* Media object PHONE
 ------------------------ */
 
 function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
