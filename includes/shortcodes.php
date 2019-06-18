@@ -609,6 +609,32 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 
 add_shortcode( 'signpost_phone', 'hwbucks_shortcode_signpost_phone_object' );
 
+/* Media object SMS/TEXT
+------------------------ */
+
+function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => '01844 348 839', // email for the signpost
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$cleaned_text = wp_strip_all_tags($a['text']);
+	} else {
+		$cleaned_text = wp_strip_all_tags($content);
+	}
+	$text_object = '
+	<div class="media signpost signpost-text">
+		<div class="media-left">
+				<i class="media-object fa fa-sms fa-lg shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $cleaned_text . '</p></div>
+	</div>';
+
+	return $text_object;
+}
+
+add_shortcode( 'signpost_text', 'hwbucks_shortcode_signpost_text_object' );
+
 /* Media object NOTE
 
 This adds simple formatting to draw attention to key information with a note icon
