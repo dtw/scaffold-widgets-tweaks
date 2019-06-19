@@ -535,6 +535,12 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_question', 'hwbucks_shortcode_question_callout' );
 
+/* Media object signpost
+
+This inserts the content of a signpost as a callout
+
+------------------------ */
+
 function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'signpost_id' => (int)'49784', // this is the A&E signpost
