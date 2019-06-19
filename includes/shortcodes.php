@@ -535,6 +535,33 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_question', 'hwbucks_shortcode_question_callout' );
 
+/* Media object alert
+
+This adds simple formatting to draw attention to key information with a alert icon
+
+------------------------ */
+
+function hwbucks_shortcode_alert_callout( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => 'This is an alert', // content of the alert
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$content = $a['text'];
+	}
+	$alert_object = '
+	<div class="media callout callout-alert">
+		<div class="media-left">
+				<i class="media-object fas fa-exclamation fa-2x shortcode-icon"></i>
+		</div>
+		<div class="media-body"><p>'. $content . '</p></div>
+	</div>';
+
+	return $alert_object;
+}
+
+add_shortcode( 'callout_alert', 'hwbucks_shortcode_alert_callout' );
+
 /* Media object signpost
 
 This inserts the content of a signpost as a callout
