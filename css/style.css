@@ -3,6 +3,7 @@
 .media.signpost {
   padding: 0px;
   border: 0px;
+  margin-bottom: 15px;
 }
 
 .media.signpost-email .media-body a,
