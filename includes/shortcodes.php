@@ -497,10 +497,10 @@ function hwbucks_shortcode_note_callout( $atts, $content = null ) {
 	}
 	$note_object = '
 	<div class="media callout callout-note">
-		<div class="media-left">
+		<div class="media-left callout">
 				<i class="media-object far fa-sticky-note fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body"><p>'. $content . '</p></div>
+		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
 
 	return $note_object;
@@ -524,10 +524,10 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 	}
 	$question_object = '
 	<div class="media callout callout-question">
-		<div class="media-left">
+		<div class="media-left callout">
 				<i class="media-object fas fa-question fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body"><p>'. $content . '</p></div>
+		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
 
 	return $question_object;
@@ -551,10 +551,10 @@ function hwbucks_shortcode_alert_callout( $atts, $content = null ) {
 	}
 	$alert_object = '
 	<div class="media callout callout-alert">
-		<div class="media-left">
+		<div class="media-left callout">
 				<i class="media-object fas fa-exclamation fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body"><p>'. $content . '</p></div>
+		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
 
 	return $alert_object;
@@ -582,10 +582,10 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 
 	$signpost_object = '
 	<div class="media callout callout-signpost">
-		<div class="media-left">
+		<div class="media-left callout">
 				<i class="media-object fas fa-map-signs fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body"><h3>' . $title . '</h3><p>'. $content . '</p></div>
+		<div class="media-body callout"><h3>' . $title . '</h3><p>'. $content . '</p></div>
 	</div>';
 
 	return $signpost_object;
