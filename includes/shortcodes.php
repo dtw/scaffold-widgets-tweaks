@@ -571,6 +571,7 @@ This inserts the content of a signpost as a callout
 function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'signpost_id' => (int)'49784', // this is the A&E signpost
+		'hide_title' => (bool)'false', // set to false by default
 	), $atts );
 
 	// fetch the signpost
@@ -585,7 +586,11 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 		<div class="media-left callout">
 				<i class="media-object fas fa-map-signs fa-2x shortcode-icon"></i>
 		</div>
-		<div class="media-body callout"><h3>' . $title . '</h3><p>'. $content . '</p></div>
+		<div class="media-body callout">';
+		if ( ! $hide_title ) {
+			$signpost_object .= '<h3>' . $title . '</h3>';
+		}
+		$signpost_object .= '<p>'. $content . '</p></div>
 	</div>';
 
 	return $signpost_object;
