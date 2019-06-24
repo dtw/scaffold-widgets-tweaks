@@ -51,12 +51,12 @@
   margin-bottom: 0px;
 }
 
-.media.callout .media-left {
+.media.callout .media-left.callout {
   padding: 1.3rem 0 0 1rem;
   text-align: center;
 }
 
-.media.callout .media-body {
+.media.callout .media-body.callout {
   padding: 1rem;
 }
 
