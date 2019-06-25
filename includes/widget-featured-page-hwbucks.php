@@ -58,7 +58,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 						<div class="col-md-8 col-sm-6 col-xs-12 panel-text">
 							<div class="row">
 								<div class="col-md-12 panel-title">
-									<h2><?php echo $title ?><h2>
+									<h2><?php echo $title ?></h2>
 								</div>
 							</div>
 							<div class="row">
