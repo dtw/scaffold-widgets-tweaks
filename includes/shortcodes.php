@@ -571,8 +571,8 @@ This inserts the content of a signpost as a callout
 function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'signpost_id' => (int)'49784', // this is the A&E signpost
-		'hide_title' => (bool)'false', // set to false by default
-	), $atts );
+		'hide_title'  => 'false', // set to false by default
+	), $atts, 'callout_signpost' );
 
 	// fetch the signpost
 	$content_post = get_post($a['signpost_id']);
@@ -580,6 +580,9 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$content = apply_filters('the_content', $content_post->post_content);
 	$title = apply_filters('the_title', $content_post->post_title);
 	$content = do_shortcode($content);
+
+	// typecast
+	$a['hide_title'] = filter_var( $a['hide_title'], FILTER_VALIDATE_BOOLEAN );
 
 	$signpost_object = '
 	<div class="media callout callout-signpost">
