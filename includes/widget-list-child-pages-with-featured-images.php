@@ -31,9 +31,9 @@ if ( has_post_thumbnail() ) {
 
 $output .= '<div class="child-nav-item col-lg-3 col-md-3 col-sm-3 col-xs-6	text-center">';
 
-$output .= '<a href="'.get_permalink().'" title="'.get_the_title().'">'.$featured_image.'</a>';
+$output .= '<div class="child-nav-img"><a href="'.get_permalink().'" title="'.get_the_title().'">'.$featured_image.'</a></div>';
 
-$output .= '<p><a href="'.get_permalink().'">'.get_the_title().'</a></p>';
+$output .= '<div class="child-nav-title"><p><a href="'.get_permalink().'">'.get_the_title().'</a></p></div>';
 
 $output .= '</div>';
 
