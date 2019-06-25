@@ -593,7 +593,7 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 		if ( ! $a['hide_title'] ) {
 			$signpost_object .= '<h3>' . $title . '</h3>';
 		}
-		$signpost_object .= '<p>'. $content . '</p></div>
+		$signpost_object .= $content . '</div>
 	</div>';
 
 	return $signpost_object;
