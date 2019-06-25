@@ -1,8 +1,8 @@
 <?php
 
-function scaffold_list_child_pages_with_featured_images() { 
+function scaffold_list_child_pages_with_featured_images() {
 
-global $post; 
+global $post;
 
 $args=array(
   'post_parent' => $post->ID,
@@ -26,8 +26,8 @@ if( $my_query->have_posts() ) {
 if ( has_post_thumbnail() ) {
 	$featured_image = get_the_post_thumbnail($page->ID, 'thumbnail');
 } else {
-	$featured_image = '';	
-	} 
+	$featured_image = '';
+	}
 
 $output .= '<div class="child-nav-item col-lg-4 col-md-4 col-sm-4 col-xs-6	text-center">';
 
