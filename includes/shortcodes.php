@@ -4,6 +4,8 @@
 
 * phone
 * email
+* text
+* sms
 * info
 * facebook
 * twitter
