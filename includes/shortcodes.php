@@ -51,6 +51,15 @@
 			}
 		add_shortcode( 'icon_text', 'scaffold_shortcode_text_icon' );
 
+	/* SMS icon
+	------------------------ */
+
+	function scaffold_shortcode_sms_icon() {
+		$sms_icon = "<i class='fas fa-sms fa-lg shortcode-icon'></i> ";
+			return $sms_icon;
+			}
+		add_shortcode( 'icon_sms', 'scaffold_shortcode_sms_icon' );
+
 	/* EMAIL icon
 	------------------------ */
 
