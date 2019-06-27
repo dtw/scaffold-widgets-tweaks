@@ -561,7 +561,7 @@ function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 		$content = $a['text'];
 	}
 	$alert_object = '
-	<div class="media callout callout-alert">
+	<div class="media callout callout-warning">
 		<div class="media-left callout">
 				<i class="media-object fas fa-exclamation fa-2x shortcode-icon"></i>
 		</div>
