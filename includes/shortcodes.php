@@ -552,9 +552,9 @@ This adds simple formatting to draw attention to key information with a alert ic
 
 ------------------------ */
 
-function hwbucks_shortcode_alert_callout( $atts, $content = null ) {
+function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'text' => 'This is an alert', // content of the alert
+		'text' => 'This is a warning', // content of the alert
 	), $atts );
 
 	if ( empty( $content ) ) {
@@ -571,7 +571,7 @@ function hwbucks_shortcode_alert_callout( $atts, $content = null ) {
 	return $alert_object;
 }
 
-add_shortcode( 'callout_alert', 'hwbucks_shortcode_alert_callout' );
+add_shortcode( 'callout_warning', 'hwbucks_shortcode_warning_callout' );
 
 /* Media object signpost
 
