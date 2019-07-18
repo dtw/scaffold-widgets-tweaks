@@ -612,4 +612,35 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_signpost', 'hwbucks_shortcode_signpost_callout' );
 
+/* Add a mailchimp sign-up form */
+function scaffold_shortcode_mailchimp_signup() {
+	$form_output = '
+	<!-- Begin MailChimp Signup Form -->
+	<div id="mailchmip-container" style="background-color: #0080a4; margin: 1rem auto;border-radius: 5px;">
+		<div id="mailchimp-title" style="padding:2rem;">
+			<h2 style="color:white;margin-bottom:0;">Subscribe to the Healthwatch Bucks email newsletter</h2>
+		</div>
+		<div id="mailchmip-form" style="margin: 0 auto;width:62%;padding:0.5rem;">
+			<form action="//healthwatchbucks.us3.list-manage.com/subscribe/post?u=b3e99f9452fa226631c515b62&amp;id=bc05bac5eb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin:0;" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+					<label class="hidden" for="mce-EMAIL">Email Address </label>
+					<input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					<p style="margin-top: 3rem;"><a style="color: #fff; text-decoration: underline;" target="_blank" href="http://us3.campaign-archive2.com/home/?u=b3e99f9452fa226631c515b62&id=bc05bac5eb" title="View previous campaigns"><i style="margin-right: 1rem;" class="far fa-lg fa-newspaper" aria-hidden="true"></i>Read previous newsletters &raquo;</a></p>
+				</div>
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3e99f9452fa226631c515b62_bc05bac5eb" tabindex="-1" value=""></div>
+			</form>
+		</div>
+	</div>
+	<!--End mc_embed_signup-->
+	';
+		return $form_output;
+		}
+
+add_shortcode( 'mailchimp_signup', 'scaffold_shortcode_mailchimp_signup' );
+
 ?>
