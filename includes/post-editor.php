@@ -39,12 +39,12 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'selector' => 'p > a',
 			'classes' => 'btn btn-primary',
 			'wrapper' => false,
-			'selector' => 'p > a',
 		),
 		array(
 			'title' => 'Call to Action',
+			'selector' => 'p',
 			'classes' => 'call-to-action',
-			'wrapper' => false,
+			'wrapper' => true,
 		),
 
 	);
