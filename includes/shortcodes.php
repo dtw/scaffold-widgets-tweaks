@@ -643,22 +643,22 @@ function scaffold_shortcode_mailchimp_signup() {
 
 add_shortcode( 'mailchimp_signup', 'scaffold_shortcode_mailchimp_signup' );
 
-/* Add a bootstrap tabbed nav menu with [bootstrap_nav_tabs] this requires a closing tag [/bootstrap__nav_tabs]. This shortcode should wrap two or more [bootstrap_tab] shortcodes (see below) */
+/* Add a bootstrap tabbed nav menu with [bootstrap_tab_menu] this requires a closing tag [/bootstrap_tabbed]. This shortcode should wrap two or more [bootstrap_tab_item] shortcodes (see below) */
 
-function scaffold_shortcode_bootstrap_nav_tabs( $atts, $content = null ) {
+function scaffold_shortcode_bootstrap_tab_menu( $atts, $content = null ) {
 
-	$nav_tabs_output = '
+	$tab_menu_output = '
 	<ul class="nav nav-tabs nav-justified">
 		' . do_shortcode($content) . '
 	</ul>';
-	return $nav_tabs_output;
+	return $tab_menu_output;
 }
 
-add_shortcode('bootstrap_nav_tabs', 'scaffold_shortcode_bootstrap_nav_tabs');
+add_shortcode('bootstrap_tab_menu', 'scaffold_shortcode_bootstrap_tab_menu');
 
 /* Add a single bootstrap tab to the tabbed nav menu with [bootstrap_tab] */
 
-function scaffold_shortcode_bootstrap_tab( $atts, $content = null ) {
+function scaffold_shortcode_bootstrap_tab_item( $atts, $content = null ) {
 		$a = shortcode_atts( array(
 			'title' => 'Title',
 			'tab_id' => (int)'1', // setting to 1 means that the tab is expanded on load
@@ -675,5 +675,5 @@ function scaffold_shortcode_bootstrap_tab( $atts, $content = null ) {
 	return $tab_output;
 }
 
-add_shortcode('bootstrap_tab', 'scaffold_shortcode_bootstrap_tab');
+add_shortcode('bootstrap_tab_item', 'scaffold_shortcode_bootstrap_tab_item');
 ?>
