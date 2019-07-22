@@ -79,3 +79,8 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.03);
 }
+
+/* CSS for bootstrap tabs */
+ul.nav-tabs li::before{
+  content:none !important;
+}
