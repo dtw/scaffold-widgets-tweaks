@@ -676,4 +676,18 @@ function scaffold_shortcode_bootstrap_tab_item( $atts, $content = null ) {
 }
 
 add_shortcode('bootstrap_tab_item', 'scaffold_shortcode_bootstrap_tab_item');
+
+/* Add a bootstrap tab content with [bootstrap_tab_content] this requires a closing tag [/bootstrap_tab_content]. This shortcode should wrap two or more [bootstrap_tab_pane] shortcodes (see below) */
+
+function scaffold_shortcode_bootstrap_tab_content( $atts, $content = null ) {
+
+	$tab_content_output = '
+	<div class="tab-content">
+		' . do_shortcode($content) . '
+	</div>';
+	return $tab_content_output;
+}
+
+add_shortcode('bootstrap_tab_content', 'scaffold_shortcode_bootstrap_tab_content');
+
 ?>
