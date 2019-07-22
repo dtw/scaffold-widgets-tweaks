@@ -235,7 +235,7 @@ function scaffold_searchform( $form ) {
 
 add_shortcode('search', 'scaffold_searchform');
 
-/* Start a bootstrao accordion with [bootstrap_accordion] this requires a closing tag [/bootstrap_accordion] and wraps around accordion_panel (see below) */
+/* Start a bootstrap accordion with [bootstrap_accordion] this requires a closing tag [/bootstrap_accordion] and wraps around accordion_panel (see below) */
 
 function scaffold_shortcode_bootstrap_accordion( $atts, $content = null ) {
 
