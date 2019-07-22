@@ -656,4 +656,24 @@ function scaffold_shortcode_bootstrap_nav_tabs( $atts, $content = null ) {
 
 add_shortcode('bootstrap_nav_tabs', 'scaffold_shortcode_bootstrap_nav_tabs');
 
+/* Add a single bootstrap tab to the tabbed nav menu with [bootstrap_tab] */
+
+function scaffold_shortcode_bootstrap_tab( $atts, $content = null ) {
+		$a = shortcode_atts( array(
+			'title' => 'Title',
+			'tab_id' => (int)'1', // setting to 1 means that the tab is expanded on load
+		), $atts );
+
+		// this depends on the user
+		// if the panel_id attribute is set to 1 the panel will be expanded on load with class="active"
+		if ($a['tab_id'] == '1') {
+			$tab_output = '<li class="active"><a data-toggle="tab" href="#' . $a['panel_id'] . '">' . $a['title'] . '</a></li>';
+		} else {
+		// bootstrap JS adds the collapsed class on toggle but we want to start with it so we can style panels collapsed on load without the JS firing
+			$tab_output = '<li><a data-toggle="tab" href="#' . $a['panel_id'] . '">' . $a['title'] . '</a></li>';
+		}
+	return $tab_output;
+}
+
+add_shortcode('bootstrap_tab', 'scaffold_shortcode_bootstrap_tab');
 ?>
