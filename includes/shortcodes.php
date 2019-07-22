@@ -690,4 +690,27 @@ function scaffold_shortcode_bootstrap_tab_content( $atts, $content = null ) {
 
 add_shortcode('bootstrap_tab_content', 'scaffold_shortcode_bootstrap_tab_content');
 
+/* Add a bootstrap tab to the content area with [bootstrap_tab_pane] this requires a closing tag [/bootstrap_tab_pane]. */
+
+function scaffold_shortcode_bootstrap_tab_pane( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'tab_id' => (int)'1', // setting to 1 means that the tab is expanded on load
+	), $atts );
+
+	// this depends on the user
+	// if the tab_id attribute is set to 1 the tab will be expanded on load with class="active"
+	if ($a['tab_id'] == '1') {
+		$tab_pane_output = '<div id="tab' . $a['tab_id'] . '" class="tab-pane fade in active">
+		' . do_shortcode($content) . '
+		</div>';
+	} else {
+		$tab_pane_output = '<div id="tab' . $a['tab_id'] . '" class="tab-pane fade">
+		' . do_shortcode($content) . '
+		</div>';
+	}
+	return $tab_pane_output;
+}
+
+add_shortcode('bootstrap_tab_pane', 'scaffold_shortcode_bootstrap_tab_pane');
+
 ?>
