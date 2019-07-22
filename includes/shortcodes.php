@@ -665,12 +665,12 @@ function scaffold_shortcode_bootstrap_tab_item( $atts, $content = null ) {
 		), $atts );
 
 		// this depends on the user
-		// if the panel_id attribute is set to 1 the panel will be expanded on load with class="active"
+		// if the tab_id attribute is set to 1 the tab will be expanded on load with class="active"
 		if ($a['tab_id'] == '1') {
-			$tab_output = '<li class="active"><a data-toggle="tab" href="#' . $a['panel_id'] . '">' . $a['title'] . '</a></li>';
+			$tab_output = '<li class="active"><a data-toggle="tab" href="#tab' . $a['tab_id'] . '">' . $a['title'] . '</a></li>';
 		} else {
-		// bootstrap JS adds the collapsed class on toggle but we want to start with it so we can style panels collapsed on load without the JS firing
-			$tab_output = '<li><a data-toggle="tab" href="#' . $a['panel_id'] . '">' . $a['title'] . '</a></li>';
+		// if not, it's just a tab
+			$tab_output = '<li><a data-toggle="tab" href="#tab' . $a['tab_id'] . '">' . $a['title'] . '</a></li>';
 		}
 	return $tab_output;
 }
