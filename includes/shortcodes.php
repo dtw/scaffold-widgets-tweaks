@@ -648,7 +648,7 @@ add_shortcode( 'mailchimp_signup', 'scaffold_shortcode_mailchimp_signup' );
 function scaffold_shortcode_bootstrap_nav_tabs( $atts, $content = null ) {
 
 	$nav_tabs_output = '
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs nav-justified">
 		' . do_shortcode($content) . '
 	</ul>';
 	return $nav_tabs_output;
