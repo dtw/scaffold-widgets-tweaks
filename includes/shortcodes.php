@@ -643,4 +643,17 @@ function scaffold_shortcode_mailchimp_signup() {
 
 add_shortcode( 'mailchimp_signup', 'scaffold_shortcode_mailchimp_signup' );
 
+/* Add a bootstrap tabbed nav menu with [bootstrap_nav_tabs] this requires a closing tag [/bootstrap__nav_tabs]. This shortcode should wrap two or more [bootstrap_tab] shortcodes (see below) */
+
+function scaffold_shortcode_bootstrap_nav_tabs( $atts, $content = null ) {
+
+	$nav_tabs_output = '
+	<ul class="nav nav-tabs">
+		' . do_shortcode($content) . '
+	</ul>';
+	return $nav_tabs_output;
+}
+
+add_shortcode('bootstrap_nav_tabs', 'scaffold_shortcode_bootstrap_nav_tabs');
+
 ?>
