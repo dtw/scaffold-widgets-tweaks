@@ -89,6 +89,9 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 			}
 		}
 	}
+
+// Save widget settings
+
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
