@@ -48,19 +48,6 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			$btn_text = $instance['btn_text'] ;
 			$p = new WP_Query( array( 'p' => $post_id ) );
 
-
-			// loop through found posts
-			while ( $p->have_posts() ) : $p->the_post();
-					echo '<section class="post">'.
-							 '<h2><a href="'.
-							 get_permalink().
-							 '">'.
-							 get_the_title().
-							 '</a></h2><p>'.
-							 get_the_excerpt().
-							 '</p></section>';
-			endwhile;
-
 			if ( $p->have_posts() ) {
 				$p->the_post();
 
