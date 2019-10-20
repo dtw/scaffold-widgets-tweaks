@@ -71,28 +71,26 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	}
 	function form( $instance ) {
 		for ($i = 1; $i <= 3; $i++) {
-			// create a new variable on the fly
-			${'title'.$i} = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title ' . $i;
-			// $title1, $title2, etc
-			${'url'.$i}  = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'URL ' . $i;
-			${'body_text'.$i}  = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
-			${'btn_text'.$i} = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more ';
+			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title ' . $i;
+			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'URL ' . $i;
+			$body_text = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
+			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more ';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( ${'title'.$i} ); ?>" />
+			<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>">Body text:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'body_text_'.$i ); ?>" value="<?php echo esc_attr( ${'body_text'.$i} ); ?>" />
+			<input type="text" id="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'body_text_'.$i ); ?>" value="<?php echo esc_attr( $body_text ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( ${'url'.$i} ); ?>" />
+			<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>">URL text:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'btn_text_'.$i ); ?>" value="<?php echo esc_attr( ${'btn_text'.$i} ); ?>" />
+			<input type="text" id="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'btn_text_'.$i ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
 		</p>
 	<?php
 		}
