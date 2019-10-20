@@ -42,26 +42,19 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
-
-			$title_1 = $instance['title'] ;
-			$body_text_1 = $instance['body_text'] ;
-			$url_1 = $instance['url'];
-			$btn_text_1 = $instance['btn_text'] ;
-
-				echo $before_widget;
-				for ($i = 1; $i <= 3; $i++) { ?>
-					<div class="col-md-4 col-sm-4 col-xs-12 subitem">
-						<h3>
-							<?php echo '<a href="' . $instance['url_'.$i] . '">' . $instance['title_'.$i] . '</a>'?>
-						</h3>
-						<?php echo '<p>' . $instance['body_text_'.$i] . '</p>'?>
-						<p>At Healthwatch Bucks we believe that we all learn from each other. Make sure that what people have to say helps you do better every day; our client services can help.</p>
-						<p>
-							<?php echo '<a href="' . $instance['url_'.$i] . '">' . $instance['btn_text_'.$i] . '&raquo;</a>'?>
-						</p>
-					</div>
-				<?php }
-				echo $after_widget;
+		echo $before_widget;
+		for ($i = 1; $i <= 3; $i++) { ?>
+			<div class="col-md-4 col-sm-4 col-xs-12 subitem">
+				<h3>
+					<?php echo '<a href="' . $instance['url_'.$i] . '">' . $instance['title_'.$i] . '</a>'?>
+				</h3>
+				<?php echo '<p>' . $instance['body_text_'.$i] . '</p>'?>
+				<p>
+					<?php echo '<a href="' . $instance['url_'.$i] . '">' . $instance['btn_text_'.$i] . ' &raquo;</a>'?>
+				</p>
+			</div>
+		<?php }
+		echo $after_widget;
 	}
 
 	// Save widget settings
@@ -81,7 +74,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title ' . $i;
 			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'URL ' . $i;
 			$body_text = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
-			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more';
+			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more ';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
@@ -92,7 +85,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			<input type="text" id="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'body_text_'.$i ); ?>" value="<?php echo esc_attr( $body_text ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL text:</label>
+			<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 		</p>
 		<p>
