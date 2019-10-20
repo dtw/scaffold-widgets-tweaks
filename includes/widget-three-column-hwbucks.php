@@ -66,8 +66,8 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			$instance['url_'.$i] = wp_strip_all_tags( $new_instance['url_'.$i] );
 			$instance['body_text_'.$i] = wp_strip_all_tags( $new_instance['body_text_'.$i] );
 			$instance['btn_text_'.$i] = wp_strip_all_tags( $new_instance['btn_text_'.$i] );
-			return $instance;
 		}
+		return $instance;
 	}
 	function form( $instance ) {
 		for ($i = 1; $i <= 3; $i++) {
