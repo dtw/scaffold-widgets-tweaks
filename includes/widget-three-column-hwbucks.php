@@ -71,10 +71,10 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	}
 	function form( $instance ) {
 		for ($i = 1; $i <= 3; $i++) {
-			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title ' . $i;
-			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'URL ' . $i;
+			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title' . $i;
+			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'URL' . $i;
 			$body_text = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
-			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more ';
+			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
