@@ -64,6 +64,9 @@ if ( ! defined( 'WPINC' ) ) {
 	// h. WIDGET for displaying RECENT FEEDBACK
 	require_once('includes/widget-recent-feedback-hwbucks.php');
 
+	// i. WIDGET for displaying a three-column content
+	require_once('includes/widget-three-column-hwbucks.php');
+
 	// Add CUSTOM CSS to the SHORTCODES
 
 	function scaffold_shortcode_css() {
