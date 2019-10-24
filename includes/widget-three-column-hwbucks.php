@@ -76,22 +76,26 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			$body_text = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
 			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more';
 		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>">Body text:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'body_text_'.$i ); ?>" value="<?php echo esc_attr( $body_text ); ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>">URL text:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'btn_text_'.$i ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
-		</p>
+		<div id="hwbucks_three_column_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
+			<h4 style="margin: 0;">Column <?php echo $i ?></h3>
+				<p>
+					<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
+					<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+				</p>
+				<p>
+					<label for="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>">Body text:</label>
+					<input type="text" id="<?php echo $this->get_field_id( 'body_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'body_text_'.$i ); ?>" value="<?php echo esc_attr( $body_text ); ?>" />
+				</p>
+				<p>
+					<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
+					<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
+				</p>
+				<p>
+					<label for="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>">URL text:</label>
+					<input type="text" id="<?php echo $this->get_field_id( 'btn_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'btn_text_'.$i ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
+				</p>
+			</h4>
+		</div>
 	<?php
 		}
 	}
