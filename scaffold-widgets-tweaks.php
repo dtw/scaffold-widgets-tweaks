@@ -61,8 +61,6 @@ if ( ! defined( 'WPINC' ) ) {
 	// g. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-featured-post-hwbucks.php');
 
-	// h. WIDGET for displaying a three-column content
-		require_once('includes/widget-three-column-hwbucks.php');
 	// Add CUSTOM CSS to the SHORTCODES
 
 	function scaffold_shortcode_css() {
