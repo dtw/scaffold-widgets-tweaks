@@ -3,7 +3,10 @@ jQuery(document).ready(function ($) {
   $(document).on("click", ".select-image-button", function (e) {
     e.preventDefault();
     var $button = $(this);
-
+    // get id of button
+    var button_id = $(this).attr('id');
+    // get the image preview field id
+    var image_upload_preview_id = button_id.replace("select_image_button", "image_upload_preview");
     // Create the media frame.
     var file_frame = wp.media.frames.file_frame = wp.media({
       title: 'Select or upload image',
@@ -23,7 +26,7 @@ jQuery(document).ready(function ($) {
       // add .change() so WordPress knows the field changed
       $button.siblings('input').val(attachment.url).change();
       // refresh preview
-      jQuery('#image_upload_preview').attr('src',attachment.url ).change();
+      jQuery('#'+image_upload_preview_id).attr('src',attachment.url ).change();
     });
 
     // Finally, open the modal
