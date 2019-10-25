@@ -78,18 +78,18 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 	function form( $instance ) {
 		for ($i = 1; $i <= 3; $i++) {
 			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title' . $i;
-			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/' . $i;
+			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/';
 			$excerpt_text = ! empty( $instance['excerpt_text_'.$i] ) ? $instance['excerpt_text_'.$i] : 'A blurb.';
 			$img_url = ! empty( $instance['img_url_'.$i] ) ? $instance['img_url_'.$i] : 'https://www.healthwatchbucks.co.uk/wp-content/uploads/2016/07/Icon-Bubbles-Comments-Feedback.png';
 		?>
 		<div id="hwbucks_three_col_img_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h3>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>
+					<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Title:</label>
 					<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 				</p>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>">Body text:</label>
+					<label for="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>">Excerpt text:</label>
 					<input type="text" id="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'excerpt_text_'.$i ); ?>" value="<?php echo esc_attr( $excerpt_text ); ?>" />
 				</p>
 				<p>
@@ -97,7 +97,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 					<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 				</p>
 				<p>
-					<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">URL text:</label>
+					<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image URL:</label>
 					<input type="text" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_attr( $img_url ); ?>" />
 				</p>
 			</h4>
