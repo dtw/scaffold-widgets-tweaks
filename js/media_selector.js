@@ -22,6 +22,8 @@ jQuery(document).ready(function ($) {
       var attachment = file_frame.state().get('selection').first().toJSON();
       // add .change() so WordPress knows the field changed
       $button.siblings('input').val(attachment.url).change();
+      // refresh preview
+      jQuery('#image_upload_preview').attr('src',attachment.url ).change();
     });
 
     // Finally, open the modal
