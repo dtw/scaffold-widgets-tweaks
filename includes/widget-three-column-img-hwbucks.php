@@ -95,11 +95,11 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_attr( $url ); ?>" />
+				<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image URL:</label>
-				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_attr( $img_url ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_url( $img_url ); ?>" />
 				<button class="select_image_button button button-primary">Select Image</button>
 			</p>
 		</div>
