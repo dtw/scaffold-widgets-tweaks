@@ -83,3 +83,18 @@ if ( ! defined( 'WPINC' ) ) {
 	}
 
 	add_action( 'wp_enqueue_scripts', 'add_accordion_scroll' );
+
+	// add media_selector script
+	function add_media_selector() {
+			wp_enqueue_script(
+					'media_selector', // name your script so that you can attach other scripts and de-register, etc.
+					//plugin_dir_path( __FILE__ ) . 'js/media_selector.js', // this is the location of your script file
+					'/wp-content/plugins/scaffold-widgets-tweaks/js/media_selector.js', // this is the location of your script file
+					array('jquery'), // this array lists the scripts upon which your script depends
+					'0.1'
+			);
+			wp_enqueue_script( 'media-selector' );
+			wp_enqueue_script( 'media-upload' );
+	}
+
+	add_action( 'admin_enqueue_scripts', 'add_media_selector' );
