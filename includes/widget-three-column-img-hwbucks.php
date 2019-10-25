@@ -25,13 +25,14 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 	 */
 	function SF_HWBucks_Three_Col_Img_Widget() {
 		parent::WP_Widget( 'SF_HWBucks_Three_Col_Img_Widget',
-		$name = 'HW Three Column w. Images',
-		array(
-			'classname'   => 'scaffold_widget_hwbucks_three_col_img widget_three_col_img',
-			'description' => 'Display links to posts or pages in a three column layout w. images'
-	)
+			$name = 'HW Three Column w. Images',
+			array(
+				'classname'   => 'scaffold_widget_hwbucks_three_col_img widget_three_col_img',
+				'description' => 'Display links to posts or pages in a three column layout w. images'
+			)
 		);
 	}
+
 	/**
 	 * Outputs the content for a new widget instance.
 	 *
