@@ -99,9 +99,9 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image:</label>
-				<img id="image_upload_preview" src="<?php echo esc_url( $img_url ); ?>" alt="" style="width:100%">
+				<img id="<?php echo $this->get_field_id( 'image_upload_preview_'.$i ); ?>" src="<?php echo esc_url( $img_url ); ?>" alt="" style="width:100%">
 				<input type="text" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_url( $img_url ); ?>" />
-				<button class="select_image_button button button-primary">Select Image</button>
+				<button id="<?php echo $this->get_field_id( 'select_image_button_'.$i ); ?>" class="select_image_button button button-primary">Select Image</button>
 			</p>
 		</div>
 	<?php
