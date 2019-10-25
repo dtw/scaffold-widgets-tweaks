@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
   // huge thanks to https://vedmant.com/using-wordpress-media-library-in-widgets-options/
-  $(document).on("click", ".select_image_button", function (e) {
+  $(document).on("click", ".select-image-button", function (e) {
     e.preventDefault();
     var $button = $(this);
 
