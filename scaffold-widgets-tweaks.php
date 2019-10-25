@@ -98,3 +98,18 @@ if ( ! defined( 'WPINC' ) ) {
 	}
 
 	add_action( 'admin_enqueue_scripts', 'add_media_selector' );
+
+	// Ajax action to refresh the sample image
+	function refresh_preview_image() {
+    if(isset($_GET['id']) ){
+        $image = wp_get_attachment_image( filter_input( INPUT_GET, 'id', FILTER_VALIDATE_INT ), 'medium', false, array( 'id' => 'img_preview_'.concat(filter_input( INPUT_GET, 'target', FILTER_SANITIZE_STRING )) ) );
+        $data = array(
+            'image'    => $image,
+        );
+        wp_send_json_success( $data );
+    } else {
+        wp_send_json_error();
+    }
+	}
+
+	add_action( 'wp_ajax_refresh_preview_image', 'refresh_preview_image'   );

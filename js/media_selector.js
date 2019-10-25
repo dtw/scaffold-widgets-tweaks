@@ -1,33 +1,63 @@
-jQuery(document).ready(function ($) {
+jQuery(document).ready( function($) {
 
-   $(document).on("click", ".select_image_button", function (e) {
-      e.preventDefault();
-      var $button = $(this);
+      jQuery('.select_image_button').click(function(e) {
 
+             e.preventDefault();
+             //check which button was clicked
+             var id = $(this).attr('id');
+             //set the target url field
+             var target_url_field = id.replace("select_image_button", "img_url");
+             var target_id_field = id.replace("select_image_button", "img_id");
+             var image_frame;
+             if(image_frame){
+                 image_frame.open();
+             }
+             // Define image_frame as wp.media object
+             image_frame = wp.media({
+                           title: 'Select Media',
+                           multiple : false,
+                           library : {
+                                type : 'image',
+                            }
+                       });
 
-      // Create the media frame.
-      var file_frame = wp.media.frames.file_frame = wp.media({
-         title: 'Select or upload image',
-         library: { // remove these to show all
-            type: 'image' // specific mime
-         },
-         button: {
-            text: 'Select'
-         },
-         multiple: false  // Set to true to allow multiple files to be selected
-      });
+                       image_frame.on('close',function() {
+                          // On close, get selections and save to the hidden input
+                          // plus other AJAX stuff to refresh the image preview
+                          var selection =  image_frame.state().get('selection').first();
+                          jQuery('input#'.concat(target_id_field)).val(selection.id);
+                          jQuery('input#'.concat(target_url_field)').val(selection.url);
+                          Refresh_Image(val(selection.id),id.slice(id.length -2));
+                       });
 
-      // When an image is selected, run a callback.
-      file_frame.on('select', function () {
-         // We set multiple to false so only get one image from the uploader
+                      image_frame.on('open',function() {
+                        // On open, get the id from the hidden input
+                        // and select the appropiate images in the media manager
+                        var selection =  image_frame.state().get('selection');
+                        var id = jQuery('input#'.concat(target_id_field)).val();
+                        var attachment = wp.media.attachment(id);
+                        attachment.fetch();
+                        selection.add( attachment ? [ attachment ] : [] );
+                      });
 
-         var attachment = file_frame.state().get('selection').first().toJSON();
+                    image_frame.open();
+     });
 
-         $button.siblings('input').val(attachment.url);
-
-      });
-
-      // Finally, open the modal
-      file_frame.open();
-   });
 });
+
+// Ajax request to refresh the image preview
+function Refresh_Image(the_id,the_target){
+        var data = {
+            action: 'refresh_sample_image',
+            id: the_id,
+            target: the_target
+        };
+
+        jQuery.get(ajaxurl, data, function(response) {
+
+            if(response.success === true) {
+
+                jQuery('#img_preview_'.concat(target)).replaceWith( response.data.image );
+            }
+        });
+}

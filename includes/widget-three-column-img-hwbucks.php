@@ -82,6 +82,14 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/';
 			$excerpt_text = ! empty( $instance['excerpt_text_'.$i] ) ? $instance['excerpt_text_'.$i] : 'A blurb.';
 			$img_url = ! empty( $instance['img_url_'.$i] ) ? $instance['img_url_'.$i] : 'https://www.healthwatchbucks.co.uk/wp-content/uploads/2016/07/Icon-Bubbles-Comments-Feedback.png';
+			$img_id = get_option( 'img_id_'.$i );
+				if( intval( $img_id ) > 0 ) {
+				    // Change with the image size you want to use
+				    $img = wp_get_attachment_image( $img_id, 'medium', false, array( 'id' => 'img_preview_'.$i ) );
+				} else {
+				    // Some default image
+				    $img = '<img id="img_preview_'.$i.'" src="https://some.default.image.jpg" />';
+				}
 		?>
 		<div id="hwbucks_three_col_img_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h4>
@@ -100,7 +108,9 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			<p>
 				<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image URL:</label>
 				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_url( $img_url ); ?>" />
-				<button class="select_image_button button button-primary">Select Image</button>
+				<?php echo $img; ?>
+				<input type="hidden" name="<?php echo $this->get_field_name( 'img_id_'.$i ); ?>" id="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>" value="<?php echo esc_attr( $image_id ); ?>" class="regular-text" />
+				<button id="<?php echo $this->get_field_id( 'select_image_button_'.$i ); ?>" class="select_image_button button button-primary">Select Image</button>
 			</p>
 		</div>
 	<?php
