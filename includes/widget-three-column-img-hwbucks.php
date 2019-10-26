@@ -49,7 +49,10 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			<div class="col-md-4 col-sm-12">
 				<div class="choice-container">
 					<a class="choice-img-link" <?php echo '<a href="' . $instance['url_'.$i] . '"' ?>>
-						<img class="choice-img" <?php echo 'src="' . $instance['img_url_'.$i] . '" alt="' . $instance['title_'.$i] . '"' ?>>
+						<?php echo wp_get_attachment_image( $instance['img_id_'.$i], 'medium', false, array(
+						 	'alt' => $instance['title_'.$i],
+							'class' => 'choice-img'))
+						?>
 					</a>
 					<a class="choice-details" <?php echo '<a href="' . $instance['url_'.$i] . '"' ?>>
 							<?php echo '<p>' . $instance['title_'.$i] . '</p>'?>
