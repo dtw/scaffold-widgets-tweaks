@@ -25,8 +25,6 @@ jQuery(document).ready(function ($) {
     file_frame.on('select', function () {
       // We set multiple to false so only get one image from the uploader
       var attachment = file_frame.state().get('selection').first().toJSON();
-      // add .change() so WordPress knows the field changed
-      $button.siblings('input').val(attachment.url).change();
       console.log('ID: '+attachment.id);
       // refresh preview
       // this doesn't work now we use thumbnail
