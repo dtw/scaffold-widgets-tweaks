@@ -4,7 +4,7 @@
 #hw_services_meta_box input {
 	max-width: 100%;
 	}
-	
+
 #hw_services_meta_box label {
 	width: 150px;
 	display: inline-block;
@@ -16,27 +16,27 @@
 	padding-right: .5rem;
 	vertical-align: middle;
 		}
-	
+
 label[for="hw_services_address_line_1"]:before {
 	content: "\f230 ";
 	}
-	
+
 label[for="hw_services_address_line_2"]:before {
 	content: "\f230 ";
 	}
-	
+
 label[for="hw_services_city"]:before {
 	content: "\f230 ";
 	}
-	
+
 label[for="hw_services_county"]:before {
 	content: "\f230 ";
 	}
-	
+
 label[for="hw_services_postcode"]:before {
 	content: "\f230 ";
 	}
-	
+
 label[for="hw_services_phone"]:before {
 	content: "\f525 ";
 	}
@@ -56,12 +56,11 @@ label[for="hw_services_date_visited"]:before {
 label[for="hw_services_full_report"]:before {
 	content: "\f103 ";
 	}
-	
+
 .post-com-count-wrapper {
 	font-size: 1.2rem;
 	}
-	
+
 span.dashicons-small {
 	font-size: .5rem;
 	color: green;
-	}
