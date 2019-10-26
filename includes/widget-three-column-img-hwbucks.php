@@ -72,7 +72,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$instance['title_'.$i] = wp_strip_all_tags( $new_instance['title_'.$i] );
 			$instance['url_'.$i] = wp_strip_all_tags( $new_instance['url_'.$i] );
 			$instance['excerpt_text_'.$i] = wp_strip_all_tags( $new_instance['excerpt_text_'.$i] );
-			$instance['img_url_'.$i] = wp_strip_all_tags( $new_instance['img_url_'.$i] );
+			$instance['img_id_'.$i] = wp_strip_all_tags( $new_instance['img_id_'.$i] );
 		}
 		return $instance;
 	}
@@ -81,7 +81,8 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title' . $i;
 			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/';
 			$excerpt_text = ! empty( $instance['excerpt_text_'.$i] ) ? $instance['excerpt_text_'.$i] : 'A blurb.';
-			$img_url = ! empty( $instance['img_url_'.$i] ) ? $instance['img_url_'.$i] : 'https://www.healthwatchbucks.co.uk/wp-content/uploads/2016/07/Icon-Bubbles-Comments-Feedback.png';
+			$img_id = ! empty( $instance['img_id_'.$i] ) ? $instance['img_id_'.$i] : '52016';
+
 		?>
 		<div id="hwbucks_three_col_img_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h4>
@@ -98,9 +99,13 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 				<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image:</label>
-				<img id="<?php echo $this->get_field_id( 'img_preview_'.$i ); ?>" class="img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="" style="width:100%">
-				<input type="hidden" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_url( $img_url ); ?>" />
+				<label for="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>">Image:</label>
+				<?php echo wp_get_attachment_image($img_id,'thumbnail', false, array(
+					'id' => $this->get_field_id( 'img_preview_'.$i ),
+				 	'class' => 'img-preview',)
+					)
+				?>
+				<input type="hidden" id="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_id_'.$i ); ?>" value="<?php echo esc_attr( $img_id ); ?>" />
 				<button id="<?php echo $this->get_field_id( 'select_image_button_'.$i ); ?>" class="select-image-button button button-primary">Select Image</button>
 			</p>
 		</div>

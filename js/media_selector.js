@@ -7,6 +7,8 @@ jQuery(document).ready(function ($) {
     var button_id = $(this).attr('id');
     // get the image preview field id
     var img_preview_id = button_id.replace("select_image_button", "img_preview");
+    // get img_id field id
+    var img_id_id = button_id.replace("select_image_button", "img_id");
     // Create the media frame.
     var file_frame = wp.media.frames.file_frame = wp.media({
       title: 'Select or upload image',
@@ -25,8 +27,16 @@ jQuery(document).ready(function ($) {
       var attachment = file_frame.state().get('selection').first().toJSON();
       // add .change() so WordPress knows the field changed
       $button.siblings('input').val(attachment.url).change();
+      console.log('ID: '+attachment.id);
       // refresh preview
-      jQuery('#'+img_preview_id).attr('src',attachment.url ).change();
+      // this doesn't work now we use thumbnail
+      //jQuery('#'+img_preview_id).attr('src',attachment.url ).change();
+      //console.log('#'+img_id_id);
+      // update img_id field
+      jQuery('#'+img_id_id).attr('value',attachment.id ).change();
+      //console.log('Attach ID'+attachment.id);
+      //console.log('Img Preview ID'+img_preview_id)
+      //refresh_image_preview(attachment.id,img_preview_id);
     });
 
     // Finally, open the modal
