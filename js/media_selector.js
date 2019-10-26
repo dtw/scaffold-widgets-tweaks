@@ -25,16 +25,8 @@ jQuery(document).ready(function ($) {
     file_frame.on('select', function () {
       // We set multiple to false so only get one image from the uploader
       var attachment = file_frame.state().get('selection').first().toJSON();
-      console.log('ID: '+attachment.id);
-      // refresh preview
-      // this doesn't work now we use thumbnail
-      //jQuery('#'+img_preview_id).attr('src',attachment.url ).change();
-      //console.log('#'+img_id_id);
       // update img_id field
       jQuery('#'+img_id_id).attr('value',attachment.id ).change();
-      //console.log('Attach ID'+attachment.id);
-      //console.log('Img Preview ID'+img_preview_id)
-      //refresh_image_preview(attachment.id,img_preview_id);
     });
 
     // Finally, open the modal
