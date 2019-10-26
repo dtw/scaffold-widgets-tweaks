@@ -33,3 +33,19 @@ jQuery(document).ready(function ($) {
     file_frame.open();
   });
 });
+
+// Ajax request to refresh the image preview
+function refresh_image_preview(img_id,field_id){
+  var data = {
+    action: 'hwbucks_get_preview_image',
+    img_id: img_id,
+    img_preview_id: field_id
+  };
+
+  jQuery.get(ajaxurl, data, function(response) {
+    if(response.success === true) {
+      var field_id_2 = '#'+field_id
+      jQuery(field_id_2).replaceWith(response.data.image);
+    }
+  });
+}
