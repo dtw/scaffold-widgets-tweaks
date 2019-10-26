@@ -104,7 +104,7 @@ if ( ! defined( 'WPINC' ) ) {
 	    if(isset($_GET['img_id']) and isset($_GET['img_preview_id'])){
 	        $image = wp_get_attachment_image( filter_input( INPUT_GET, 'img_id', FILTER_VALIDATE_INT ), 'thumbnail', false, array(
 						'id' => filter_input( INPUT_GET, 'img_preview_id'),
-					 	'class' => 'img-preview',)
+					 	'class' => 'hwbucks-three-col-img-preview',)
 					);
 	        $data = array(
 	            'image'    => $image,

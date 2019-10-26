@@ -84,25 +84,25 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$img_id = ! empty( $instance['img_id_'.$i] ) ? $instance['img_id_'.$i] : '52016';
 
 		?>
-		<div id="hwbucks_three_col_img_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
+		<div id="hwbucks_three_col_img_<?php echo $i ?>" class="hwbucks-three-col-img-container">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h4>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Title:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>">Excerpt text:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'excerpt_text_'.$i ); ?>" value="<?php echo esc_attr( $excerpt_text ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'excerpt_text_'.$i ); ?>" value="<?php echo esc_attr( $excerpt_text ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>">Image:</label>
 				<?php echo wp_get_attachment_image($img_id,'thumbnail', false, array(
 					'id' => $this->get_field_id( 'img_preview_'.$i ),
-				 	'class' => 'img-preview',)
+				 	'class' => 'hwbucks-three-col-img-preview',)
 					)
 				?>
 				<input type="hidden" id="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_id_'.$i ); ?>" value="<?php echo esc_attr( $img_id ); ?>" />
