@@ -64,3 +64,18 @@ label[for="hw_services_full_report"]:before {
 span.dashicons-small {
 	font-size: .5rem;
 	color: green;
+	}
+
+/* widget-three-column-img-hwbucks
+--------------------------------- */
+
+.hwbucks-three-col-img-preview {
+	display: block;
+	margin-bottom:0.5rem;
+}
+
+.hwbucks-three-col-img-container {
+	margin-top:0.5rem;
+	border:1px solid rgb(221, 221, 221);
+	padding:0.5rem;
+}
