@@ -27,6 +27,8 @@ jQuery(document).ready(function ($) {
       var attachment = file_frame.state().get('selection').first().toJSON();
       // update img_id field
       jQuery('#'+img_id_id).attr('value',attachment.id ).change();
+      // refresh preview
+      refresh_image_preview(attachment.id,img_preview_id);
     });
 
     // Finally, open the modal
