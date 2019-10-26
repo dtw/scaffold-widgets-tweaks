@@ -1,63 +1,45 @@
-jQuery(document).ready( function($) {
+jQuery(document).ready(function ($) {
+  // huge thanks to https://vedmant.com/using-wordpress-media-library-in-widgets-options/
+  $(document).on("click", ".select-image-button", function (e) {
+    e.preventDefault();
+    var $button = $(this);
+    // get id of button
+    var button_id = $(this).attr('id');
+    // get the image preview field id
+    var img_preview_id = button_id.replace("select_image_button", "img_preview");
+    // get img_id field id
+    var img_id_id = button_id.replace("select_image_button", "img_id");
+    // Create the media frame.
+    var file_frame = wp.media.frames.file_frame = wp.media({
+      title: 'Select or upload image',
+      library: { // remove these to show all
+        type: 'image' // specific mime
+      },
+      button: {
+        text: 'Select'
+      },
+      multiple: false  // Set to true to allow multiple files to be selected
+    });
 
-      jQuery('.select_image_button').click(function(e) {
+    // When an image is selected, run a callback.
+    file_frame.on('select', function () {
+      // We set multiple to false so only get one image from the uploader
+      var attachment = file_frame.state().get('selection').first().toJSON();
+      // add .change() so WordPress knows the field changed
+      $button.siblings('input').val(attachment.url).change();
+      console.log('ID: '+attachment.id);
+      // refresh preview
+      // this doesn't work now we use thumbnail
+      //jQuery('#'+img_preview_id).attr('src',attachment.url ).change();
+      //console.log('#'+img_id_id);
+      // update img_id field
+      jQuery('#'+img_id_id).attr('value',attachment.id ).change();
+      //console.log('Attach ID'+attachment.id);
+      //console.log('Img Preview ID'+img_preview_id)
+      //refresh_image_preview(attachment.id,img_preview_id);
+    });
 
-             e.preventDefault();
-             //check which button was clicked
-             var id = $(this).attr('id');
-             //set the target url field
-             var target_url_field = id.replace("select_image_button", "img_url");
-             var target_id_field = id.replace("select_image_button", "img_id");
-             var image_frame;
-             if(image_frame){
-                 image_frame.open();
-             }
-             // Define image_frame as wp.media object
-             image_frame = wp.media({
-                           title: 'Select Media',
-                           multiple : false,
-                           library : {
-                                type : 'image',
-                            }
-                       });
-
-                       image_frame.on('close',function() {
-                          // On close, get selections and save to the hidden input
-                          // plus other AJAX stuff to refresh the image preview
-                          var selection =  image_frame.state().get('selection').first();
-                          jQuery('input#'.concat(target_id_field)).val(selection.id);
-                          jQuery('input#'.concat(target_url_field)').val(selection.url);
-                          Refresh_Image(val(selection.id),id.slice(id.length -2));
-                       });
-
-                      image_frame.on('open',function() {
-                        // On open, get the id from the hidden input
-                        // and select the appropiate images in the media manager
-                        var selection =  image_frame.state().get('selection');
-                        var id = jQuery('input#'.concat(target_id_field)).val();
-                        var attachment = wp.media.attachment(id);
-                        attachment.fetch();
-                        selection.add( attachment ? [ attachment ] : [] );
-                      });
-
-                    image_frame.open();
-     });
-
+    // Finally, open the modal
+    file_frame.open();
+  });
 });
-
-// Ajax request to refresh the image preview
-function Refresh_Image(the_id,the_target){
-        var data = {
-            action: 'refresh_sample_image',
-            id: the_id,
-            target: the_target
-        };
-
-        jQuery.get(ajaxurl, data, function(response) {
-
-            if(response.success === true) {
-
-                jQuery('#img_preview_'.concat(target)).replaceWith( response.data.image );
-            }
-        });
-}
