@@ -49,7 +49,10 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			<div class="col-md-4 col-sm-12">
 				<div class="choice-container">
 					<a class="choice-img-link" <?php echo '<a href="' . $instance['url_'.$i] . '"' ?>>
-						<img class="choice-img" <?php echo 'src="' . $instance['img_url_'.$i] . '" alt="' . $instance['title_'.$i] . '"' ?>>
+						<?php echo wp_get_attachment_image( $instance['img_id_'.$i], 'medium', false, array(
+						 	'alt' => $instance['title_'.$i],
+							'class' => 'choice-img'))
+						?>
 					</a>
 					<a class="choice-details" <?php echo '<a href="' . $instance['url_'.$i] . '"' ?>>
 							<?php echo '<p>' . $instance['title_'.$i] . '</p>'?>
@@ -72,7 +75,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$instance['title_'.$i] = wp_strip_all_tags( $new_instance['title_'.$i] );
 			$instance['url_'.$i] = wp_strip_all_tags( $new_instance['url_'.$i] );
 			$instance['excerpt_text_'.$i] = wp_strip_all_tags( $new_instance['excerpt_text_'.$i] );
-			$instance['img_url_'.$i] = wp_strip_all_tags( $new_instance['img_url_'.$i] );
+			$instance['img_id_'.$i] = wp_strip_all_tags( $new_instance['img_id_'.$i] );
 		}
 		return $instance;
 	}
@@ -81,26 +84,31 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title' . $i;
 			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/';
 			$excerpt_text = ! empty( $instance['excerpt_text_'.$i] ) ? $instance['excerpt_text_'.$i] : 'A blurb.';
-			$img_url = ! empty( $instance['img_url_'.$i] ) ? $instance['img_url_'.$i] : 'https://www.healthwatchbucks.co.uk/wp-content/uploads/2016/07/Icon-Bubbles-Comments-Feedback.png';
+			$img_id = ! empty( $instance['img_id_'.$i] ) ? $instance['img_id_'.$i] : '52016';
+
 		?>
-		<div id="hwbucks_three_col_img_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
+		<div id="hwbucks_three_col_img_<?php echo $i ?>" class="hwbucks-three-col-img-container">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h4>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Title:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'title_'.$i ); ?>" name="<?php echo $this->get_field_name( 'title_'.$i ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>">Excerpt text:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'excerpt_text_'.$i ); ?>" value="<?php echo esc_attr( $excerpt_text ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'excerpt_text_'.$i ); ?>" name="<?php echo $this->get_field_name( 'excerpt_text_'.$i ); ?>" value="<?php echo esc_attr( $excerpt_text ); ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'url_'.$i ); ?>">URL:</label>
-				<input type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
+				<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'url_'.$i ); ?>" value="<?php echo esc_url( $url ); ?>" />
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>">Image:</label>
-				<img id="<?php echo $this->get_field_id( 'img_preview_'.$i ); ?>" class="img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="" style="width:100%">
-				<input type="hidden" id="<?php echo $this->get_field_id( 'img_url_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_url_'.$i ); ?>" value="<?php echo esc_url( $img_url ); ?>" />
+				<label for="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>">Image:</label>
+				<?php echo wp_get_attachment_image($img_id,'thumbnail', false, array(
+					'id' => $this->get_field_id( 'img_preview_'.$i ),
+				 	'class' => 'hwbucks-three-col-img-preview',)
+					)
+				?>
+				<input type="hidden" id="<?php echo $this->get_field_id( 'img_id_'.$i ); ?>" name="<?php echo $this->get_field_name( 'img_id_'.$i ); ?>" value="<?php echo esc_attr( $img_id ); ?>" />
 				<button id="<?php echo $this->get_field_id( 'select_image_button_'.$i ); ?>" class="select-image-button button button-primary">Select Image</button>
 			</p>
 		</div>

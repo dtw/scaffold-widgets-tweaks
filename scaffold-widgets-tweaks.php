@@ -104,3 +104,23 @@ if ( ! defined( 'WPINC' ) ) {
 	}
 
 	add_action( 'admin_enqueue_scripts', 'add_media_selector' );
+
+	// Ajax action to refresh the user image
+	function hwbucks_get_preview_image() {
+	    if(isset($_GET['img_id']) and isset($_GET['img_preview_id'])){
+	        $image = wp_get_attachment_image( filter_input( INPUT_GET, 'img_id', FILTER_VALIDATE_INT ), 'thumbnail', false, array(
+						'id' => filter_input( INPUT_GET, 'img_preview_id'),
+					 	'class' => 'hwbucks-three-col-img-preview',)
+					);
+	        $data = array(
+	            'image'    => $image,
+	        );
+	        wp_send_json_success( $data );
+	    } else {
+	        wp_send_json_error();
+	    }
+	}
+
+	add_action( 'wp_ajax_hwbucks_get_preview_image', 'hwbucks_get_preview_image' );
+
+?>

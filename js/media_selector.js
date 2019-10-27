@@ -7,6 +7,8 @@ jQuery(document).ready(function ($) {
     var button_id = $(this).attr('id');
     // get the image preview field id
     var img_preview_id = button_id.replace("select_image_button", "img_preview");
+    // get img_id field id
+    var img_id_id = button_id.replace("select_image_button", "img_id");
     // Create the media frame.
     var file_frame = wp.media.frames.file_frame = wp.media({
       title: 'Select or upload image',
@@ -23,13 +25,28 @@ jQuery(document).ready(function ($) {
     file_frame.on('select', function () {
       // We set multiple to false so only get one image from the uploader
       var attachment = file_frame.state().get('selection').first().toJSON();
-      // add .change() so WordPress knows the field changed
-      $button.siblings('input').val(attachment.url).change();
+      // update img_id field
+      jQuery('#'+img_id_id).attr('value',attachment.id ).change();
       // refresh preview
-      jQuery('#'+img_preview_id).attr('src',attachment.url ).change();
+      refresh_image_preview(attachment.id,img_preview_id);
     });
 
     // Finally, open the modal
     file_frame.open();
   });
 });
+
+// Ajax request to refresh the image preview
+function refresh_image_preview(img_id,field_id){
+  var data = {
+    action: 'hwbucks_get_preview_image',
+    img_id: img_id,
+    img_preview_id: field_id
+  };
+
+  jQuery.get(ajaxurl, data, function(response) {
+    if(response.success === true) {
+      jQuery('#'+field_id).replaceWith(response.data.image);
+    }
+  });
+}
