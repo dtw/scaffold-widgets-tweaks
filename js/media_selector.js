@@ -46,8 +46,7 @@ function refresh_image_preview(img_id,field_id){
 
   jQuery.get(ajaxurl, data, function(response) {
     if(response.success === true) {
-      var field_id_2 = '#'+field_id
-      jQuery(field_id_2).replaceWith(response.data.image);
+      jQuery('#'+field_id).replaceWith(response.data.image);
     }
   });
 }
