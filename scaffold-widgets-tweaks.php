@@ -67,6 +67,9 @@ if ( ! defined( 'WPINC' ) ) {
 	// i. WIDGET for displaying a three-column content
 	require_once('includes/widget-three-column-hwbucks.php');
 
+	// y. WIDGET for displaying a FEATURED POST
+	require_once('includes/widget-latest-post-by-category-hwbucks.php');
+
 	// z. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-three-column-img-hwbucks.php');
 	
