@@ -219,4 +219,5 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			}
 		echo $after_widget;
 	}
+}
 ?>
