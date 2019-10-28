@@ -63,15 +63,15 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 							</div>
 							<div class="row">
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a class="title-link" href="
-										<?php the_permalink(); ?>" rel="bookmark">
+									<a class="title-link" href="<?php the_permalink(); ?>" rel="bookmark">
 										<?php the_title(); ?>
 									</a>
 									<?php the_excerpt(); ?>
-									<p style="clear: both;"><a class="btn btn-primary" href="<?php echo get_the_permalink();
-										echo '">';
-										echo $btn_text; ?>
-									</a></p>
+									<p style="clear: both;">
+										<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
+											<?php echo $btn_text; ?>
+										</a>
+									</p>
 								</div>
 							</div>
 						</div>
