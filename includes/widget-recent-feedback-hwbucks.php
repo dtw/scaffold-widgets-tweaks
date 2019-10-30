@@ -84,10 +84,9 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 							if ( has_post_thumbnail($comment->comment_post_ID) ) {
 							// add a container and wrap the thumbnail in a hyperlink to the post ?>
 									<a href="
-									<?php echo get_the_permalink($comment->comment_post_ID); ?>
-									">
 									<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,180]); ?>
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs">
+										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
