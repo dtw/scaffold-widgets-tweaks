@@ -90,6 +90,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs">
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
+								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
 									<a href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
@@ -160,7 +161,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 												}
 												?>
 											</p>
-											<p>
+											<p class="review-date-time">
 												<strong>
 													<?php echo human_time_diff( strtotime($comment->comment_date), current_time( 'timestamp' ) ); ?> ago
 												</strong>
