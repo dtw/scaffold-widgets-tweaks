@@ -166,14 +166,18 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 													<?php echo human_time_diff( strtotime($comment->comment_date), current_time( 'timestamp' ) ); ?> ago
 												</strong>
 											</p>
+											<?php if ($reviewcount == 1) {
+												echo "</div>";
+												echo "</div>";
+											} ?>
+						</div>
+					</div>
+				</div>
 											<?php
 			$reviewcount = $reviewcount + 1;
 
 
 			} // end of if there is a rating ?>
-										</div>
-									</div>
-								</div>
 								<!-- end of col -->
 								<?php	 } // end of loop?
 
