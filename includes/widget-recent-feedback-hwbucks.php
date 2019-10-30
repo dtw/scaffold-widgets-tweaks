@@ -76,7 +76,6 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 					$term_id = $term_ids[0]->term_id;											// Get taxonomy ID
 					$term_icon = get_term_meta( $term_id, 'icon', true );						// Get meta
 				?>
-								<div class="service-icon-container text-center col-md-4 col-sm-3 col-xs-12">
 						<!-- contains each panel -->
 						<div class="row">
 						<?php //if this is the main panel
