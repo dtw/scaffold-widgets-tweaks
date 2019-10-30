@@ -116,19 +116,18 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 				</div>
 		<!-- REVIEWED TO HERE-->
 								<?php if ($reviewcount == 1) { ?>
-									<?php if ( has_post_thumbnail($comment->comment_post_ID) ) { ?>
-										<div class="service-info-container col-md-8 col-sm-9 col-xs-12">
-											<a class="title-link" href="
-												<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-												<?php echo get_the_title($comment->comment_post_ID); ?>
-											</a>
-									<?php } else { ?>
-										<div class="service-info-container col-md-8 col-sm-9 col-xs-12">
-											<a class="title-link" href="
-												<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-												<?php echo get_the_title($comment->comment_post_ID); ?>
-											</a>
-									<?php } ?>
+									<div class="service-info-container col-md-8 col-sm-6 col-xs-12 panel-text-right">
+										<div class="row">
+											<div class="col-md-12 panel-title">
+												<h2><?php echo $title ?></h2>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12 col-sm-12 col-xs-12">
+												<a class="title-link" href="
+													<?php echo get_the_permalink($comment->comment_post_ID); ?>">
+													<?php echo get_the_title($comment->comment_post_ID); ?>
+												</a>
 								<?php } else { ?>
 									<div class="service-info-container-sm col-md-9 col-sm-9 col-xs-12">
 										<h3 style="margin: 0; padding-bottom: .5rem;">
