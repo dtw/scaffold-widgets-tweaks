@@ -44,7 +44,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 		extract( $args );
 		echo $before_widget;
 		for ($i = 1; $i <= 3; $i++) { ?>
-			<div class="col-md-4 col-sm-4 col-xs-12 subitem">
+			<div class="col-md-4 col-sm-12 col-xs-12 subitem">
 				<h3>
 					<?php echo '<a href="' . $instance['url_'.$i] . '">' . $instance['title_'.$i] . '</a>'?>
 				</h3>
