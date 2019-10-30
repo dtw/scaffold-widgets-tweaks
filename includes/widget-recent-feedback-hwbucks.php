@@ -115,8 +115,12 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 					</a>
 				</div>
 		<!-- REVIEWED TO HERE-->
-								<?php if ($reviewcount == 1) { ?>
-									<div class="service-info-container col-md-8 col-sm-6 col-xs-12 panel-text-right">
+								<?php if ($reviewcount == 1) {
+									if ( has_post_thumbnail($comment->comment_post_ID) ) {
+									echo '<div class="service-info-container col-md-8 col-sm-6 col-xs-12 panel-text-right">';
+									} else {
+									echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
+									} ?>
 										<div class="row">
 											<div class="col-md-12 panel-title">
 												<h2><?php echo $title ?></h2>
