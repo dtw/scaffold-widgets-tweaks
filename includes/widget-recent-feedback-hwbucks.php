@@ -179,7 +179,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 
 			} // end of if there is a rating ?>
 								<!-- end of col -->
-								<?php	 } // end of loop?
+								<?php	  // end of loop?
 
 		echo "
 							</div>
