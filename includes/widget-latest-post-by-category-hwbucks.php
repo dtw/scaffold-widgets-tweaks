@@ -34,7 +34,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 
 	function form( $instance ) {
 
-		$defaults  = array( 'title' => '', 'category' => '', 'show_extra' => false, 'panel_colour' => 'orange', 'btn_text' => 'Read more' );
+		$defaults  = array( 'title' => '', 'category' => '', 'show_extra' => false, 'panel_colour' => 'orange', 'btn_text' => '' );
 		$instance  = wp_parse_args( ( array ) $instance, $defaults );
 		$title     = $instance['title'];
 		$category  = $instance['category'];
@@ -82,7 +82,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			</label>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text:</label>
+			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text (optional):</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'btn_text' ); ?>" name="<?php echo $this->get_field_name( 'btn_text' ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
 		</p>
 		<?php
@@ -160,7 +160,12 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 									<?php the_excerpt(); ?>
 									<p style="clear: both;">
 										<a class="btn btn-primary" href="<?php echo get_category_link($category); ?>">
-											Read all <?php echo strtolower(get_cat_name($category)); ?>
+											<?php if ( empty( $btn_text ) ) {
+													echo 'Read all '. strtolower(get_cat_name($category));
+												} else {
+													echo $btn_text;
+												}
+											?>
 										</a>
 									</p>
 								</div>
