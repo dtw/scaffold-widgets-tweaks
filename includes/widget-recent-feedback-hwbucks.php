@@ -64,9 +64,6 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 				<?php if ($reviewcount == 1) { ?>
 					<!-- start the main panel -->
 					<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
-						<div class="col-md-12 panel-title">
-							<h2><?php echo $title ?></h2>
-						</div>
 				<?php } elseif ($reviewcount == 4) { ?>
 					<!-- start the final small panel -->
 					<div class="col-md-4 hidden-sm hidden-xs">
