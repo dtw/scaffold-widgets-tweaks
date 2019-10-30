@@ -63,7 +63,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 				//if this is the first review ?>
 				<?php if ($reviewcount == 1) { ?>
 					<!-- start the main panel -->
-					<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
+					<?php echo '<div class="panel col-md-12 col-sm-12 col-xs-12 panel-' . $panel_colour . '">'?>
 				<?php } elseif ($reviewcount == 4) { ?>
 					<!-- start the final small panel -->
 					<div class="col-md-4 hidden-sm hidden-xs">
@@ -76,9 +76,9 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 					$term_id = $term_ids[0]->term_id;											// Get taxonomy ID
 					$term_icon = get_term_meta( $term_id, 'icon', true );						// Get meta
 				?>
-						<div class="feedback row">
 								<div class="service-icon-container text-center col-md-4 col-sm-3 col-xs-12">
 						<!-- contains each panel -->
+						<div class="row">
 						<?php //if this is the main panel
 						if ($reviewcount == 1) { ?>
 							<?php //if the post has an thumbnail
