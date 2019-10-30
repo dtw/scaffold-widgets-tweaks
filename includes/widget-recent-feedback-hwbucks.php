@@ -53,12 +53,14 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 		$comments_query = new WP_Comment_Query;
 		$comments = $comments_query->query( $args );
 
+		// no use of $before_widget
+
 		$reviewcount = 1;
 		// Comment Loop
 		if ( $comments ) {
-			echo "<div class='feedback row'>";
-			foreach ( $comments as $comment ) { ?>
-				<!-- if this is the first review -->
+			echo "<div class='feedback row'><!--start widget output-->";
+			foreach ( $comments as $comment ) {
+				//if this is the first review ?>
 				<?php if ($reviewcount == 1) { ?>
 					<!-- start the main panel -->
 					<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
@@ -78,19 +80,20 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 					$term_icon = get_term_meta( $term_id, 'icon', true );						// Get meta
 				?>
 						<div class="feedback row">
-						<!-- if this is the main panel -->
-						<?php if ($reviewcount == 1) { ?>
-							<!-- if the post has an thumbnail -->
-							<?php if ( has_post_thumbnail($comment->comment_post_ID) ) { ?>
-								<!-- add a container and wrap the thumbnail in a hyperlink to the post -->
 								<div class="service-icon-container text-center col-md-4 col-sm-3 col-xs-12">
+						<!-- contains each panel -->
+						<?php //if this is the main panel
+						if ($reviewcount == 1) { ?>
+							<?php //if the post has an thumbnail
+							if ( has_post_thumbnail($comment->comment_post_ID) ) {
+							// add a container and wrap the thumbnail in a hyperlink to the post ?>
 									<a href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
 									<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,180]); ?>
-							<?php } else { ?>
-								<!-- if there is no thumb... the col's are different?! -->
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs">
+							<?php } else {
+								//if there is no thumb... the col's are different?! ?>
 									<a href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
