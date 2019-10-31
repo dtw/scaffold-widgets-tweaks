@@ -7,27 +7,27 @@ Based on code by Jason King - http://kingjason.com - cheers Jason
 /**
  * Register the widget
  */
-function SF_register_widget_hwbucks_recent_feedback() {
-	register_widget( 'SF_HWBucks_Recent_Feedback_Widget' );
+function SF_register_widget_hwbucks_latest_dic() {
+	register_widget( 'SF_HWBucks_Latest_DIC_Widget' );
 }
-add_action( 'widgets_init', 'SF_register_widget_hwbucks_recent_feedback' );
+add_action( 'widgets_init', 'SF_register_widget_hwbucks_latest_dic' );
 /**
  * A Recent Feedback widget
  * Shows latest feedback comment in a bootstrap panel followed by the next 3 most recent comments in a three column format.
  *
  */
-class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
+class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 	/**
 	 * Sets up a new widget instance.
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Recent_Feedback_Widget() {
-		parent::WP_Widget( 'SF_HWBucks_Recent_Feedback_Widget',
 		$name = 'HW Recent Feedback',
+	function SF_HWBucks_Latest_DIC_Widget() {
+		parent::WP_Widget( 'SF_HWBucks_Latest_DIC_Widget',
 		array(
-			'classname'   => 'scaffold_widget_hwbucks_recent_feedback widget_recent_feedback',
 			'description' => 'Display full details of the latest feedback comment as a panal, with the next 3 most recent star ratings below.'
+			'classname'   => 'scaffold_widget_hwbucks_latest_dic widget_recent_feedback',
 	)
 		);
 	}
