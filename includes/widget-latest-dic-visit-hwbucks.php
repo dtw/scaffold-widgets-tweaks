@@ -45,7 +45,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		$panel_colour = $instance['panel_colour'] ;
 
 		// The Query - gets the first service with a hw_services_overall_rating greater than or equal to 1
-		$args = array(
+		$dic_query = new WP_Query(array(
 			'post_type' => 'Local_services',
 			// 'orderby' => 'rand',
 			'showposts' => 1,
@@ -53,10 +53,10 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 				array(
 					'key'     => 'hw_services_overall_rating',
 					'value'   => 1,
-					'compare' => '>=',),
+					'compare' => '>=')
 				),
-			);
-		$dic_query = new WP_Query($args);
+			)
+		);
 
 		// no use of $before_widget
 
