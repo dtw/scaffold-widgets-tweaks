@@ -53,10 +53,10 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 				array(
 					'key'     => 'hw_services_overall_rating',
 					'value'   => 1,
-					'compare' => '>=')
-				),
-			)
-		);
+					'compare' => '>='
+				)
+			),
+		));
 
 		// no use of $before_widget
 
