@@ -26,7 +26,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		parent::WP_Widget( 'SF_HWBucks_Latest_DIC_Widget',
 		$name = 'HW Latest DIC Visit',
 		array(
-			'classname'   => 'scaffold_widget_hwbucks_latest_dic widget_recent_feedback',
+			'classname'   => 'scaffold_widget_hwbucks_latest_dic widget_latest_dic',
 			'description' => 'Display full details of the latest DIC visit as a panel.'
 	)
 		);
@@ -44,155 +44,74 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		$title = $instance['title'] ;
 		$panel_colour = $instance['panel_colour'] ;
 
-		// The Query - gets the last 4 approved comments for post_type local_services
+		// The Query - gets the first service with a hw_services_overall_rating greater than or equal to 1
 		$args = array(
-			'status' => 'approve',
-			'post_type' => 'local_services',
-			'number' => 4,
-		);
-		$comments_query = new WP_Comment_Query;
-		$comments = $comments_query->query( $args );
+			'post_type' => 'Local_services',
+			// 'orderby' => 'rand',
+			'showposts' => 1,
+			'meta_query' => array(
+				array(
+					'key'     => 'hw_services_overall_rating',
+					'value'   => 1,
+					'compare' => '>=',),
+				),
+			);
+		$dic_query = new WP_Query($args);
 
 		// no use of $before_widget
 
-		$reviewcount = 1;
-		// Comment Loop
-		if ( $comments ) {
-			echo "<div class='feedback row'><!--start widget output-->";
-			foreach ( $comments as $comment ) {
-				//if this is the first review ?>
-				<?php if ($reviewcount == 1) { ?>
-					<!-- start the main panel -->
-					<?php echo '<div class="panel col-md-12 col-sm-12 col-xs-12 panel-' . $panel_colour . '">'?>
-				<?php } elseif ($reviewcount == 4) { ?>
-					<!-- start the final small panel -->
-					<div class="col-md-4 hidden-sm hidden-xs">
-				<?php } else { ?>
-					<!-- start a smaller panel -->
-					<div class="col-md-4 col-sm-6 hidden-xs">
-				<?php } ?>
-				<?php 										// Display icon for taxonomy term
-					$term_ids = get_the_terms( $comment->comment_post_ID, 'service_types' );	// Find taxonomies
-					$term_id = $term_ids[0]->term_id;											// Get taxonomy ID
-					$term_icon = get_term_meta( $term_id, 'icon', true );						// Get meta
-				?>
-						<!-- contains each panel -->
-						<div class="row">
-						<?php //if this is the main panel
-						if ($reviewcount == 1) { ?>
-							<?php //if the post has an thumbnail
-							if ( has_post_thumbnail($comment->comment_post_ID) ) {
-							// add a container and wrap the thumbnail in a hyperlink to the post ?>
-								<div class="service-icon-container text-center col-md-4 col-sm-6 hidden-xs panel-icon-left">
-									<a href="
-										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
-										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,180]); ?>
-							<?php } else {
-								//if there is no thumb... the col's are different?! ?>
-								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
-									<a href="
-									<?php echo get_the_permalink($comment->comment_post_ID); ?>
-									">
-										<img class="service-icon-md" src="
-										<?php echo $term_icon; ?>
-										" alt="
-										<?php echo get_the_title($comment->comment_post_ID); ?>
-										" />
-							<?php } ?>
-						<!-- this isn't the main panel 4x to 2x to 1x-->
-						<?php } else { ?>
-							<!-- add a container and wrap the term icon in a hyperlink to the post -->
-							<div class="service-icon-container text-center col-md-3 col-sm-3 col-xs-12">
-								<a href="
-								<?php echo get_the_permalink($comment->comment_post_ID); ?>
-								">
-								<img class="service-icon-sm" src="
-								<?php echo $term_icon; ?>
-								" alt="
-								<?php echo get_the_title($comment->comment_post_ID); ?>
-								" />
-						<?php } ?>
-					</a>
-				</div>
-		<!-- REVIEWED TO HERE-->
-								<?php if ($reviewcount == 1) {
-									if ( has_post_thumbnail($comment->comment_post_ID) ) {
-									echo '<div class="service-info-container col-md-8 col-sm-6 col-xs-12 panel-text-right">';
-									} else {
-									echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
-									} ?>
-										<div class="row">
-											<div class="col-md-12 panel-title">
-												<h2><?php echo $title ?></h2>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12 col-sm-12 col-xs-12">
-												<a class="title-link" href="
-													<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-													<?php echo get_the_title($comment->comment_post_ID); ?>
-												</a>
-								<?php } else { ?>
-									<div class="service-info-container-sm col-md-9 col-sm-9 col-xs-12">
-										<h3 style="margin: 0; padding-bottom: .5rem;">
-											<a href="
-												<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-												<?php echo get_the_title($comment->comment_post_ID); ?>
-											</a>
-										</h3>
-								<?php } ?>
-											<?php if ($reviewcount == 1) {
-												get_template_part("elements/comments-list");
-											?>
-												<p>
-													<?php
-													// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
-													// wpautop converts double line breaks to <p></p>
-													// i.e. this keeps line breaks in the comment
-														echo wpautop(mb_strimwidth($comment->comment_content,0,300," ..."), true);
-													?>
-												</p>
-											<?php } ?>
-											<?php // Display star rating
-											$individual_rating = get_comment_meta( $comment->comment_ID, 'feedback_rating', true ); ?>
-											<p class="star-rating p-rating">
-												<?php
-												for ($i = 1; $i <= $individual_rating; ++$i)  {
-													echo "<i class='fa fa-star fa-lg'></i> ";
-												}
-												for ($i = 1; $i <= (5 - $individual_rating); ++$i)  {echo "<i class='fa fa-star-o fa-lg'></i> ";
-												}
-												?>
-											</p>
-											<p class="review-date-time">
-												<strong>
-													<?php echo human_time_diff( strtotime($comment->comment_date), current_time( 'timestamp' ) ); ?> ago
-												</strong>
-											</p>
-											<?php if ($reviewcount == 1) {
-												echo "</div>";
-												echo "</div>";
-											} ?>
+		if( $dic_query->have_posts() ) :
+			while($dic_query->have_posts()) : $dic_query->the_post(); ?>
+			<div class="row news">
+				<div class="panel col-md-12 col-sm-12 col-xs-12 panel-<?php echo $panel_colour ?>" id="dignity-in-care"><!-- start panel -->
+					<div class="row">
+						<div class="col-md-4 col-sm-6 hidden-xs panel-icon-left">
+							<a href="
+								<?php the_permalink(); ?>" rel="bookmark">
+								<?php the_post_thumbnail([auto,240]); ?>
+							</a>
+						</div>
+						<div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">
+							<div class="row">
+								<div class="col-md-12 panel-title">
+									<h2><?php echo $title ?></h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<span class="city">
+										<a class="title-link" href="
+											<?php the_permalink(); ?>" rel="bookmark">
+											<?php the_title(); ?>
+										</a>
+										<?php $city = get_post_meta( $post->ID, 'hw_services_city', true ); if ($city) { echo $city; }?>
+									</span>
+									<?php the_excerpt(); ?>
+									<p>
+										<?php $rating = get_post_meta( $post->ID, 'hw_services_overall_rating', true );
+											for ($i = 1; $i <= $rating; ++$i)  {
+												echo "<i class='fa fa-star fa-lg green'></i> ";
+											}
+											for ($i = 1; $i <= (5 - $rating); ++$i)  {echo "<i class='fa fa-star-o fa-lg green'></i> ";
+											}
+										?>
+									</p>
+									<p class="visit-date">Visited on
+										<?php echo the_date(); ?>
+									</p>
+								</div>
+								<?php // get_template_part("elements/comments-rating-average"); ?>
+							</div>
 						</div>
 					</div>
+					<!-- end of column -->
 				</div>
-											<?php
-			$reviewcount = $reviewcount + 1;
-
-
-			} // end of if there is a rating ?>
-								<!-- end of col -->
-								<?php	  // end of loop?
-
-		echo "
-							</div>
-							<!-- end of row -->";
-
-		} else {
-			echo 'No comments found.';
-		}
-	}
-
+					<!-- end of panel -->
+			</div>
+		<?php
+			endwhile;
+			endif; wp_reset_query();
+}
 	// Save widget settings
 
 	function update( $new_instance, $old_instance ) {
@@ -202,8 +121,8 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		return $instance;
 	}
 	function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Recent feedback from the public';
-		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'grey';
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Latest Dignity in Care visit';
+		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'green';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content title:</label>
