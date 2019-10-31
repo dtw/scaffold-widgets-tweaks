@@ -22,12 +22,12 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-		$name = 'HW Recent Feedback',
 	function SF_HWBucks_Latest_DIC_Widget() {
 		parent::WP_Widget( 'SF_HWBucks_Latest_DIC_Widget',
+		$name = 'HW Latest DIC Visit',
 		array(
-			'description' => 'Display full details of the latest feedback comment as a panal, with the next 3 most recent star ratings below.'
 			'classname'   => 'scaffold_widget_hwbucks_latest_dic widget_recent_feedback',
+			'description' => 'Display full details of the latest DIC visit as a panel.'
 	)
 		);
 	}
