@@ -91,11 +91,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 									<?php the_excerpt(); ?>
 									<p>
 										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
-											for ($i = 1; $i <= $rating; ++$i)  {
-												echo "<i class='fas fa-star fa-lg green'></i> ";
-											}
-											for ($i = 1; $i <= (5 - $rating); ++$i)  {echo "<i class='far fa-star fa-lg green'></i> ";
-											}
+											feedbackstarrating($rating,'green');
 										?>
 									</p>
 									<p class="visit-date">Visited on
