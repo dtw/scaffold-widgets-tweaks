@@ -156,13 +156,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 											<?php // Display star rating
 											$individual_rating = get_comment_meta( $comment->comment_ID, 'feedback_rating', true ); ?>
 											<p class="star-rating p-rating">
-												<?php
-												for ($i = 1; $i <= $individual_rating; ++$i)  {
-													echo "<i class='fa fa-star fa-lg'></i> ";
-												}
-												for ($i = 1; $i <= (5 - $individual_rating); ++$i)  {echo "<i class='fa fa-star-o fa-lg'></i> ";
-												}
-												?>
+												<?php feedbackstarrating($individual_rating); ?>
 											</p>
 											<p class="review-date-time">
 												<strong>
