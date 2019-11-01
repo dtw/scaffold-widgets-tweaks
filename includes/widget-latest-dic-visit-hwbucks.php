@@ -61,7 +61,8 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		// no use of $before_widget
 
 		if( $dic_query->have_posts() ) :
-			while($dic_query->have_posts()) : $dic_query->the_post(); ?>
+			while($dic_query->have_posts()) : $dic_query->the_post();
+			$dic = get_post(); ?>
 			<div class="row news">
 				<div class="panel col-md-12 col-sm-12 col-xs-12 panel-<?php echo $panel_colour ?>" id="dignity-in-care"><!-- start panel -->
 					<div class="row">
@@ -84,11 +85,11 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 											<?php the_permalink(); ?>" rel="bookmark">
 											<?php the_title(); ?>
 										</a>
-										<?php $city = get_post_meta( $post->ID, 'hw_services_city', true ); if ($city) { echo $city; }?>
+										<?php $city = get_post_meta( $dic->ID, 'hw_services_city', true ); if ($city) { echo $city; }?>
 									</span>
 									<?php the_excerpt(); ?>
 									<p>
-										<?php $rating = get_post_meta( $post->ID, 'hw_services_overall_rating', true );
+										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
 											for ($i = 1; $i <= $rating; ++$i)  {
 												echo "<i class='fas fa-star fa-lg green'></i> ";
 											}
