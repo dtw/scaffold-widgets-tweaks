@@ -158,9 +158,9 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 											<p class="star-rating p-rating">
 												<?php
 												for ($i = 1; $i <= $individual_rating; ++$i)  {
-													echo "<i class='fas fa-star fa-lg'></i> ";
+													echo "<i class='fa fa-star fa-lg'></i> ";
 												}
-												for ($i = 1; $i <= (5 - $individual_rating); ++$i)  {echo "<i class='far fa-star fa-lg'></i> ";
+												for ($i = 1; $i <= (5 - $individual_rating); ++$i)  {echo "<i class='fa fa-star-o fa-lg'></i> ";
 												}
 												?>
 											</p>
