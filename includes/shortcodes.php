@@ -138,7 +138,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_star_icon() {
-		$star_icon = "<i class='fa fa-star fa-lg shortcode-icon'></i> ";
+		$star_icon = "<i class='fas fa-star fa-lg shortcode-icon'></i> ";
 			return $star_icon;
 			}
 		add_shortcode( 'icon_star', 'scaffold_shortcode_star_icon' );
@@ -147,7 +147,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_greenstar_icon() {
-		$greenstar_icon = "<i class='fa fa-star fa-lg shortcode-icon' style='color:#84BF41;'></i> ";
+		$greenstar_icon = "<i class='fas fa-star fa-lg shortcode-icon' style='color:#84BF41;'></i> ";
 			return $greenstar_icon;
 			}
 		add_shortcode( 'icon_greenstar', 'scaffold_shortcode_greenstar_icon' );
