@@ -30,7 +30,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_phone_icon() {
-		$phone_icon = "<i class='fa fa-phone fa-lg shortcode-icon'></i> ";
+		$phone_icon = "<i class='fas fa-phone fa-lg shortcode-icon'></i> ";
 			return $phone_icon;
 			}
 		add_shortcode( 'icon_phone', 'scaffold_shortcode_phone_icon' );
@@ -39,7 +39,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_telephone_icon() {
-		$telephone_icon = "<i class='fa fa-phone fa-lg shortcode-icon'></i> ";
+		$telephone_icon = "<i class='fas fa-phone fa-lg shortcode-icon'></i> ";
 			return $telephone_icon;
 			}
 		add_shortcode( 'icon_telephone', 'scaffold_shortcode_telephone_icon' );
@@ -75,7 +75,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_info_icon() {
-		$info_icon = "<i class='fa fa-info-circle fa-lg shortcode-icon'></i> ";
+		$info_icon = "<i class='fas fa-info-circle fa-lg shortcode-icon'></i> ";
 			return $info_icon;
 			}
 		add_shortcode( 'icon_info', 'scaffold_shortcode_info_icon' );
@@ -129,7 +129,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_calendar_icon() {
-		$calendar_icon = "<i class='fa fa-calendar fa-lg shortcode-icon'></i> ";
+		$calendar_icon = "<i class='fas fa-calendar fa-lg shortcode-icon'></i> ";
 			return $calendar_icon;
 			}
 		add_shortcode( 'icon_calendar', 'scaffold_shortcode_calendar_icon' );
@@ -138,7 +138,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_star_icon() {
-		$star_icon = "<i class='fa fa-star fa-lg shortcode-icon'></i> ";
+		$star_icon = "<i class='fas fa-star fa-lg shortcode-icon'></i> ";
 			return $star_icon;
 			}
 		add_shortcode( 'icon_star', 'scaffold_shortcode_star_icon' );
@@ -147,7 +147,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_greenstar_icon() {
-		$greenstar_icon = "<i class='fa fa-star fa-lg shortcode-icon' style='color:#84BF41;'></i> ";
+		$greenstar_icon = "<i class='fas fa-star fa-lg shortcode-icon green'></i> ";
 			return $greenstar_icon;
 			}
 		add_shortcode( 'icon_greenstar', 'scaffold_shortcode_greenstar_icon' );
@@ -165,7 +165,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_warning_icon() {
-		$warning_icon = "<i class='fa fa-warning fa-lg shortcode-icon'></i> ";
+		$warning_icon = "<i class='fas fa-exclamation-triangle fa-lg shortcode-icon'></i> ";
 			return $warning_icon;
 			}
 		add_shortcode( 'icon_warning', 'scaffold_shortcode_warning_icon' );
@@ -174,7 +174,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_address_icon() {
-		$address_icon = "<i class='fa fa-pencil-alt fa-lg shortcode-icon'></i> ";
+		$address_icon = "<i class='fas fa-pencil-alt fa-lg shortcode-icon'></i> ";
 			return $address_icon;
 			}
 		add_shortcode( 'icon_address', 'scaffold_shortcode_address_icon' );
@@ -456,7 +456,7 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 	$phone_object = '
 	<div class="media signpost signpost-phone">
 		<div class="media-left">
-				<i class="media-object fa fa-phone fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-phone fa-lg shortcode-icon"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_phone . '</p></div>
 	</div>';
@@ -482,7 +482,7 @@ function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
 	$text_object = '
 	<div class="media signpost signpost-text">
 		<div class="media-left">
-				<i class="media-object fa fa-sms fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-sms fa-lg shortcode-icon"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_text . '</p></div>
 	</div>';
