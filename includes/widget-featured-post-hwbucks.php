@@ -68,10 +68,11 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 										<?php the_title(); ?>
 									</a>
 									<?php the_excerpt(); ?>
-									<p class="clear-both"><a class="btn btn-primary" href="<?php echo get_the_permalink();
-										echo '">';
-										echo $btn_text; ?>
-									</a></p>
+									<p style="clear: both;">
+										<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
+											<?php echo $btn_text; ?>
+										</a>
+									</p>
 								</div>
 							</div>
 						</div>
