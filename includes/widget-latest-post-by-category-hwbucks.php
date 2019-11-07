@@ -158,7 +158,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 										<?php the_title(); ?>
 									</a>
 									<?php the_excerpt(); ?>
-									<p style="clear: both;">
+									<p class="clear-both">
 										<a class="btn btn-primary" href="<?php echo get_category_link($category); ?>">
 											<?php if ( empty( $btn_text ) ) {
 													echo 'Read all ' . strtolower(get_cat_name($category));
