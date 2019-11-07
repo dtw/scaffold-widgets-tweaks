@@ -63,8 +63,9 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a class="title-link" href="<?php the_permalink(); ?>" rel="bookmark">
+								<div class="col-md-12 panel-content">
+									<a class="title-link" href="
+										<?php the_permalink(); ?>" rel="bookmark">
 										<?php the_title(); ?>
 									</a>
 									<?php the_excerpt(); ?>
