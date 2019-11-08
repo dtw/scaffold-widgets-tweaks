@@ -174,7 +174,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 						<div class="col-md-4 col-sm-6 hidden-xs panel-icon">
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail([auto,240]); ?>
+								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
 						</div>
 					</div>

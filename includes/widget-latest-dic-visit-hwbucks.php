@@ -70,7 +70,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 						<div class="col-md-4 col-sm-6 hidden-xs panel-icon-left">
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail([auto,240]); ?>
+								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
 						</div>
 						<div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">
