@@ -75,12 +75,12 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 						</div>
 						<div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">
 							<div class="row">
-								<div class="col-md-12 panel-title">
+								<div class="col-md-12 panel-title-right">
 									<h2><?php echo $title ?></h2>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="col-md-12 panel-content-right">
 									<span class="city">
 										<a class="title-link" href="
 											<?php the_permalink(); ?>" rel="bookmark">

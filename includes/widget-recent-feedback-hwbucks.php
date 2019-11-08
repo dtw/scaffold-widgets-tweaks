@@ -97,7 +97,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 										<?php echo $term_icon; ?>
 										" alt="
 										<?php echo get_the_title($comment->comment_post_ID); ?>
-										" />
+										" class="panel-icon-img"/>
 							<?php } ?>
 						<!-- this isn't the main panel 4x to 2x to 1x-->
 						<?php } else { ?>
@@ -110,7 +110,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								<?php echo $term_icon; ?>
 								" alt="
 								<?php echo get_the_title($comment->comment_post_ID); ?>
-								" />
+								" class="panel-icon-img" />
 						<?php } ?>
 					</a>
 				</div>
@@ -122,12 +122,12 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 									echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
 									} ?>
 										<div class="row">
-											<div class="col-md-12 panel-title">
+											<div class="col-md-12 panel-title-right">
 												<h2><?php echo $title ?></h2>
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-md-12 col-sm-12 col-xs-12">
+											<div class="col-md-12 col-sm-12 col-xs-12 panel-content-right">
 												<a class="title-link" href="
 													<?php echo get_the_permalink($comment->comment_post_ID); ?>">
 													<?php echo get_the_title($comment->comment_post_ID); ?>
