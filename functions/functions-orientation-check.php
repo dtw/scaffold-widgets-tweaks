@@ -4,13 +4,13 @@
     // returns url, width, height, is_intermediate
     if (abs(($image_attributes[1] - $image_attributes[2])) <= 10) {
       // it's roughly square
-      return 'square';
+      return 'sq';
     } elseif ($image_attributes[1] > $image_attributes[2]) {
       // it's landscape
-      return 'landscape';
+      return 'ls';
     } else {
       // must be portrait
-      return 'portrait';
+      return 'pt';
     }
   }
 ?>
