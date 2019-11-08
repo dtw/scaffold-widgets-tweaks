@@ -37,6 +37,9 @@ if ( ! defined( 'WPINC' ) ) {
 	// 4. DASHBOARD
 	require_once('includes/dash.php');
 
+	// 5. Add custom functions
+	require_once('functions/functions-orientation-check.php');
+
 /* Widgets
 ------------------------------------------- */
 
