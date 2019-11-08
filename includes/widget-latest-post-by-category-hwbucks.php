@@ -146,7 +146,15 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			?>
 				<div class="col-md-12 col-sm-12 col-xs-12 panel panel-<?php echo $panel_colour ?>"><!-- start panel -->
 					<div class="row">
-						<div class="col-md-8 col-sm-6 col-xs-12 panel-text">
+					<?php $img_orient = orientation_check(get_post_thumbnail_id($post->post_ID));
+					if ( $img_orient == 'ls') {
+						echo '<div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
+					} elseif ( $img_orient == 'pt') {
+						echo '<div class="col-md-10 col-sm-9 col-xs-12 panel-text">';
+					} elseif ( $img_orient == 'sq') {
+						echo '<div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
+					}
+					?>
 							<div class="row">
 								<div class="col-md-12 panel-title">
 									<h2><?php echo $title ?></h2>
@@ -171,7 +179,14 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6 hidden-xs panel-icon">
+					<?php if ( $img_orient == 'ls') {
+						echo '<div class="col-md-4 col-sm-6 hidden-xs panel-icon">';
+					} elseif ( $img_orient == 'pt') {
+						echo '<div class="col-md-2 col-sm-3 hidden-xs panel-icon">';
+					} elseif ( $img_orient == 'sq') {
+						echo '<div class="col-md-3 col-sm-4 hidden-xs panel-icon">';
+					}
+					?>
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
