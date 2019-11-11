@@ -30,7 +30,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_phone_icon() {
-		$phone_icon = "<i class='fas fa-phone fa-lg shortcode-icon'></i> ";
+		$phone_icon = "<i class='fas fa-phone fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $phone_icon;
 			}
 		add_shortcode( 'icon_phone', 'scaffold_shortcode_phone_icon' );
@@ -39,7 +39,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_telephone_icon() {
-		$telephone_icon = "<i class='fas fa-phone fa-lg shortcode-icon'></i> ";
+		$telephone_icon = "<i class='fas fa-phone fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $telephone_icon;
 			}
 		add_shortcode( 'icon_telephone', 'scaffold_shortcode_telephone_icon' );
@@ -48,7 +48,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_text_icon() {
-		$text_icon = "<i class='fas fa-sms fa-lg shortcode-icon'></i> ";
+		$text_icon = "<i class='fas fa-sms fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $text_icon;
 			}
 		add_shortcode( 'icon_text', 'scaffold_shortcode_text_icon' );
@@ -57,7 +57,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_sms_icon() {
-		$sms_icon = "<i class='fas fa-sms fa-lg shortcode-icon'></i> ";
+		$sms_icon = "<i class='fas fa-sms fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $sms_icon;
 			}
 		add_shortcode( 'icon_sms', 'scaffold_shortcode_sms_icon' );
@@ -66,7 +66,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_email_icon() {
-		$email_icon = "<i class='far fa-envelope fa-lg shortcode-icon'></i> ";
+		$email_icon = "<i class='far fa-envelope fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $email_icon;
 			}
 		add_shortcode( 'icon_email', 'scaffold_shortcode_email_icon' );
@@ -75,7 +75,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_info_icon() {
-		$info_icon = "<i class='fas fa-info-circle fa-lg shortcode-icon'></i> ";
+		$info_icon = "<i class='fas fa-info-circle fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $info_icon;
 			}
 		add_shortcode( 'icon_info', 'scaffold_shortcode_info_icon' );
@@ -84,7 +84,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_facebook_icon() {
-		$facebook_icon = "<i class='fab fa-facebook fa-lg shortcode-icon'></i> ";
+		$facebook_icon = "<i class='fab fa-facebook fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $facebook_icon;
 			}
 		add_shortcode( 'icon_facebook', 'scaffold_shortcode_facebook_icon' );
@@ -93,7 +93,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_twitter_icon() {
-		$twitter_icon = "<i class='fab fa-twitter fa-lg shortcode-icon'></i> ";
+		$twitter_icon = "<i class='fab fa-twitter fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $twitter_icon;
 			}
 		add_shortcode( 'icon_twitter', 'scaffold_shortcode_twitter_icon' );
@@ -102,7 +102,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_skype_icon() {
-		$skype_icon = "<i class='fab fa-skype fa-lg shortcode-icon'></i> ";
+		$skype_icon = "<i class='fab fa-skype fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $skype_icon;
 			}
 		add_shortcode( 'icon_skype', 'scaffold_shortcode_skype_icon' );
@@ -111,7 +111,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_linkedin_icon() {
-		$linkedin_icon = "<i class='fab fa-linkedin fa-lg shortcode-icon'></i> ";
+		$linkedin_icon = "<i class='fab fa-linkedin fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $linkedin_icon;
 			}
 		add_shortcode( 'icon_linkedin', 'scaffold_shortcode_linkedin_icon' );
@@ -120,7 +120,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_youtube_icon() {
-		$youtube_icon = "<i class='fab fa-youtube fa-lg shortcode-icon'></i> ";
+		$youtube_icon = "<i class='fab fa-youtube fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $youtube_icon;
 			}
 		add_shortcode( 'icon_youtube', 'scaffold_shortcode_youtube_icon' );
@@ -129,7 +129,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_calendar_icon() {
-		$calendar_icon = "<i class='fas fa-calendar fa-lg shortcode-icon'></i> ";
+		$calendar_icon = "<i class='fas fa-calendar fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $calendar_icon;
 			}
 		add_shortcode( 'icon_calendar', 'scaffold_shortcode_calendar_icon' );
@@ -138,7 +138,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_star_icon() {
-		$star_icon = "<i class='fas fa-star fa-lg shortcode-icon'></i> ";
+		$star_icon = "<i class='fas fa-star fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $star_icon;
 			}
 		add_shortcode( 'icon_star', 'scaffold_shortcode_star_icon' );
@@ -147,7 +147,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_greenstar_icon() {
-		$greenstar_icon = "<i class='fas fa-star fa-lg shortcode-icon green'></i> ";
+		$greenstar_icon = "<i class='fas fa-star fa-lg shortcode-icon green' aria-hidden='true'></i> ";
 			return $greenstar_icon;
 			}
 		add_shortcode( 'icon_greenstar', 'scaffold_shortcode_greenstar_icon' );
@@ -156,7 +156,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_location_icon() {
-		$location_icon = "<i class='fas fa-map-marker-alt fas-lg shortcode-icon'></i> ";
+		$location_icon = "<i class='fas fa-map-marker-alt fas-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $location_icon;
 			}
 		add_shortcode( 'icon_location', 'scaffold_shortcode_location_icon' );
@@ -165,7 +165,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_warning_icon() {
-		$warning_icon = "<i class='fas fa-exclamation-triangle fa-lg shortcode-icon'></i> ";
+		$warning_icon = "<i class='fas fa-exclamation-triangle fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $warning_icon;
 			}
 		add_shortcode( 'icon_warning', 'scaffold_shortcode_warning_icon' );
@@ -174,7 +174,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_address_icon() {
-		$address_icon = "<i class='fas fa-pencil-alt fa-lg shortcode-icon'></i> ";
+		$address_icon = "<i class='fas fa-pencil-alt fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $address_icon;
 			}
 		add_shortcode( 'icon_address', 'scaffold_shortcode_address_icon' );
@@ -183,7 +183,7 @@
 	------------------------ */
 
 	function scaffold_shortcode_website_icon() {
-		$website_icon = "<i class='fas fa-external-link-alt fa-lg shortcode-icon'></i> ";
+		$website_icon = "<i class='fas fa-external-link-alt fa-lg shortcode-icon' aria-hidden='true'></i> ";
 			return $website_icon;
 			}
 		add_shortcode( 'icon_website', 'scaffold_shortcode_website_icon' );
@@ -272,7 +272,7 @@ function scaffold_shortcode_bootstrap_accordion_panel( $atts, $content = null ) 
 		$accordion_output = '
 		<div class="panel panel-default">
 			<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['panel_id'] . '">
-				<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
+				<h4 class="panel-title"><i class="fas fa-caret-right" aria-hidden="true"></i>' . $a['title'] . '</h4>
 			</div>
 			<div id="' . $a['panel_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 				<div class="panel-body">
@@ -318,7 +318,7 @@ function hwbucks_shortcode_signpost_accordion_panel( $atts, $content = null ) {
 		$accordion_output_start = '
 	<div class="panel panel-default">
 		<div class="panel-heading' . $panel_heading_class . '" data-toggle="collapse" data-parent="#accordion" data-target="#' . $a['signpost_id'] . '">
-			<h4 class="panel-title"><i class="fas fa-caret-right"></i>' . $a['title'] . '</h4>
+			<h4 class="panel-title"><i class="fas fa-caret-right" aria-hidden="true"></i>' . $a['title'] . '</h4>
 		</div>
 		<div id="' . $a['signpost_id'] . '" class="panel-collapse collapse' . $panel_collapse_class . '">
 			<div class="panel-body">' . $content;
@@ -352,7 +352,7 @@ function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 	$address_object = '
 	<div class="media signpost signpost-address">
 		<div class="media-left">
-				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><p>' . $output_address . '</p></div>
 	</div>';
@@ -377,7 +377,7 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 	$location_object = '
 	<div class="media signpost signpost-location">
 		<div class="media-left">
-				<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><p>' .$output_location . '</p></div>
 	</div>';
@@ -404,7 +404,7 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	$website_object = '
 	<div class="media signpost signpost-website">
 		<div class="media-left">
-				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><a href="' . $cleaned_url . '">' . $display_url . '</a></div>
 	</div>';
@@ -430,7 +430,7 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 	$email_object = '
 	<div class="media signpost signpost-email">
 		<div class="media-left">
-				<i class="media-object far fa-envelope fa-lg shortcode-icon"></i>
+				<i class="media-object far fa-envelope fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><a href="mailto:' . $cleaned_email . '">' . $cleaned_email . '</a></div>
 	</div>';
@@ -456,7 +456,7 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 	$phone_object = '
 	<div class="media signpost signpost-phone">
 		<div class="media-left">
-				<i class="media-object fas fa-phone fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-phone fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_phone . '</p></div>
 	</div>';
@@ -482,7 +482,7 @@ function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
 	$text_object = '
 	<div class="media signpost signpost-text">
 		<div class="media-left">
-				<i class="media-object fas fa-sms fa-lg shortcode-icon"></i>
+				<i class="media-object fas fa-sms fa-lg shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_text . '</p></div>
 	</div>';
@@ -509,7 +509,7 @@ function hwbucks_shortcode_note_callout( $atts, $content = null ) {
 	$note_object = '
 	<div class="media callout callout-note">
 		<div class="media-left callout">
-				<i class="media-object far fa-sticky-note fa-2x shortcode-icon"></i>
+				<i class="media-object far fa-sticky-note fa-2x shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -536,7 +536,7 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 	$question_object = '
 	<div class="media callout callout-question">
 		<div class="media-left callout">
-				<i class="media-object fas fa-question fa-2x shortcode-icon"></i>
+				<i class="media-object fas fa-question fa-2x shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -563,7 +563,7 @@ function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 	$alert_object = '
 	<div class="media callout callout-warning">
 		<div class="media-left callout">
-				<i class="media-object fas fa-exclamation fa-2x shortcode-icon"></i>
+				<i class="media-object fas fa-exclamation fa-2x shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -598,7 +598,7 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$signpost_object = '
 	<div class="media callout callout-signpost">
 		<div class="media-left callout">
-				<i class="media-object fas fa-map-signs fa-2x shortcode-icon"></i>
+				<i class="media-object fas fa-map-signs fa-2x shortcode-icon" aria-hidden="true"></i>
 		</div>
 		<div class="media-body callout">';
 		if ( ! $a['hide_title'] ) {
