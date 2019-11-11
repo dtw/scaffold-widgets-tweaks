@@ -141,9 +141,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 											</a>
 										</h3>
 								<?php } ?>
-											<?php if ($reviewcount == 1) {
-												get_template_part("elements/comments-list");
-											?>
+											<?php if ($reviewcount == 1) { ?>
 												<p>
 													<?php
 													// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
