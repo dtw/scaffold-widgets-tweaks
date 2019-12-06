@@ -29,12 +29,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - featured-page-hwbucks now has a "read more" button rather than an anchor
 
 ## [1.0.4] - 2019-05-28
+### Added
+- new shortcodes for signpost website
+
 ### Changed
 - signpost shortcodes can now use a single or opening/closings tags
 - comments and clean-up
-
-### Added
-- new shortcodes for signpost website
 
 ## [1.0.3] - 2019-05-22
 ### Added
