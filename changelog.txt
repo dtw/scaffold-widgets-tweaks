@@ -16,6 +16,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 -
 
+## [1.0.6] - 2019-05-30
+### Changed
+- replaced all icon shortcodes with new versions
+- fixes on accordion panel edit link
+
+## [1.0.5] - 2019-05-29
+### Added
+- an edit button to signpost accordion panels
+
+### Changed
+- featured-page-hwbucks now has a "read more" button rather than an anchor
+
+## [1.0.4] - 2019-05-28
+### Changed
+- signpost shortcodes can now use a single or opening/closings tags
+- comments and clean-up
+
+### Added
+- new shortcodes for signpost website
+
+## [1.0.3] - 2019-05-22
+### Added
+- new shortcodes for signpost address and location: uses bootstrap media-object styles to prevent text wrapping around icon
+
 ## [1.0.2] - 2019-05-20
 ### Added
 - new shortcodes to wrap an accordion and add basic accordion panels and panels that pull content from Post types
