@@ -16,9 +16,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 -
 
+## [1.0.12] - 2019-06-27
+### Added
+- new icon shortcode for sms
+
+### Changed
+- callout shortcode CSS styles
+- allow title to be hidden in signpost_callout
+- improve layout of widget-list-child-pages-with-featured-images
+- rename alert callout to warning
+- updated callout colors
+
+## [1.0.11] - 2019-06-22
+### Added
+- new shortcode for signpost text
+- new alert callout shortcode
+
+### Removed
+- old icon shortcodes (deprecated in 1.0.6)
+
+## [1.0.10] - 2019-06-14
+### Added
+- js to scroll to the top of accordion panels when opened.
+
+### Changed
+- small CSS changes
+
 ## [1.0.9] - 2019-06-11
 ### Added
-- new shortcodes for signpost sms/text
+- new icon shortcode for signpost sms/text
 
 ## [1.0.8] - 2019-06-05
 ### Added
