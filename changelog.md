@@ -16,6 +16,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 -
 
+## [1.0.14] - 2019-07-22
+### Added
+- four new shortcodes to embed a bootstrap tabs (not exactly sure how these work)
+
+## [1.0.13] - 2019-07-18
+### Added
+- new shortcode to embed mailchimp signup form
+
+### Changed
+- CTA anchor format now applies to paragraph and anchor elements
+
 ## [1.0.12] - 2019-06-27
 ### Added
 - new icon shortcode for sms
