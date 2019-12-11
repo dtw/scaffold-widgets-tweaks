@@ -16,17 +16,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 -
 
-## [1.0.17] - 2019-11-07
+## [1.0.24] - 2019-11-29
 ### Changed
-- Minor syntax and CSS class updates
+- fixed images in Three Column Image widget
 
-## [1.0.16] - 2019-10-27
+## [1.0.23] - 2019-11-11
+### Changed
+- fixed persistent bug in Recent Feedback widget
+- hide some decorative icons with aria classes
+
+## [1.0.22] - 2019-11-08
+### Added
+- function to check the orientation of an image in the media library. Returns "ls", "pt" or "sq" (landscape, portrait, square).
+
+### Changed
+- lots of changes to widget Panels for layout and image size
+- Latest Post by Category widget now uses the orientation check to layout columns better
+
+## [1.0.21] - 2019-11-07
+### Changed
+- minor syntax and CSS class updates
+
+## [1.0.21] - 2019-11-01
+### Changed
+- use the new feedbackstarrating function() in DiC and Feedback widgets
+- new fontawesome version classes
+
+## [1.0.20] - 2019-10-31
+### Added
+- DiC widget. Replaces the static code on the front page.
+
+## [1.0.19] - 2019-10-30
+### Added
+- Latest Posts by Category widget. Replaces the static "News" sub-items on the front page. Can now be any category. Fetches the last four posts. Puts the latest in a Panel. Shows the remaining 3 in a three column layout below the Panel.
+
+### Changed
+- comments on the Recent Feedback widget code
+- removed the Panel title and made layout/logic changes on the Recent Feedback widget
+- layout on the Three Column widget for mobile
+
+
+## [1.0.18] - 2019-10-27
 ### Added
 - Three Column Image widget. Provides a image-based CTA links in three columns. Takes title, excerpt and image. Includes JS to allow image selection from media library and refresh image previews in admin interface.
 
-## [1.0.16] - 2019-10-20
+## [1.0.17] - 2019-10-24
 ### Added
 - Three Column widget. Replaces the static "sub items" under the main panels on the home page. Takes a title, body text, url and button text.
+
+## [1.0.16] - 2019-08-25
+### Added
+- Recent Feedback widget. Converts the Recent Feedback Panel on the front page into a widget.
 
 ## [1.0.15] - 2019-08-20
 ### Added
