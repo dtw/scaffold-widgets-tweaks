@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 -
 
+## [1.0.17] - 2019-11-07
+### Changed
+- Minor syntax and CSS class updates
+
+## [1.0.16] - 2019-10-27
+### Added
+- Three Column Image widget. Provides a image-based CTA links in three columns. Takes title, excerpt and image. Includes JS to allow image selection from media library and refresh image previews in admin interface.
+
+## [1.0.16] - 2019-10-20
+### Added
+- Three Column widget. Replaces the static "sub items" under the main panels on the home page. Takes a title, body text, url and button text.
+
+## [1.0.15] - 2019-08-20
+### Added
+- Featured Post widget. Based on featured page but allows selection from 10 most recent posts.
+
 ## [1.0.14] - 2019-07-22
 ### Added
 - four new shortcodes to embed a bootstrap tabs (not exactly sure how these work)
