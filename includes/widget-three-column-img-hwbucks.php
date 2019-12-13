@@ -46,7 +46,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 		// <div id="feedback-selector" class="row">
 		echo $before_widget;
 		for ($i = 1; $i <= 3; $i++) { ?>
-			<div class="col-md-4 col-sm-12">
+			<div class="col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
 				<div class="choice-container">
 					<a class="choice-img-link" <?php echo '<a href="' . $instance['url_'.$i] . '"' ?>>
 						<?php echo wp_get_attachment_image( $instance['img_id_'.$i], 'large', false, array(
