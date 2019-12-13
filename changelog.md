@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.19.0] - 2019-10-30
 ### Added
-- Latest Posts by Category widget. Replaces the static "News" sub-items on the front page. Can now be any category. Fetches the last four posts. Puts the latest in a Panel. Shows the remaining 3 in a three column layout below the Panel.
+- Latest Posts by Category widget. Replaces the static "News" section on the front page. Can now be any category. Fetches the latest post and places in a Panel. Optionally shows the next 3 posts in a three column layout below the Panel.
 
 ### Changed
 - comments on the Recent Feedback widget code
