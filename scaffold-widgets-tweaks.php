@@ -37,6 +37,9 @@ if ( ! defined( 'WPINC' ) ) {
 	// 4. DASHBOARD
 	require_once('includes/dash.php');
 
+	// 5. Add custom functions
+	require_once('functions/functions-orientation-check.php');
+
 /* Widgets
 ------------------------------------------- */
 
@@ -61,9 +64,21 @@ if ( ! defined( 'WPINC' ) ) {
 	// g. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-featured-post-hwbucks.php');
 
+	// h. WIDGET for displaying RECENT FEEDBACK
+	require_once('includes/widget-recent-feedback-hwbucks.php');
+
+	// i. WIDGET for displaying a three-column content
+	require_once('includes/widget-three-column-hwbucks.php');
+
+	// x. WIDGET for displaying a FEATURED POST
+	require_once('includes/widget-latest-dic-visit-hwbucks.php');
+
+	// y. WIDGET for displaying a FEATURED POST
+	require_once('includes/widget-latest-post-by-category-hwbucks.php');
+
 	// z. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-three-column-img-hwbucks.php');
-
+	
 	// Add CUSTOM CSS to the SHORTCODES
 
 	function scaffold_shortcode_css() {
