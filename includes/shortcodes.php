@@ -237,12 +237,22 @@ add_shortcode('search', 'scaffold_searchform');
 
 /* List the children of the current page with featured images */
 
-function scaffold_list_child_pages_with_featured_images()
+function scaffold_list_child_pages_with_featured_images( $atts, $content = null ) {
+		$a = shortcode_atts( array(
+			'page_id' => (int)'0', // can't default to $post->ID so setting to 0, which is impossible
+		), $atts );
 
 	global $post;
 
+	// now we know what the $post ID is we can use it if there was no argument passed
+	if ($a['page_id'] == 0) {
+		$page_id = $post->ID;
+	} else {
+		$page_id = $a['page_id'];
+	}
+
 	$args=array(
-	  'post_parent' => $post->ID,
+	  'post_parent' => $page_id,
 	  'post_type' => 'page',
 	  'post_status' => 'publish',
 	  'posts_per_page' => -1,
