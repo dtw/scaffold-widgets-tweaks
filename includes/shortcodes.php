@@ -263,21 +263,31 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 	$my_query = new WP_Query($args);
 	if( $my_query->have_posts() ) {
 		$output = "";
-		$output .= "<div class='container-fluid child-nav'><div class='row'>";
+		$output .= '<!-- start container --><div id="children-selector" class="child-nav row">';
 	  while ($my_query->have_posts()) : $my_query->the_post();
 			// check if the post has a Post Thumbnail assigned to it.
 			if ( has_post_thumbnail() ) {
-				$featured_image = get_the_post_thumbnail($page->ID, 'thumbnail');
+				$featured_image = get_the_post_thumbnail_url($page->ID, 'medium');
 			} else {
 				$featured_image = '';
 				}
 
-			$output .= '<div class="child-nav-item col-lg-4 col-md-4 col-sm-4 col-xs-6	text-center">';
-			$output .= '<div class="child-nav-img"><a href="'.get_permalink().'" title="'.get_the_title().'">'.$featured_image.'</a></div>';
-			$output .= '<div class="child-nav-title"><p><a href="'.get_permalink().'">'.get_the_title().'</a></p></div>';
-			$output .= '</div>';
+      $output = $output .
+      '<div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="children-container">
+          <a class="child-img-a" href="' . get_permalink() . '">
+            <img class="child-img" src="' . $featured_image . '" alt="' . get_the_title() . '" />
+          </a>
+          <a class="child-details" "href="' . get_permalink() . '">
+            <p>' . get_the_title() . '</p>
+            <div class="hover-content">
+              <p>' . get_the_excerpt() . '</p>
+            </div>
+          </a>
+        </div>
+      </div>';
 		endwhile;
-		$output .= "</div><!-- end of row --></div><!-- end of container -->";
+		$output .= "</div><!-- end of container -->";
 		return $output;
 	}
 wp_reset_query();
