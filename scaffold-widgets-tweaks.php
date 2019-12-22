@@ -50,7 +50,7 @@ if ( ! defined( 'WPINC' ) ) {
 	require_once('includes/widget-featured-page.php');
 
 	// c. WIDGET for listing CHILD PAGES plus FEATURED IMAGES
-	require_once('includes/widget-list-child-pages-with-featured-images.php');
+	// moved to shortcodes.php
 
 	// d. WIDGET for displaying RECENT POSTS by CATEGORY
 	require_once('includes/widget-recent-posts-by-category.php');
