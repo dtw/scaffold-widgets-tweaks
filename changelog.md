@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - fixed mobile layout in Three Column Image widget
+- moved [childrenwithimages] shortcode from own file
+- added a page_id argument to [childrenwithimages]
+
+### Removed
+- [childrenwithimages] widget file
 
 ## [1.22.2] - 2019-11-29
 ### Changed
