@@ -1,8 +1,9 @@
 <?php
 
-function scaffold_list_child_pages_with_excerpts() { 
+// Create a shortcode to list CHILD PAGES
+function scaffold_list_child_pages_with_excerpts() {
 
-global $post; 
+global $post;
 
 $args=array(
   'post_parent' => $post->ID,
@@ -31,27 +32,13 @@ wp_reset_query();
 
 add_shortcode('children', 'scaffold_list_child_pages_with_excerpts');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Create function to list CHILD PAGES
 
 // Use scaffold_list_child_pages(); in a template
 
-function scaffold_list_child_pages() { 
+function scaffold_list_child_pages() {
 
-global $post; 
+global $post;
 
 if ( is_page() && $post->post_parent )
 
@@ -95,7 +82,7 @@ class scaffold_list_child_pages extends WP_Widget {
 					'classname'   => 'scaffold_widget_child_pages widget_child_pages',
 					'description' => 'Subnavigation, a list of links to child pages'
 	)
-		 
+
 			);
 	}
 
@@ -108,7 +95,7 @@ class scaffold_list_child_pages extends WP_Widget {
 		extract($args);
 
 		// Widget options
-		$title 	 = apply_filters('widget_title', $instance['title'] ); // Title		
+		$title 	 = apply_filters('widget_title', $instance['title'] ); // Title
 
         // Output
 
@@ -123,17 +110,17 @@ if( count( $children ) != 0 || is_page() && $post->post_parent ) {
 	/** Widget control update */
 	function update( $new_instance, $old_instance ) {
 		$instance    = $old_instance;
-		
+
 		//Let's turn that array into something the Wordpress database can store
 		$instance['title']  = strip_tags( $new_instance['title'] );
 		return $instance;
 	}
-	
+
 	/**
 	* Widget settings
 	**/
-	function form( $instance ) {	
-	
+	function form( $instance ) {
+
 		    // instance exist? if not set defaults
 		    if ( $instance ) {
 				$title  = $instance['title'];
@@ -141,14 +128,14 @@ if( count( $children ) != 0 || is_page() && $post->post_parent ) {
 			    //These are our defaults
 				$title  = '';
 		    }
-			
+
 			// The widget form
 			?>
 			<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" class="widefat" />
 			</p>
-	<?php 
+	<?php
 	}
 
 } // class scaffold_list_child_pages
