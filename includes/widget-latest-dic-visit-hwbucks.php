@@ -91,7 +91,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 									<?php the_excerpt(); ?>
 									<p>
 										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
-											feedbackstarrating($rating,'green');
+											echo feedbackstarrating($rating,'green');
 										?>
 									</p>
 									<p class="visit-date">Visited on
