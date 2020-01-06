@@ -4,13 +4,12 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           Scaffold Widgets and Tweaks
  *
  * @wordpress-plugin
  * Plugin Name:       Scaffold Widgets and Tweaks
  * Description:       Improves how the post editor and admin screens work in WordPress, and adds widgets for the Scaffold WordPress theme.  <strong>DO NOT DELETE !</strong>
- * Version:           1.2
- * Author:            Jason King
+ * Author:            Phil Thiselton & Jason King
  * Author URI:        http://www.kingjason.co.uk/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -78,7 +77,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 	// z. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-three-column-img-hwbucks.php');
-	
+
 	// Add CUSTOM CSS to the SHORTCODES
 
 	function scaffold_shortcode_css() {
