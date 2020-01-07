@@ -148,11 +148,11 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 					<div class="row">
 					<?php $img_orient = orientation_check(get_post_thumbnail_id($post->post_ID));
 					if ( $img_orient == 'ls') {
-						echo '<div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
+						echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
 					} elseif ( $img_orient == 'pt') {
-						echo '<div class="col-md-10 col-sm-9 col-xs-12 panel-text">';
+						echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text">';
 					} elseif ( $img_orient == 'sq') {
-						echo '<div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
+						echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
 					}
 					?>
 							<div class="row">
@@ -180,11 +180,11 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 							</div>
 						</div>
 					<?php if ( $img_orient == 'ls') {
-						echo '<div class="col-md-4 col-sm-6 hidden-xs panel-icon">';
+						echo '<!--ls--><div class="col-md-4 col-sm-6 hidden-xs panel-icon">';
 					} elseif ( $img_orient == 'pt') {
-						echo '<div class="col-md-2 col-sm-3 hidden-xs panel-icon">';
+						echo '<!--pt--><div class="col-md-2 col-sm-3 hidden-xs panel-icon">';
 					} elseif ( $img_orient == 'sq') {
-						echo '<div class="col-md-3 col-sm-4 hidden-xs panel-icon">';
+						echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon">';
 					}
 					?>
 							<a href="
