@@ -83,7 +83,15 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 							<?php //if the post has an thumbnail
 							if ( has_post_thumbnail($comment->comment_post_ID) ) {
 							// add a container and wrap the thumbnail in a hyperlink to the post ?>
-								<div class="service-icon-container text-center col-md-4 col-sm-6 hidden-xs panel-icon-left">
+								<?php $img_orient = orientation_check(get_post_thumbnail_id($comment->comment_post_ID));
+								if ( $img_orient == 'ls') {
+									echo '<!--ls--><div class="col-md-4 col-sm-6 hidden-xs panel-icon-left">';
+								} elseif ( $img_orient == 'pt') {
+									echo '<!--pt--><div class="col-md-2 col-sm-3 hidden-xs panel-icon-left">';
+								} elseif ( $img_orient == 'sq') {
+									echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
+								}
+								?>
 									<a href="
 										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
 										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,240], array('class' => 'panel-icon-img')); ?>
@@ -117,7 +125,13 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 		<!-- REVIEWED TO HERE-->
 								<?php if ($reviewcount == 1) {
 									if ( has_post_thumbnail($comment->comment_post_ID) ) {
-									echo '<div class="service-info-container col-md-8 col-sm-6 col-xs-12 panel-text-right">';
+										if ( $img_orient == 'ls') {
+											echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">';
+										} elseif ( $img_orient == 'pt') {
+											echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text-right">';
+										} elseif ( $img_orient == 'sq') {
+											echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text-right">';
+										}
 									} else {
 									echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
 									} ?>

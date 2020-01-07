@@ -67,13 +67,28 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 			<div class="row news">
 				<div class="panel col-md-12 col-sm-12 col-xs-12 panel-<?php echo $panel_colour ?>" id="dignity-in-care"><!-- start panel -->
 					<div class="row">
-						<div class="col-md-4 col-sm-6 hidden-xs panel-icon-left">
+						<?php $img_orient = orientation_check(get_post_thumbnail_id($post->post_ID));
+						if ( $img_orient == 'ls') {
+							echo '<!--ls--><div class="col-md-4 col-sm-6 hidden-xs panel-icon-left">';
+						} elseif ( $img_orient == 'pt') {
+							echo '<!--pt--><div class="col-md-2 col-sm-3 hidden-xs panel-icon-left">';
+						} elseif ( $img_orient == 'sq') {
+							echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
+						}
+						?>
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
 						</div>
-						<div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">
+						<?php if ( $img_orient == 'ls') {
+							echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">';
+						} elseif ( $img_orient == 'pt') {
+							echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text-right">';
+						} elseif ( $img_orient == 'sq') {
+							echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text-right">';
+						}
+						?>
 							<div class="row">
 								<div class="col-md-12 panel-title-right">
 									<h2><?php echo $title ?></h2>
