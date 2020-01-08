@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - change bootstrap columns in widgets based on orientation_check
+- added feedbackstarrating() arguments
 
 ## [1.23.0] - 2020-01-06
 ### Changed
