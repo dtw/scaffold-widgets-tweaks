@@ -107,6 +107,8 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 									<p>
 										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
 											echo feedbackstarrating($rating,array('colour' => 'green','size' => 'fa-lg'));
+											if ($rating == 1) echo '<span class="screen-reader-text">'.$rating.' star</span>';
+											else echo '<span class="screen-reader-text">'.$rating.' stars</span>';
 										?>
 									</p>
 									<p class="visit-date">Visited on
