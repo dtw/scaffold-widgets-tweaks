@@ -413,6 +413,7 @@ function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 	<div class="media signpost signpost-address">
 		<div class="media-left">
 				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Mailing address</span>
 		</div>
 		<div class="media-body"><p>' . $output_address . '</p></div>
 	</div>';
@@ -438,6 +439,7 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 	<div class="media signpost signpost-location">
 		<div class="media-left">
 				<i class="media-object fas fa-map-marker-alt fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Street address</span>
 		</div>
 		<div class="media-body"><p>' .$output_location . '</p></div>
 	</div>';
@@ -465,6 +467,7 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 	<div class="media signpost signpost-website">
 		<div class="media-left">
 				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Website</span>
 		</div>
 		<div class="media-body"><a href="' . $cleaned_url . '">' . $display_url . '</a></div>
 	</div>';
@@ -491,6 +494,7 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 	<div class="media signpost signpost-email">
 		<div class="media-left">
 				<i class="media-object far fa-envelope fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Email address</span>
 		</div>
 		<div class="media-body"><a href="mailto:' . $cleaned_email . '">' . $cleaned_email . '</a></div>
 	</div>';
@@ -517,6 +521,7 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 	<div class="media signpost signpost-phone">
 		<div class="media-left">
 				<i class="media-object fas fa-phone fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Telephone</span>
 		</div>
 		<div class="media-body"><p>'. $cleaned_phone . '</p></div>
 	</div>';
@@ -543,6 +548,7 @@ function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
 	<div class="media signpost signpost-text">
 		<div class="media-left">
 				<i class="media-object fas fa-sms fa-lg shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Text Message Number</span>
 		</div>
 		<div class="media-body"><p>'. $cleaned_text . '</p></div>
 	</div>';
@@ -570,6 +576,7 @@ function hwbucks_shortcode_note_callout( $atts, $content = null ) {
 	<div class="media callout callout-note">
 		<div class="media-left callout">
 				<i class="media-object far fa-sticky-note fa-2x shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Take note</span>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -597,6 +604,7 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 	<div class="media callout callout-question">
 		<div class="media-left callout">
 				<i class="media-object fas fa-question fa-2x shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">A question for you</span>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -624,6 +632,7 @@ function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 	<div class="media callout callout-warning">
 		<div class="media-left callout">
 				<i class="media-object fas fa-exclamation fa-2x shortcode-icon" aria-hidden="true"></i>
+				<span class="screen-reader-text">Warning</span>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
