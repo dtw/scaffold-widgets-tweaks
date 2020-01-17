@@ -76,7 +76,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 							echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
 						}
 						?>
-							<a href="
+							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
