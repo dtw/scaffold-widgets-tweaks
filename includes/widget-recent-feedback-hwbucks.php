@@ -92,13 +92,13 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 									echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
 								}
 								?>
-									<a href="
+									<a class="img-anchor" href="
 										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
 										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,240], array('class' => 'panel-icon-img')); ?>
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
-									<a href="
+									<a class="img-anchor" href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
 										<img class="service-icon-md" src="
@@ -111,7 +111,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 						<?php } else { ?>
 							<!-- add a container and wrap the term icon in a hyperlink to the post -->
 							<div class="service-icon-container text-center col-md-3 col-sm-3 col-xs-12">
-								<a href="
+								<a class="img-anchor" href="
 								<?php echo get_the_permalink($comment->comment_post_ID); ?>
 								">
 								<img class="service-icon-sm" src="
