@@ -42,7 +42,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
-		echo '<div class="row three-column">';
+		echo '<div class="row three-column subitem-container">';
 		for ($i = 1; $i <= 3; $i++) { ?>
 			<div class="col-md-4 col-sm-12 col-xs-12 subitem">
 				<h3>
