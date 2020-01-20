@@ -218,7 +218,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			if ( $cat_recent_posts->have_posts() ) {
 				while ( $cat_recent_posts->have_posts() ) {
 					$cat_recent_posts->the_post(); ?>
-					<div class="col-md-4 col-sm-4 hidden-xs subitem" style="padding-right: 2rem;">
+					<div class="col-md-4 col-sm-4 hidden-xs subitem">
 						<h3>
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
