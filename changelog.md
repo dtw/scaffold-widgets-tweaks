@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.25.0] - 2020-01-21
+### Added
+- new hover effects for widget subitems
+
+## Changed
+- screen reader hints for ratings added to all star ratings
+- updated widget layouts with semantic classes and IDs
+- support (accessible) anchor hover style
+
 ## [1.24.0] - 2020-01-10
 ### Changed
 - change bootstrap columns in widgets based on orientation_check
