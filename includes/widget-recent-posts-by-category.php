@@ -251,7 +251,7 @@ $sticky = get_option( 'sticky_posts' );
 				echo '<div class="col-md-3 col-sm-6 col-xs-12" style="min-height: 350px;">';
 				
 					if ( has_post_thumbnail(large) ) : ?>
-    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+    <a class="img-anchor" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
         <?php the_post_thumbnail('thumbnail'); ?>
     </a>
 <?php endif;

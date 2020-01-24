@@ -78,7 +78,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 hidden-xs panel-icon">
-							<a href="
+							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240]); ?>
 							</a>

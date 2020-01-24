@@ -60,11 +60,10 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 		));
 
 		// no use of $before_widget
-
+		echo '<div class="row latest-dic-visit">';
 		if( $dic_query->have_posts() ) :
 			while($dic_query->have_posts()) : $dic_query->the_post();
 			$dic = get_post(); ?>
-			<div class="row news">
 				<div class="panel col-md-12 col-sm-12 col-xs-12 panel-<?php echo $panel_colour ?>" id="dignity-in-care"><!-- start panel -->
 					<div class="row">
 						<?php $img_orient = orientation_check(get_post_thumbnail_id($post->post_ID));
@@ -76,7 +75,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 							echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
 						}
 						?>
-							<a href="
+							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
@@ -107,6 +106,8 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 									<p>
 										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
 											echo feedbackstarrating($rating,array('colour' => 'green','size' => 'fa-lg'));
+											if ($rating == 1) echo '<span class="screen-reader-text">'.$rating.' star</span>';
+											else echo '<span class="screen-reader-text">'.$rating.' stars</span>';
 										?>
 									</p>
 									<p class="visit-date">Visited on
@@ -120,10 +121,10 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 					<!-- end of column -->
 				</div>
 					<!-- end of panel -->
-			</div>
 		<?php
 			endwhile;
 			endif; wp_reset_query();
+			echo '</div>';
 }
 	// Save widget settings
 

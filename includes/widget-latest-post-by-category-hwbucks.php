@@ -139,7 +139,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 
 		) );
 
-		echo $before_widget;
+		echo '<div class="row latest-post-'.strtolower(get_the_category_by_ID($category)).'">';
 		if ( $cat_recent_posts->have_posts() ) {
 			$cat_recent_posts->the_post();
 			// start the panel
@@ -187,7 +187,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 						echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon">';
 					}
 					?>
-							<a href="
+							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
 								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
 							</a>
@@ -212,12 +212,13 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 				'cat'            => $category,
 				'post__not_in' 		=> $sticky,
 				'offset' 		=> $sticky_offset)
-			);
-
+			);?>
+			<div class="col-sm-12 hidden-xs subitem-container">
+			<?php
 			if ( $cat_recent_posts->have_posts() ) {
 				while ( $cat_recent_posts->have_posts() ) {
 					$cat_recent_posts->the_post(); ?>
-					<div class="col-md-4 col-sm-4 hidden-xs" style="padding-right: 2rem;">
+					<div class="col-md-4 col-sm-4 hidden-xs subitem">
 						<h3>
 							<a href="
 								<?php the_permalink(); ?>" rel="bookmark">
@@ -234,10 +235,11 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 				<?php }
 				} else {
 					echo 'No posts yet...';
-				}
-			wp_reset_postdata();
+				}?>
+			</div><!-- end subitem-container -->
+			<?php wp_reset_postdata();
 			}
-		echo $after_widget;
+		echo '</div>';
 	}
 }
 ?>

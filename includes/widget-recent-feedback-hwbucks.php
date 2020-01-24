@@ -64,12 +64,16 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 				<?php if ($reviewcount == 1) { ?>
 					<!-- start the main panel -->
 					<?php echo '<div class="panel col-md-12 col-sm-12 col-xs-12 panel-' . $panel_colour . '">'?>
+				<?php } elseif ($reviewcount == 2) { ?>
+					<!-- start the first small panel -->
+					<div class="subitem-container col-sm-12 hidden-xs">
+					<div class="subitem col-md-4 col-sm-6 hidden-xs">
 				<?php } elseif ($reviewcount == 4) { ?>
 					<!-- start the final small panel -->
-					<div class="col-md-4 hidden-sm hidden-xs">
+					<div class="subitem col-md-4 hidden-sm hidden-xs">
 				<?php } else { ?>
 					<!-- start a smaller panel -->
-					<div class="col-md-4 col-sm-6 hidden-xs">
+					<div class="subitem col-md-4 col-sm-6 hidden-xs">
 				<?php } ?>
 				<?php 										// Display icon for taxonomy term
 					$term_ids = get_the_terms( $comment->comment_post_ID, 'service_types' );	// Find taxonomies
@@ -92,13 +96,13 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 									echo '<!--sq--><div class="col-md-3 col-sm-4 hidden-xs panel-icon-left">';
 								}
 								?>
-									<a href="
+									<a class="img-anchor" href="
 										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
 										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,240], array('class' => 'panel-icon-img')); ?>
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
 								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
-									<a href="
+									<a class="img-anchor" href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
 										<img class="service-icon-md" src="
@@ -111,7 +115,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 						<?php } else { ?>
 							<!-- add a container and wrap the term icon in a hyperlink to the post -->
 							<div class="service-icon-container text-center col-md-3 col-sm-3 col-xs-12">
-								<a href="
+								<a class="img-anchor" href="
 								<?php echo get_the_permalink($comment->comment_post_ID); ?>
 								">
 								<img class="service-icon-sm" src="
@@ -121,80 +125,73 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								" class="panel-icon-img" />
 						<?php } ?>
 					</a>
-				</div>
-		<!-- REVIEWED TO HERE-->
-								<?php if ($reviewcount == 1) {
-									if ( has_post_thumbnail($comment->comment_post_ID) ) {
-										if ( $img_orient == 'ls') {
-											echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">';
-										} elseif ( $img_orient == 'pt') {
-											echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text-right">';
-										} elseif ( $img_orient == 'sq') {
-											echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text-right">';
-										}
-									} else {
-									echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
-									} ?>
-										<div class="row">
-											<div class="col-md-12 panel-title-right">
-												<h2><?php echo $title ?></h2>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12 col-sm-12 col-xs-12 panel-content-right">
-												<a class="title-link" href="
-													<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-													<?php echo get_the_title($comment->comment_post_ID); ?>
-												</a>
-								<?php } else { ?>
-									<div class="service-info-container-sm col-md-9 col-sm-9 col-xs-12">
-										<h3 style="margin: 0; padding-bottom: .5rem;">
-											<a href="
-												<?php echo get_the_permalink($comment->comment_post_ID); ?>">
-												<?php echo get_the_title($comment->comment_post_ID); ?>
-											</a>
-										</h3>
-								<?php } ?>
-											<?php if ($reviewcount == 1) { ?>
-												<p>
-													<?php
-													// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
-													// wpautop converts double line breaks to <p></p>
-													// i.e. this keeps line breaks in the comment
-														echo wpautop(mb_strimwidth($comment->comment_content,0,300," ..."), true);
-													?>
-												</p>
-											<?php } ?>
-											<?php // Display star rating
-											$individual_rating = get_comment_meta( $comment->comment_ID, 'feedback_rating', true ); ?>
-											<p class="star-rating p-rating">
-												<?php echo feedbackstarrating($individual_rating,array('size' => 'fa-lg')); ?>
-											</p>
-											<p class="review-date-time">
-												<strong>
-													<?php echo human_time_diff( strtotime($comment->comment_date), current_time( 'timestamp' ) ); ?> ago
-												</strong>
-											</p>
-											<?php if ($reviewcount == 1) {
-												echo "</div>";
-												echo "</div>";
-											} ?>
+				</div><!-- close icon container -->
+				<?php //this outputs one opening div
+				if ($reviewcount == 1) {
+					if ( has_post_thumbnail($comment->comment_post_ID) ) {
+						if ( $img_orient == 'ls') {
+							echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text-right">';
+						} elseif ( $img_orient == 'pt') {
+							echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text-right">';
+						} elseif ( $img_orient == 'sq') {
+							echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text-right">';
+						}
+					} else {
+						echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
+					}
+			//<div>
+				?>
+					<div class="row">
+						<div class="col-md-12 panel-title-right">
+							<h2><?php echo $title ?></h2>
 						</div>
 					</div>
-				</div>
-											<?php
-			$reviewcount = $reviewcount + 1;
-
-
-			} // end of if there is a rating ?>
-								<!-- end of col -->
-								<?php	  // end of loop?
-
-		echo "
-							</div>
-							<!-- end of row -->";
-
-		} else {
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 panel-content-right">
+							<a class="title-link" href="
+								<?php echo get_the_permalink($comment->comment_post_ID); ?>">
+								<?php echo get_the_title($comment->comment_post_ID); ?>
+							</a>
+				<?php } else { ?>
+					<div class="service-info-container-sm col-md-9 col-sm-9 col-xs-12">
+						<h3 style="margin: 0; padding-bottom: .5rem;">
+							<a href="
+								<?php echo get_the_permalink($comment->comment_post_ID); ?>">
+								<?php echo get_the_title($comment->comment_post_ID); ?>
+							</a>
+						</h3>
+				<?php } ?>
+				<?php if ($reviewcount == 1) {
+					// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
+					// wpautop converts double line breaks to <p></p>
+					// i.e. this keeps line breaks in the comment
+					echo wpautop(mb_strimwidth($comment->comment_content,0,300," ..."), true);
+				}
+				// Display star rating
+				$individual_rating = get_comment_meta( $comment->comment_ID, 'feedback_rating', true ); ?>
+						<p class="star-rating p-rating">
+							<?php echo feedbackstarrating($individual_rating,array('size' => 'fa-lg'));
+								if ($individual_rating == 1) echo '<span class="screen-reader-text">'.$individual_rating.' star</span>';
+								else echo '<span class="screen-reader-text">'.$individual_rating.' stars</span>';
+							?>
+						</p>
+						<p class="review-date-time">
+							<strong>
+								<?php echo human_time_diff( strtotime($comment->comment_date), current_time( 'timestamp' ) ); ?> ago
+							</strong>
+						</p>
+				<?php if ($reviewcount == 1) { ?>
+				</div><!-- close panel-content-right-->
+			</div><!-- close row -->
+				<?php } ?>
+			</div><!-- close service-info-container-sm | service-info-container | panel-text-right -->
+		</div> <!-- close row -->
+	</div> <!-- close panel | subitem -->
+				<?php	$reviewcount = $reviewcount + 1;
+			} // end of loop ?>
+	</div><!-- close subitem-container -->
+</div><!-- end of feedback row -->
+		<?php } else {
 			echo 'No comments found.';
 		}
 	}

@@ -409,10 +409,11 @@ function hwbucks_shortcode_signpost_address_object( $atts, $content = null ) {
 	} else {
 		$output_address = $content;
 	}
+	$label = 'Mailing address';
 	$address_object = '
 	<div class="media signpost signpost-address">
 		<div class="media-left">
-				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-pencil-alt fa-lg shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body"><p>' . $output_address . '</p></div>
 	</div>';
@@ -434,6 +435,7 @@ function hwbucks_shortcode_signpost_location_object( $atts, $content = null ) {
 	} else {
 		$output_location = $content;
 	}
+	$label = 'Street address';
 	$location_object = '
 	<div class="media signpost signpost-location">
 		<div class="media-left">
@@ -461,10 +463,11 @@ function hwbucks_shortcode_signpost_website_object( $atts, $content = null ) {
 		$cleaned_url = wp_strip_all_tags($content);
 	}
 	$display_url = preg_replace("(^https?://)", "", $cleaned_url );
+	$label = 'Website';
 	$website_object = '
 	<div class="media signpost signpost-website">
 		<div class="media-left">
-				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-external-link-alt fa-lg shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body"><a href="' . $cleaned_url . '">' . $display_url . '</a></div>
 	</div>';
@@ -487,10 +490,11 @@ function hwbucks_shortcode_signpost_email_object( $atts, $content = null ) {
 	} else {
 		$cleaned_email = wp_strip_all_tags($content);
 	}
+	$label = 'Email address';
 	$email_object = '
 	<div class="media signpost signpost-email">
 		<div class="media-left">
-				<i class="media-object far fa-envelope fa-lg shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object far fa-envelope fa-lg shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body"><a href="mailto:' . $cleaned_email . '">' . $cleaned_email . '</a></div>
 	</div>';
@@ -513,10 +517,11 @@ function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 	} else {
 		$cleaned_phone = wp_strip_all_tags($content);
 	}
+	$label = 'Telephone';
 	$phone_object = '
 	<div class="media signpost signpost-phone">
 		<div class="media-left">
-				<i class="media-object fas fa-phone fa-lg shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-phone fa-lg shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_phone . '</p></div>
 	</div>';
@@ -539,10 +544,11 @@ function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
 	} else {
 		$cleaned_text = wp_strip_all_tags($content);
 	}
+	$label = 'Text Message Number';
 	$text_object = '
 	<div class="media signpost signpost-text">
 		<div class="media-left">
-				<i class="media-object fas fa-sms fa-lg shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-sms fa-lg shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body"><p>'. $cleaned_text . '</p></div>
 	</div>';
@@ -566,10 +572,11 @@ function hwbucks_shortcode_note_callout( $atts, $content = null ) {
 	if ( empty( $content ) ) {
 		$content = $a['text'];
 	}
+	$label = 'Take note';
 	$note_object = '
 	<div class="media callout callout-note">
 		<div class="media-left callout">
-				<i class="media-object far fa-sticky-note fa-2x shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object far fa-sticky-note fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -593,10 +600,11 @@ function hwbucks_shortcode_question_callout( $atts, $content = null ) {
 	if ( empty( $content ) ) {
 		$content = $a['text'];
 	}
+	$label = 'A question for you';
 	$question_object = '
 	<div class="media callout callout-question">
 		<div class="media-left callout">
-				<i class="media-object fas fa-question fa-2x shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-question fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -620,10 +628,11 @@ function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 	if ( empty( $content ) ) {
 		$content = $a['text'];
 	}
+	$label = 'Warning';
 	$alert_object = '
 	<div class="media callout callout-warning">
 		<div class="media-left callout">
-				<i class="media-object fas fa-exclamation fa-2x shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-exclamation fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body callout"><p>'. $content . '</p></div>
 	</div>';
@@ -654,11 +663,11 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 
 	// typecast
 	$a['hide_title'] = filter_var( $a['hide_title'], FILTER_VALIDATE_BOOLEAN );
-
+	$label = 'Attention';
 	$signpost_object = '
 	<div class="media callout callout-signpost">
 		<div class="media-left callout">
-				<i class="media-object fas fa-map-signs fa-2x shortcode-icon" aria-hidden="true"></i>
+				<i class="media-object fas fa-map-signs fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body callout">';
 		if ( ! $a['hide_title'] ) {
