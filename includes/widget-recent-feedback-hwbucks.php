@@ -105,11 +105,11 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 									<a class="img-anchor" href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
-										<img class="service-icon-md" src="
+										<img class="service-icon-md panel-icon-img" src="
 										<?php echo $term_icon; ?>
 										" alt="
 										<?php echo get_the_title($comment->comment_post_ID); ?>
-										" class="panel-icon-img"/>
+										"/>
 							<?php } ?>
 						<!-- this isn't the main panel 4x to 2x to 1x-->
 						<?php } else { ?>
@@ -118,11 +118,11 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								<a class="img-anchor" href="
 								<?php echo get_the_permalink($comment->comment_post_ID); ?>
 								">
-								<img class="service-icon-sm" src="
+								<img class="service-icon-sm panel-icon-img" src="
 								<?php echo $term_icon; ?>
 								" alt="
 								<?php echo get_the_title($comment->comment_post_ID); ?>
-								" class="panel-icon-img" />
+								"/>
 						<?php } ?>
 					</a>
 				</div><!-- close icon container -->
