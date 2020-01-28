@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.26.0] - 2020-01-28
+### Added
+- shortcode to display our reviews in pages
+
+### Changed
+- update multiple styles with altered colours to improve contrast based on WCAG2
+- switched hex colour codes to colour names where possible (e.g. white)
+- changes to validate HTML
+
 ## [1.25.0] - 2020-01-21
 ### Added
 - new hover effects for widget subitems
