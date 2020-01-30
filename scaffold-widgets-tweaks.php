@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Scaffold Widgets and Tweaks
  * Description:       Improves how the post editor and admin screens work in WordPress, and adds widgets for the Scaffold WordPress theme.  <strong>DO NOT DELETE !</strong>
- * Version:           1.25.0
+ * Version:           1.26.0
  * Author:            Phil Thiselton & Jason King
  * Author URI:        http://www.kingjason.co.uk/
  * License:           GPL-2.0+
