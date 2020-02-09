@@ -63,17 +63,17 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 				//if this is the first review ?>
 				<?php if ($reviewcount == 1) { ?>
 					<!-- start the main panel -->
-					<?php echo '<div class="panel col-md-12 col-sm-12 col-xs-12 panel-' . $panel_colour . '">'?>
+					<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
 				<?php } elseif ($reviewcount == 2) { ?>
 					<!-- start the first small panel -->
-					<div class="subitem-container col-sm-12 hidden-xs">
-					<div class="subitem col-md-4 col-sm-6 hidden-xs">
+					<div class="col-sm-12 hidden-xs subitem-container">
+					<div class="col-md-4 col-sm-6 hidden-xs subitem">
 				<?php } elseif ($reviewcount == 4) { ?>
 					<!-- start the final small panel -->
-					<div class="subitem col-md-4 hidden-sm hidden-xs">
+					<div class="col-md-4 hidden-sm hidden-xs subitem">
 				<?php } else { ?>
 					<!-- start a smaller panel -->
-					<div class="subitem col-md-4 col-sm-6 hidden-xs">
+					<div class="col-md-4 col-sm-6 hidden-xs subitem">
 				<?php } ?>
 				<?php 										// Display icon for taxonomy term
 					$term_ids = get_the_terms( $comment->comment_post_ID, 'service_types' );	// Find taxonomies
@@ -101,7 +101,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,240], array('class' => 'panel-icon-img')); ?>
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
-								<div class="service-icon-container text-center col-md-4 col-sm-3 hidden-xs panel-icon-left">
+								<div class="col-md-4 col-sm-3 hidden-xs text-center panel-icon-left service-icon-container">
 									<a class="img-anchor" href="
 									<?php echo get_the_permalink($comment->comment_post_ID); ?>
 									">
@@ -114,7 +114,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 						<!-- this isn't the main panel 4x to 2x to 1x-->
 						<?php } else { ?>
 							<!-- add a container and wrap the term icon in a hyperlink to the post -->
-							<div class="service-icon-container text-center col-md-3 col-sm-3 col-xs-12">
+							<div class="col-md-3 col-sm-3 col-xs-12 text-center service-icon-container">
 								<a class="img-anchor" href="
 								<?php echo get_the_permalink($comment->comment_post_ID); ?>
 								">
@@ -137,7 +137,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 							echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text-right">';
 						}
 					} else {
-						echo '<div class="service-info-container col-md-8 col-sm-9 col-xs-12 panel-text-right">';
+						echo '<div class="col-md-8 col-sm-9 col-xs-12 panel-text-right service-info-container">';
 					}
 			//<div>
 				?>
@@ -153,7 +153,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								<?php echo get_the_title($comment->comment_post_ID); ?>
 							</a>
 				<?php } else { ?>
-					<div class="service-info-container-sm col-md-9 col-sm-9 col-xs-12">
+					<div class="col-md-9 col-sm-9 col-xs-12 service-info-container-sm">
 						<h3 style="margin: 0; padding-bottom: .5rem;">
 							<a href="
 								<?php echo get_the_permalink($comment->comment_post_ID); ?>">
