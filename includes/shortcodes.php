@@ -228,13 +228,13 @@ function scaffold_shortcode_bootstrap_column_end() {
 
 /*  Adds a search form with scaffold styles */
 
-function scaffold_searchform( $form ) {
+function scaffold_services_search_form( $form ) {
 
 	$search_box = "<div class='jumbotron widget widget_search' style='margin: 3rem 0;'>" . get_search_form(false) . "</div>";
 	return $search_box;
 }
 
-add_shortcode('search', 'scaffold_searchform');
+add_shortcode('search', 'scaffold_services_search_form');
 
 /* List the children of the current page with featured images */
 
