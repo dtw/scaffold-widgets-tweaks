@@ -236,6 +236,14 @@ function scaffold_services_search_form( $form ) {
 
 add_shortcode('search', 'scaffold_services_search_form');
 
+function scaffold_site_search_form( $form ) {
+
+	$search_box = "<div class='jumbotron widget widget_search' style='margin: 3rem 0;'>" . do_shortcode('[wd_asp id=2]') . "</div>";
+	return $search_box;
+}
+
+add_shortcode('site_search', 'scaffold_site_search_form');
+
 /* List the children of the current page with featured images */
 
 function scaffold_list_child_pages_with_featured_images( $atts, $content = null ) {
