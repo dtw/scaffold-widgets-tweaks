@@ -59,6 +59,10 @@
   outline: 3px solid #0080A4 !important;
 }
 
+.callout-note .media-body a {
+  color:	#23527c;
+}
+
 .callout-note .media-body a:hover,
 .callout-note .media-body a:focus {
 	color: #fcf8e3;
