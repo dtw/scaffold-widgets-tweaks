@@ -230,7 +230,7 @@ function scaffold_shortcode_bootstrap_column_end() {
 
 function scaffold_services_search_form( $form ) {
 
-	$search_box = "<div class='jumbotron widget widget_search' style='margin: 3rem 0;'>" . get_search_form(false) . "</div>";
+	$search_box = "<div class='jumbotron widget widget_search' style='margin: 3rem 0;'>" . do_shortcode('[wd_asp id=1]') . "</div>";
 	return $search_box;
 }
 
