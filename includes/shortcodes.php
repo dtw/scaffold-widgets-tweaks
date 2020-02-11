@@ -661,7 +661,7 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'signpost_id' => (int)'49784', // this is the A&E signpost
 		'hide_title'  => 'false', // set to false by default
-	), $atts, 'callout_signpost' );
+	), $atts, 'embed_signpost' );
 
 	// fetch the signpost
 	$content_post = get_post($a['signpost_id']);
@@ -688,7 +688,7 @@ function hwbucks_shortcode_signpost_callout( $atts, $content = null ) {
 	return $signpost_object;
 }
 
-add_shortcode( 'callout_signpost', 'hwbucks_shortcode_signpost_callout' );
+add_shortcode( 'embed_signpost', 'hwbucks_shortcode_signpost_callout' );
 
 /* Add a mailchimp sign-up form */
 function scaffold_shortcode_mailchimp_signup() {
