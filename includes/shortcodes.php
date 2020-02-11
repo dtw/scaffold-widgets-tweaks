@@ -222,8 +222,9 @@ function scaffold_shortcode_bootstrap_column_end() {
 ------------------------ */
 
 /* this isn't a callback so I assume get_search_form is decalred elsewhere */
+/* https://developer.wordpress.org/reference/functions/get_search_form/ */
 
-add_shortcode('search', 'get_search_form');
+// add_shortcode('search', 'get_search_form');
 
 /*  Adds a search form with scaffold styles */
 
