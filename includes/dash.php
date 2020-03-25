@@ -29,7 +29,7 @@ function remove_dashboard_widgets() {
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
- 
+
 
 
 /* 3. Unregister default WIDGETS
@@ -82,7 +82,7 @@ function scaffold_admin_css() {
 function scaffold_add_editor_styles() {
 add_editor_style( 'editor.css' );
 }
-add_action( 'after_setup_theme', 'scaffold_add_editor_styles' ); 
+add_action( 'after_setup_theme', 'scaffold_add_editor_styles' );
 
 
 
