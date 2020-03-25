@@ -71,14 +71,7 @@ function scaffold_admin_css() {
 
 
 
-/* 6. Modify text in the ADMIN FOOTER
--------------------------------------------------------- */
 
-function scaffold_modify_footer_admin () {
-  echo 'This WordPress website is built and supported by Jason King &mdash; <a target="_blank" href="http://www.kingjason.co.uk">www.kingjason.co.uk</a>.';
-}
- 
-add_filter('admin_footer_text', 'scaffold_modify_footer_admin');
 
 
 

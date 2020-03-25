@@ -11,7 +11,6 @@
  * Description:       Improves how the post editor and admin screens work in WordPress, and adds widgets for the Scaffold WordPress theme.  <strong>DO NOT DELETE !</strong>
  * Version:           1.26.1
  * Author:            Phil Thiselton & Jason King
- * Author URI:        http://www.kingjason.co.uk/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
