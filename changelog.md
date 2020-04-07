@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.27.0] - 2020-04-07
+### Changed
+- site search shortcode name
+- some shortcode names from callout_ to embed_ - this is distinguishes them from simple callouts
+- CSS including support for new columns in Scaffold Child
+
+### Removed
+- old credits and broken links
+
 ## [1.26.1] - 2020-02-10
 ### Changed
 - strip URLs from comments
