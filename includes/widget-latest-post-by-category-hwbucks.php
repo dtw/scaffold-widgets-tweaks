@@ -34,10 +34,11 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 
 	function form( $instance ) {
 
-		$defaults  = array( 'title' => '', 'category' => '', 'show_extra' => false, 'panel_colour' => 'orange', 'show_btn' => true, 'btn_text' => '' );
+		$defaults  = array( 'title' => '', 'category' => '', 'show_excerpt' => true, 'show_extra' => false, 'panel_colour' => 'orange', 'show_btn' => true, 'btn_text' => '' );
 		$instance  = wp_parse_args( ( array ) $instance, $defaults );
 		$title     = $instance['title'];
 		$category  = $instance['category'];
+		$show_excerpt = $instance['show_excerpt'];
 		$show_extra = $instance['show_extra'];
 		$panel_colour = $instance['panel_colour'];
 		$show_btn = $instance['show_btn'];
@@ -61,6 +62,10 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 				'selected'   => $category)
 			);
 			?>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_excerpt' ); ?>" name="<?php echo $this->get_field_name( 'show_excerpt' ); ?>" <?php checked( $show_excerpt, 1 ); ?> />
+			<label for="<?php echo $this->get_field_id( 'show_excerpt' ); ?>">Display excerpt?</label>
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_extra' ); ?>" name="<?php echo $this->get_field_name( 'show_extra' ); ?>" <?php checked( $show_extra, 1 ); ?> />
@@ -100,6 +105,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$instance              = $old_instance;
 		$instance['title']     = wp_strip_all_tags( $new_instance['title'] );
 		$instance['category']  = wp_strip_all_tags( $new_instance['category'] );
+		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
 		$instance['show_extra'] = isset( $new_instance['show_extra'] ) ? 1 : 0;
 		$instance['panel_colour'] = $new_instance['panel_colour'];
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
@@ -123,6 +129,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 
 		$title     = $title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 		$category  = $instance['category'];
+		$show_excerpt = ( $instance['show_excerpt'] === 1 ) ? true : false;
 		$show_extra = ( $instance['show_extra'] === 1 ) ? true : false;
 		$panel_colour = $instance['panel_colour'] ;
 		$show_btn = ( $instance['show_btn'] === 1 ) ? true : false;
@@ -172,7 +179,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 									<a class="title-link" href="<?php the_permalink(); ?>" rel="bookmark">
 										<?php the_title(); ?>
 									</a>
-									<?php the_excerpt();
+									<?php if ( $show_excerpt ) { the_excerpt() };
 									if ( $show_btn ) { ?>
 										<p class="clear-both">
 											<a class="btn btn-primary" href="<?php echo get_category_link($category); ?>">
