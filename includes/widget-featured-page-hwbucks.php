@@ -45,6 +45,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 			$page_id = (int) $instance['page'];
 			$title = $instance['title'] ;
 			$panel_colour = $instance['panel_colour'] ;
+			$show_btn = $instance['show_btn'];
 			$btn_text = $instance['btn_text'] ;
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
@@ -68,11 +69,13 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 										<?php the_title(); ?>
 									</a>
 									<p class="panel-excerpt"> <?php echo get_the_excerpt(); ?> </p>
-									<p class="clear-both">
-										<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
-											<?php echo $btn_text; ?>
-										</a>
-									</p>
+									<?php if ( $show_btn ) { ?>
+										<p class="clear-both">
+											<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
+												<?php echo $btn_text; ?>
+											</a>
+										</p>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -98,6 +101,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$instance['page'] = (int)( $new_instance['page'] );
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
+		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
 		return $instance;
 	}
@@ -105,6 +109,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$page = isset( $instance['page'] ) ? (int) $instance['page'] : 0;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
+		$show_btn = $instance['show_btn'];
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
 		?>
 		<p>
@@ -126,6 +131,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 					?>
 				</select>
 			</label>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_btn' ); ?>" name="<?php echo $this->get_field_name( 'show_btn' ); ?>" <?php checked( $show_btn, 1 ); ?> />
+			<label for="<?php echo $this->get_field_id( 'show_btn' ); ?>">Display link button?</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text:</label>
