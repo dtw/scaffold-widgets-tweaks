@@ -102,7 +102,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 										</a>
 										<?php $city = get_post_meta( $dic->ID, 'hw_services_city', true ); if ($city) { echo $city; }?>
 									</span>
-									<?php the_excerpt(); ?>
+									<p class="panel-excerpt"> <?php echo get_the_excerpt(); ?> </p>
 									<p>
 										<?php $rating = get_post_meta( $dic->ID, 'hw_services_overall_rating', true );
 											echo feedbackstarrating($rating,array('colour' => 'green','size' => 'fa-lg'));

@@ -161,12 +161,16 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 							</a>
 						</h3>
 				<?php } ?>
-				<?php if ($reviewcount == 1) {
-					// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
-					// wpautop converts double line breaks to <p></p>
-					// i.e. this keeps line breaks in the comment
-					echo wpautop(wp_strip_all_tags(mb_strimwidth($comment->comment_content,0,300," ...")), true);
-				}
+				<?php if ($reviewcount == 1) { ?>
+					<p class="panel-excerpt">
+						<?php
+						// mb_strimwidth trims comment to 300 (if needed) and adds an ellipsis
+						// wpautop converts double line breaks to <p></p>
+						// i.e. this keeps line breaks in the comment
+						echo wpautop(wp_strip_all_tags(mb_strimwidth($comment->comment_content,0,300," ...")), true);
+						?>
+					</p>
+				<?php }
 				// Display star rating
 				$individual_rating = get_comment_meta( $comment->comment_ID, 'feedback_rating', true ); ?>
 						<p class="star-rating p-rating">
