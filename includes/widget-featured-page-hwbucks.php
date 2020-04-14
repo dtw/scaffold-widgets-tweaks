@@ -44,6 +44,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		if ( isset( $instance['page'] ) && $instance['page'] != -1 ) {
 			$page_id = (int) $instance['page'];
 			$title = $instance['title'] ;
+			$show_excerpt = $instance['show_excerpt'];
 			$panel_colour = $instance['panel_colour'] ;
 			$show_btn = $instance['show_btn'];
 			$btn_text = $instance['btn_text'] ;
@@ -68,8 +69,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 										<?php the_permalink(); ?>" rel="bookmark">
 										<?php the_title(); ?>
 									</a>
-									<p class="panel-excerpt"> <?php echo get_the_excerpt(); ?> </p>
-									<?php if ( $show_btn ) { ?>
+									<?php if ( $show_excerpt ) { ?>
+										<p class="panel-excerpt"> <?php echo get_the_excerpt(); ?> </p>
+									<?php	}
+									if ( $show_btn ) { ?>
 										<p class="clear-both">
 											<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
 												<?php echo $btn_text; ?>
@@ -100,6 +103,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['page'] = (int)( $new_instance['page'] );
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
+		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
 		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
@@ -108,6 +112,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	function form( $instance ) {
 		$page = isset( $instance['page'] ) ? (int) $instance['page'] : 0;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
+		$show_excerpt = $instance['show_excerpt'];
 		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
 		$show_btn = $instance['show_btn'];
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
@@ -115,6 +120,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content title:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_excerpt' ); ?>" name="<?php echo $this->get_field_name( 'show_excerpt' ); ?>" <?php checked( $show_excerpt, 1 ); ?> />
+			<label for="<?php echo $this->get_field_id( 'show_excerpt' ); ?>">Display excerpt?</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('panel_colour'); ?>">Panel colour:
