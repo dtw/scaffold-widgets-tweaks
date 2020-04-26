@@ -848,7 +848,7 @@ function scaffold_shortcode_last_update( $atts, $content = null ) {
 
 	$last_update_div = '
 	<div class="last-update" id="last-update">
-		' . strtotime(get_the_modified_date()) . '
+		<p class="lead">Last updated: ' . get_the_modified_date() . '</p>
 	</div> ';
 	return $last_update_div;
 }
