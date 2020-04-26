@@ -842,4 +842,17 @@ function scaffold_shortcode_bootstrap_tab_pane( $atts, $content = null ) {
 
 add_shortcode('bootstrap_tab_pane', 'scaffold_shortcode_bootstrap_tab_pane');
 
+/* Add the date the post or page was last updated/modified */
+
+function scaffold_shortcode_last_update( $atts, $content = null ) {
+
+	$last_update_div = '
+	<div class="last-update" id="last-update">
+		' . strtotime(get_the_modified_date()) . '
+	</div> ';
+	return $last_update_div;
+}
+
+add_shortcode('last_updated', 'scaffold_shortcode_last_update');
+
 ?>
