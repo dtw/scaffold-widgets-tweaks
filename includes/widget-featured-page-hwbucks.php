@@ -48,6 +48,8 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 			$panel_colour = $instance['panel_colour'] ;
 			$show_btn = $instance['show_btn'];
 			$btn_text = $instance['btn_text'] ;
+			$show_last_updated = $instance['show_last_updated'];
+			$last_updated_text = $instance['last_updated_text'];
 			$p = new WP_Query( array( 'page_id' => $page_id ) );
 			if ( $p->have_posts() ) {
 				$p->the_post();
@@ -69,7 +71,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 										<?php the_permalink(); ?>" rel="bookmark">
 										<?php the_title(); ?>
 									</a>
-									<?php if ( $show_excerpt ) { ?>
+									<?php if ( $show_last_updated ) { ?>
+										<p class="panel-updated"> <?php echo $last_updated_text . ' ' . get_the_modified_date(); ?> </p>
+									<?php }
+									if ( $show_excerpt ) { ?>
 										<p class="panel-excerpt"> <?php echo get_the_excerpt(); ?> </p>
 									<?php	}
 									if ( $show_btn ) { ?>
@@ -107,6 +112,8 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
+		$instance['show_last_updated'] = isset( $new_instance['show_last_updated'] ) ? 1 : 0;
+		$instance['last_updated_text'] = wp_strip_all_tags( $new_instance['last_updated_text'] );
 		return $instance;
 	}
 	function form( $instance ) {
@@ -116,6 +123,8 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
 		$show_btn = $instance['show_btn'];
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
+		$show_last_updated = $instance['show_last_updated'];
+		$last_updated_text = ! empty( $instance['last_updated_text'] ) ? $instance['last_updated_text'] : 'Last updated: ';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content title:</label>
@@ -148,6 +157,14 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'btn_text' ); ?>" name="<?php echo $this->get_field_name( 'btn_text' ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_last_updated' ); ?>" name="<?php echo $this->get_field_name( 'show_last_updated' ); ?>" <?php checked( $show_last_updated, 1 ); ?> />
+			<label for="<?php echo $this->get_field_id( 'show_last_updated' ); ?>">Display last update?</label>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'last_updated_text' ); ?>">Text to display for last update:</label>
+			<input type="text" id="<?php echo $this->get_field_id( 'last_updated_text' ); ?>" name="<?php echo $this->get_field_name( 'last_updated_text' ); ?>" value="<?php echo esc_attr( $last_updated_text ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'page' ); ?>">Which page?</label>
