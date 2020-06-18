@@ -22,7 +22,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Featured_Post_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Featured_Post_Widget',
 		$name = 'HW Featured Post',
 		array(
@@ -30,6 +30,10 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			'description' => 'Display a specific post title, excerpt and featured image (choose most recent 10 posts)'
 	)
 		);
+	}
+
+	function SF_HWBucks_Featured_Post_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

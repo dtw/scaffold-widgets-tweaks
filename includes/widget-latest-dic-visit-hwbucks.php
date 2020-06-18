@@ -22,7 +22,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Latest_DIC_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Latest_DIC_Widget',
 		$name = 'HW Latest DIC Visit',
 		array(
@@ -30,6 +30,10 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 			'description' => 'Display full details of the latest DIC visit as a panel.'
 	)
 		);
+	}
+
+	function SF_HWBucks_Latest_DIC_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

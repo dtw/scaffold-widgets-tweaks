@@ -22,7 +22,7 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Featured_Page_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Featured_Page_Widget',
 		$name = 'HW Featured Page',
 		array(
@@ -30,6 +30,10 @@ class SF_HWBucks_Featured_Page_Widget extends WP_Widget {
 			'description' => 'Display a specific page title, excerpt and featured image'
 	)
 		);
+	}
+
+	function SF_HWBucks_Featured_Page_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

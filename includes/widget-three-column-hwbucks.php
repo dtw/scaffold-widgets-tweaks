@@ -23,7 +23,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Three_Column_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Three_Column_Widget',
 		$name = 'HW Three Column',
 		array(
@@ -31,6 +31,10 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			'description' => 'Display links to posts or pages in a three column layout'
 	)
 		);
+	}
+
+	function SF_HWBucks_Three_Column_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

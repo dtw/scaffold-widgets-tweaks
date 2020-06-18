@@ -22,7 +22,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Recent_Feedback_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Recent_Feedback_Widget',
 		$name = 'HW Recent Feedback',
 		array(
@@ -30,6 +30,10 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 			'description' => 'Display full details of the latest feedback comment as a panal, with the next 3 most recent star ratings below.'
 	)
 		);
+	}
+
+	function SF_HWBucks_Recent_Feedback_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

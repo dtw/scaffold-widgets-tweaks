@@ -21,14 +21,18 @@ class SF_Featured_Page_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_Featured_Page_Widget() {
-		parent::WP_Widget( 'SF_Featured_Page_Widget', 
+	function __construct() {
+		parent::WP_Widget( 'SF_Featured_Page_Widget',
 		$name = 'SF Featured Page',
 		array(
 			'classname'   => 'scaffold_widget_featured_page widget_featured_page',
 			'description' => 'Display a specific page title, excerpt and featured image'
 	)
 		);
+	}
+
+	function SF_Featured_Page_Widget() {
+		self::__construct();
 	}
 	/**
 	 * Outputs the content for a new widget instance.

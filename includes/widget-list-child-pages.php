@@ -74,7 +74,7 @@ function init_scaffold_list_child_pages() { return register_widget('scaffold_lis
 
 class scaffold_list_child_pages extends WP_Widget {
 	/** constructor */
-	function scaffold_list_child_pages() {
+	function __construct() {
 		parent::WP_Widget(
 			'scaffold_list_child_pages',
 			$name = 'SF List Child Pages',
@@ -86,6 +86,9 @@ class scaffold_list_child_pages extends WP_Widget {
 			);
 	}
 
+	function scaffold_list_child_pages() {
+		self::__construct();
+	}
 
 	/**
 	* This is our Widget

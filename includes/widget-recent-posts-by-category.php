@@ -15,8 +15,8 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 
 	// Process widget
 
-	function scaffold_widget_cat_recent_posts() {
-	
+	function __construct() {
+
 		$widget_ops = array(
 
 			'classname'   => 'scaffold_widget_cat_recent_posts widget_recent_entries',
@@ -25,7 +25,11 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 		);
 		
 		$this->WP_Widget( 'scaffold_widget_cat_recent_posts', 'SF Recent Posts', $widget_ops );
-	
+
+	}
+
+	function scaffold_widget_cat_recent_posts() {
+		self::__construct();
 	}
 	
 	// Build the widget settings form

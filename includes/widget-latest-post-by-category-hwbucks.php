@@ -21,7 +21,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 	 *
 	 * @access public
 	 */
-	function SF_HWBucks_Latest_Post_Widget() {
+	function __construct() {
 		parent::WP_Widget( 'SF_HWBucks_Latest_Post_Widget',
 		$name = 'HW Latest Post by Category',
 		array(
@@ -30,6 +30,9 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		);
 	}
 
+	function SF_HWBucks_Latest_Post_Widget() {
+		self::__construct();
+	}
 	// Build the widget settings form
 
 	function form( $instance ) {

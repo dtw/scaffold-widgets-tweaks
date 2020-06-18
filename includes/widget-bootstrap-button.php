@@ -11,7 +11,7 @@ class scaffold_bootstrap_button extends WP_Widget {
 
 
 	/** constructor */
-	function scaffold_bootstrap_button() {
+	function __construct() {
 		parent::WP_Widget( 'scaffold_bootstrap_button',
 		$name = 'SF Link button',
 
@@ -20,6 +20,10 @@ class scaffold_bootstrap_button extends WP_Widget {
 			'description' => 'Button that links to any URL'
 		)
 	);
+	}
+
+	function scaffold_bootstrap_button() {
+		self::__construct();
 	}
 
 	/**
