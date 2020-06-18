@@ -81,7 +81,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 						?>
 							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail([auto,240], array('class' => 'panel-icon-img')); ?>
+								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img')); ?>
 							</a>
 						</div>
 						<?php if ( $img_orient == 'ls') {

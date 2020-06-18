@@ -102,7 +102,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 								?>
 									<a class="img-anchor" href="
 										<?php echo get_the_permalink($comment->comment_post_ID); ?>" rel="bookmark">
-										<?php echo get_the_post_thumbnail($comment->comment_post_ID,[auto,240], array('class' => 'panel-icon-img')); ?>
+										<?php echo get_the_post_thumbnail($comment->comment_post_ID,'medium', array('class' => 'panel-icon-img')); ?>
 							<?php } else {
 								//if there is no thumb... the col's are different?! ?>
 								<div class="col-md-4 col-sm-3 hidden-xs text-center panel-icon-left service-icon-container">
