@@ -21,9 +21,9 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 
 			'classname'   => 'scaffold_widget_cat_recent_posts widget_recent_entries',
 			'description' => 'Choose a category, how many posts, date and excerpt optional'
-		
+
 		);
-		
+
 		$this->WP_Widget( 'scaffold_widget_cat_recent_posts', 'SF Recent Posts', $widget_ops );
 
 	}
@@ -31,11 +31,11 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 	function scaffold_widget_cat_recent_posts() {
 		self::__construct();
 	}
-	
+
 	// Build the widget settings form
 
 	function form( $instance ) {
-	
+
 		$defaults  = array( 'title' => '', 'category' => '', 'number' => 5, 'show_date' => '' );
 		$instance  = wp_parse_args( ( array ) $instance, $defaults );
 		$title     = $instance['title'];
@@ -43,17 +43,17 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 		$number    = $instance['number'];
 		$show_date = $instance['show_date'];
 		$show_excerpt = isset($instance['show_excerpt']) ? esc_attr( $instance['show_excerpt'] ) : '';
-		
+
 		?>
-		
+
 		<p>
 			<label for="scaffold_widget_cat_recent_posts_title">Title:</label>
 			<input type="text" class="widefat" id="scaffold_widget_cat_recent_posts_title" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
-		
+
 		<p>
-			<label for="scaffold_widget_cat_recent_posts_username">Category:</label>				
-			
+			<label for="scaffold_widget_cat_recent_posts_username">Category:</label>
+
 			<?php
 
 			wp_dropdown_categories( array(
@@ -70,7 +70,7 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 			?>
 
 		</p>
-		
+
 		<p>
 			<label for="scaffold_widget_cat_recent_posts_number">Number of posts to show: </label>
 			<input type="text" id="scaffold_widget_cat_recent_posts_number" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo esc_attr( $number ); ?>" size="3" />
@@ -85,9 +85,9 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 			<input type="checkbox" id="scaffold_widget_cat_recent_posts_show_excerpt" class="checkbox" name="<?php echo $this->get_field_name( 'show_excerpt' ); ?>" <?php checked( $show_excerpt, 1 ); ?> />
 			<label for="scaffold_widget_cat_recent_posts_show_excerpt">Display excerpt?</label>
 		</p>
-		
+
 		<?php
-	
+
 	}
 
 	// Save widget settings
@@ -150,7 +150,7 @@ if (!$sticky_exclude) {
 
 
 
-		$cat_recent_posts = new WP_Query( array( 
+		$cat_recent_posts = new WP_Query( array(
 
 			'post_type'      => 'post',
 			'post_status'      => 'publish',
@@ -171,7 +171,7 @@ if (!$sticky_exclude) {
 				if ( has_post_thumbnail() ) {
 				echo '<div class="col-md-2 col-sm-3 hidden-xs">';
 					}
-					
+
 					if ( has_post_thumbnail() ) : ?>
     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
         <?php the_post_thumbnail('thumbnail'); ?>
@@ -180,17 +180,17 @@ if (!$sticky_exclude) {
 				<?php if ( has_post_thumbnail() ) {
 					echo '</div><!-- end of column -->';
 				}
-			
+
 					endif;
-			
 
 
-				if ( has_post_thumbnail() ) {				
+
+				if ( has_post_thumbnail() ) {
 				echo '<div class="col-md-10 col-sm-9 col-xs-12">';
 				} else {
 				echo '<div class="col-md-12 col-sm-12 col-xs-12">';
 				}
-				
+
 				echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
 				if ( $show_excerpt ) { echo '<p class="lead">' . get_the_excerpt() . '</p>';
 				}
@@ -232,7 +232,7 @@ if (!$sticky_exclude) {
 
 $sticky = get_option( 'sticky_posts' );
 
-		$cat_recent_posts = new WP_Query( array( 
+		$cat_recent_posts = new WP_Query( array(
 
 			'post_type'      => 'post',
 			'post_status'      => 'publish',
@@ -240,7 +240,7 @@ $sticky = get_option( 'sticky_posts' );
 			'cat'            => $category,
 			'post__not_in' 		=> $sticky,
 			'offset' 		=> $sticky_offset
-			
+
 
 		) );
 
@@ -253,15 +253,15 @@ $sticky = get_option( 'sticky_posts' );
 				$cat_recent_posts->the_post();
 
 				echo '<div class="col-md-3 col-sm-6 col-xs-12" style="min-height: 350px;">';
-				
+
 					if ( has_post_thumbnail(large) ) : ?>
     <a class="img-anchor" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
         <?php the_post_thumbnail('thumbnail'); ?>
     </a>
 <?php endif;
-			
-				
-				
+
+
+
 				echo '<h3 style="margin: 0; padding-bottom: .5rem;"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
 				if ( $show_date ) echo '<span class="post-date">' . get_the_time( get_option( 'date_format' ) ) . '</span>';
 				if ( $show_excerpt ) echo '<span class="post-excerpt">' . the_excerpt() . '</span>';

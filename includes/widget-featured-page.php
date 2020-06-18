@@ -57,9 +57,9 @@ class SF_Featured_Page_Widget extends WP_Widget {
 
     <div class="media row">
 
-        
+
 				<?php if ( $image_size != 'no-thumbnail' && has_post_thumbnail() ) : ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">						
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail( $image_size, array( 'class' => 'media-object alignright' ) ); ?></a>
 						<?php endif; ?>
 
