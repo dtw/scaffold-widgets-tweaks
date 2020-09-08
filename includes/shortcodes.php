@@ -855,4 +855,18 @@ function scaffold_shortcode_last_update( $atts, $content = null ) {
 
 add_shortcode('last_updated', 'scaffold_shortcode_last_update');
 
+/* Add a facebook share button for the specified link - if no link is specified share the current page */
+
+function scaffold_shortcode_facebook_share_ui( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'button_txt' => 'Share to Facebook', //
+		'url'  => get_permalink(), // set to current page by default
+	), $atts, 'share_facebook' );
+
+	$facebook_share_ui_output = '<a href="https://www.facebook.com/dialog/share?app_id=936333823462448&display=popup&href=' . $a['url'] . '">' . $a['button_txt'] . '</a>';
+	return $facebook_share_ui_output;
+}
+
+add_shortcode('share_facebook', 'scaffold_shortcode_facebook_share_ui');
+
 ?>
