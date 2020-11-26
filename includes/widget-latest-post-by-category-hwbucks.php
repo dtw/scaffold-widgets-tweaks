@@ -166,7 +166,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			?>
 				<div class="col-md-12 col-sm-12 col-xs-12 panel panel-<?php echo $panel_colour ?>"><!-- start panel -->
 					<div class="row">
-					<?php $img_orient = orientation_check(get_post_thumbnail_id($post->post_ID));
+					<?php $img_orient = orientation_check(get_post_thumbnail_id());
 					if ( $img_orient == 'ls') {
 						echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
 					} elseif ( $img_orient == 'pt') {
