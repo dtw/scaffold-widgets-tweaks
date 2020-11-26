@@ -140,8 +140,11 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 
 		// Check if there is a sticky post
 		$sticky = get_option( 'sticky_posts' );
-		$sticky_exclude = $sticky[0];
-		if (!$sticky_exclude) {
+		if ($sticky) {
+			$first_sticky_post = $sticky[0];
+			$sticky_offset = 0;
+		} else  {
+			$first_sticky_post = '';
 			$sticky_offset = 1;
 			}
 
@@ -152,7 +155,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			'post_status'      => 'publish',
 			'posts_per_page' => 1,
 			'cat'            => $category,
-			'p' 			 => $sticky[0],
+			'p' 			 => $first_sticky_post,
 
 		) );
 
