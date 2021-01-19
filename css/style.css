@@ -120,6 +120,21 @@
   background-color: #f2dede;
 }
 
+.media.callout-expired {
+  border: 1px solid rgba(127,127,127,0.1);
+  background-color: #F4F4F4;
+}
+
+.media.callout-expired .media-body.callout a {
+  color: var(--hw-blue);
+}
+
+.media.callout-expired .media-body.callout a:hover{
+  color: #F4F4F4;
+  background-color: var(--hw-blue);
+  outline: 3px solid var(--hw-blue);
+}
+
 .media.callout-signpost {
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #F7F7F7;

@@ -651,6 +651,34 @@ function hwbucks_shortcode_warning_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_warning', 'hwbucks_shortcode_warning_callout' );
 
+/* Media object expired
+
+This adds simple formatting to draw attention to key information with a alert icon
+
+------------------------ */
+
+function hwbucks_shortcode_expired_callout( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => 'This is a warning that content may be out of date.', // content of the alert
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$content = $a['text'];
+	}
+	$label = 'Warning';
+	$expired_object = '
+	<div class="media callout callout-expired">
+		<div class="media-left callout">
+				<i class="media-object fas fa-calendar-times fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
+		</div>
+		<div class="media-body callout"><p>'. $content . '</p></div>
+	</div>';
+
+	return $expired_object;
+}
+
+add_shortcode( 'callout_expired', 'hwbucks_shortcode_expired_callout' );
+
 /* Media object signpost
 
 This inserts the content of a signpost as a callout
