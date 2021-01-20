@@ -783,7 +783,6 @@ function scaffold_shortcode_mailchimp_signup() {
 					<label class="hidden" for="mce-EMAIL">Email Address </label>
 					<input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-					<p><i class="mc-icons far fa-lg fa-newspaper" aria-hidden="true"></i><a target="_blank" href="http://us3.campaign-archive2.com/home/?u=b3e99f9452fa226631c515b62&id=bc05bac5eb" title="View previous campaigns">Read previous newsletters &raquo;</a></p>
 				</div>
 				<div id="mce-responses" class="clear">
 					<div class="response" id="mce-error-response" style="display:none"></div>
