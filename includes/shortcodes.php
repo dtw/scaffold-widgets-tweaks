@@ -777,7 +777,7 @@ function scaffold_shortcode_mailchimp_signup() {
 		<div id="mailchimp-title">
 			<h2>Subscribe to the Healthwatch Bucks newsletter</h2>
 		</div>
-		<div id="mailchimp-form">
+		<div id="mailchimp-form-inline">
 			<form action="//healthwatchbucks.us3.list-manage.com/subscribe/post?u=b3e99f9452fa226631c515b62&amp;id=bc05bac5eb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin:0;" target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
 					<label class="hidden" for="mce-EMAIL">Email Address </label>
