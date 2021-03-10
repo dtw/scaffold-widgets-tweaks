@@ -39,6 +39,9 @@ if ( ! defined( 'WPINC' ) ) {
 	// 5. Add custom functions
 	require_once('functions/functions-orientation-check.php');
 
+	// 6. Add custom roles
+	require_once('functions/functions-custom-roles.php');
+
 /* Widgets
 ------------------------------------------- */
 
