@@ -134,4 +134,21 @@ if ( ! defined( 'WPINC' ) ) {
 
 	add_action( 'wp_ajax_hwbucks_get_preview_image', 'hwbucks_get_preview_image' );
 
+	/**
+	 * Activate the plugin.
+	 */
+	function swt_activate() {
+	    // Trigger our function that registers the custom role
+	    create_editor_plus_role();
+	}
+	register_activation_hook( __FILE__, 'swt_activate' );
+
+	/**
+	 * Deactivate the plugin.
+	 */
+	function swt_deactivate() {
+	    // Trigger our function that remove the custom role
+	    remove_editor_plus_role();
+	}
+	register_deactivation_hook( __FILE__, 'swt_deactivate' );
 ?>
