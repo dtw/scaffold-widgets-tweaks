@@ -6,6 +6,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.33.0] - 2021-01-20
+### Added
+- callout shortcode for "expired" page content [callout_expired]
+
+### Changed
+- minor tweaks to mailchimp form
+
+## [1.32.0] - 2020-11-26
+### Changed
+- sticky post handling in 'latest post by category'
+- minor PHP fixes
+
+## [1.31.0] - 2020-09-08
+### Added
+- simple Facebook share shortcode [share_facebook] - doesn't require Facebook SDK
+
+## [1.30.0] - 2020-06-18
+### Added
+- CSS class for thumbnails on 'featured post/page' widgets
+
+### Changed
+- Updates for PHP7.0 compatibility
+- custom size in thumbnails with 'medium'
+
+## [1.29.0] - 2020-04-28
+### Added
+- 'last modified date' shortcode - [last_updated]
+- options to show button and show excerpt on 'featured post' widget
+- option to display last update date and customise preceding text on 'featured post/page' widgets
+
+## [1.28.0] - 2020-04-14
+### Added
+- coronavirus CSS style option to 'featured post/page' and 'latest post' widgets
+- options to show button and show excerpt on 'latest post' and 'featured post' widgets
+- a CSS class for the excerpt on most widgets
+
 ## [1.27.0] - 2020-04-07
 ### Changed
 - site search shortcode name
