@@ -176,11 +176,11 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 
 			<?php
 			/**
-			 *  Can't see how to walk posts like pages so we'll just get the last 10, which is probably adequate!
+			 *  Can't see how to walk posts like pages so we'll just get the last 20, which is probably adequate!
 			 */
 			 		$args = array(
 							'post_type' => 'post',
-							'numberposts' => '10',
+							'numberposts' => '20',
 							'post_status' => 'publish',
 							//'order' => 'asc' // rather than changing the sort order, this gets the oldest x posts first!
 	        );
