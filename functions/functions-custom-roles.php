@@ -9,6 +9,7 @@
     $role = get_role( 'editor_plus' );
     // add capabilities
     $role->add_cap( 'customize' );
+    $role->add_cap( 'edit_theme_options' );
   }
   //add_action( 'init', 'create_editor_plus_role' );
 
@@ -17,6 +18,7 @@
     $role = get_role( 'editor_plus' );
     // del capabilities
     $role->remove_cap( 'customize' );
+    $role->remove_cap( 'edit_theme_options' );
     // remove the new role
     remove_role( 'editor_plus', 'Editor Plus', get_role( 'editor' )->capabilities );
   }
