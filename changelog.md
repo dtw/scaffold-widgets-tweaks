@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.34.0] - 2021-03-17
+### Added
+- Editor Plus custom role - an Editor than can alter current theme settings and use the customizer
+
+### Changed
+- increase number of recent posts shown in HW Bucks Featured Post config to 20 from 10
+
 ## [1.33.0] - 2021-01-20
 ### Added
 - callout shortcode for "expired" page content [callout_expired]
