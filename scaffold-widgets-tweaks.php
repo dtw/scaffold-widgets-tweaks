@@ -151,4 +151,6 @@ if ( ! defined( 'WPINC' ) ) {
 	    remove_editor_plus_role();
 	}
 	register_deactivation_hook( __FILE__, 'swt_deactivate' );
+	register_uninstall_hook( __FILE__, 'swt_deactivate' );
+
 ?>
