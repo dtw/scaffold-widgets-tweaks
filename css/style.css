@@ -164,7 +164,7 @@ ul.nav-tabs li::before{
   content:none !important;
 }
 
-/* CSS for [last_update] */
-.last-update p {
+/* CSS for [last_update] [first_published]*/
+.last-update p, .first-pub p {
   font-weight: 900;
 }

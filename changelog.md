@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.35.0] - 2021-06-30
+### Added
+- [first_published] shortcode
+
 ## [1.34.0] - 2021-03-17
 ### Added
 - Editor Plus custom role - an Editor than can alter current theme settings and use the customizer

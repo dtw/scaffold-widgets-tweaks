@@ -882,6 +882,19 @@ function scaffold_shortcode_last_update( $atts, $content = null ) {
 
 add_shortcode('last_updated', 'scaffold_shortcode_last_update');
 
+/* Add the date the post or page was first published */
+
+function scaffold_shortcode_first_pub( $atts, $content = null ) {
+
+	$first_pub_div = '
+	<div class="first-pub" id="first-pub">
+		<p class="lead">First published: ' . get_the_date() . '</p>
+	</div> ';
+	return $first_pub_div;
+}
+
+add_shortcode('first_published', 'scaffold_shortcode_first_pub');
+
 /* Add a facebook share button for the specified link - if no link is specified share the current page */
 
 function scaffold_shortcode_facebook_share_ui( $atts, $content = null ) {
