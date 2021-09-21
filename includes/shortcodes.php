@@ -278,7 +278,7 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 			if ( has_post_thumbnail() ) {
 				$featured_image = get_the_post_thumbnail_url($page->ID, 'medium');
 			} else {
-				$featured_image = '';
+				$featured_image = plugins_url('../images/default.png', __FILE__);
 				}
 
       $output = $output .
