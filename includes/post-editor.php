@@ -35,9 +35,15 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'wrapper' => true,
 		),
 		array(
-			'title' => 'Button',
+			'title' => 'Download Button',
 			'selector' => 'p > a',
-			'classes' => 'btn btn-primary',
+			'classes' => 'btn btn-download',
+			'wrapper' => false,
+		),
+		array(
+			'title' => 'CTA Button',
+			'selector' => 'p > a',
+			'classes' => 'btn btn-cta',
 			'wrapper' => false,
 		),
 		array(
@@ -45,6 +51,12 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'selector' => 'p',
 			'classes' => 'call-to-action',
 			'wrapper' => true,
+		),
+		array(
+			'title' => 'Button',
+			'selector' => 'p > a',
+			'classes' => 'btn btn-primary',
+			'wrapper' => false,
 		),
 
 	);
