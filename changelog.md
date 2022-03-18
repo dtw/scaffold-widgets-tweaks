@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.37.0] - 2021-11-03
+### Added
+- CSS for NHS check column
+
 ## [1.36.0] - 2021-10-15
 ### Added
 - add shortcode to embed SM surveys
