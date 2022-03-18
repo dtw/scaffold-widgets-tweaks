@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.36.0] - 2021-10-15
+### Added
+- add shortcode to embed SM surveys
+- add download button format - in future, download links will not be auto-formatted.
+
 ## [1.35.0] - 2021-06-30
 ### Added
 - [first_published] shortcode
