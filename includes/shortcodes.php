@@ -909,4 +909,16 @@ function scaffold_shortcode_facebook_share_ui( $atts, $content = null ) {
 
 add_shortcode('share_facebook', 'scaffold_shortcode_facebook_share_ui');
 
+/* Add an iframe to embed any SM survey by changing the js (I think) */
+
+function scaffold_shortcode_embed_sm_survey( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'script'  => 'tRaiETqnLgj758hTBazgd9X_2BXDphQbKDoK1vQuXVd9_2BJjtY7PHszcMHwZT2Unjhc.js', // set to the quick satisfaction survey
+	), $atts, 'embed_sm_survey' );
+
+	$embed_sm_survey_ui_output = '<!-- This should be an iframe --><script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src="https://widget.surveymonkey.com/collect/website/js/' . $a['script'] . '",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>';
+	return $embed_sm_survey_ui_output;
+}
+
+add_shortcode('embed_sm_survey', 'scaffold_shortcode_embed_sm_survey');
 ?>
