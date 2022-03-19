@@ -27,20 +27,20 @@
 
 .media.callout-signpost .media-body a,
 .signposts a {
-  color: #23527c;
+  color: var(--hw-blue);
 }
 
 .media.callout-signpost .media-body a:hover,
 .media.callout-signpost .media-body a:focus,
 .signposts a:hover,
 .signposts a:focus {
-	color: #FAFAFA;
-	background-color:	#23527c;
-	outline: 3px solid #23527c;
+	color: var(--hw-grey);
+	background-color:	var(--hw-blue);
+	outline: 3px solid var(--hw-blue);
 }
 
 .panel-body .media-body a {
-  color: #0080A4;
+  color: var(--url-blue);
 }
 
 .panel-body .media-body a:hover,
@@ -49,25 +49,25 @@
 }
 
 .post-edit-link {
-  color: #0080A4 !important;
+  color: var(--url-blue) !important;
 }
 
 .post-edit-link:hover,
 .post-edit-link:focus  {
   color: rgba(255,255,255,1.00) !important;
-  background-color: #0080A4 !important;
-  outline: 3px solid #0080A4 !important;
+  background-color: var(--url-blue) !important;
+  outline: 3px solid var(--url-blue) !important;
 }
 
 .callout-note .media-body a {
-  color:	#23527c;
+  color:	var(--hw-blue);
 }
 
 .callout-note .media-body a:hover,
 .callout-note .media-body a:focus {
 	color: #fcf8e3;
-	background-color:	#23527c;
-	outline: 3px solid #23527c;
+	background-color:	var(--hw-blue);
+	outline: 3px solid var(--hw-blue);
 }
 
 .media.signpost .media-body p {

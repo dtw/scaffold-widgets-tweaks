@@ -63,7 +63,7 @@ label[for="hw_services_full_report"]:before {
 
 span.dashicons-small {
 	font-size: .5rem;
-	color: #84bf41;
+	color: var(--hw-green);
 	}
 
 /* widget-three-column-img-hwbucks
@@ -99,12 +99,12 @@ span.dashicons-small {
 }
 
 .checkmark {
-	color: #84bf41;
+	color: var(--hw-green);
 	padding: 0.5rem;
 }
 
 .checkmark:hover {
-  background: #84bf41;
+  background: var(--hw-green);
   color: white;
 }
 
