@@ -518,7 +518,7 @@ add_shortcode( 'signpost_email', 'hwbucks_shortcode_signpost_email_object' );
 
 function hwbucks_shortcode_signpost_phone_object( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'phone' => '01844 348 839', // email for the signpost
+		'phone' => '01494 32 48 32', // email for the signpost
 	), $atts );
 
 	if ( empty( $content ) ) {
@@ -545,7 +545,7 @@ add_shortcode( 'signpost_phone', 'hwbucks_shortcode_signpost_phone_object' );
 
 function hwbucks_shortcode_signpost_text_object( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'text' => '01844 348 839', // email for the signpost
+		'text' => '01494 32 48 32', // sms number for the signpost
 	), $atts );
 
 	if ( empty( $content ) ) {
