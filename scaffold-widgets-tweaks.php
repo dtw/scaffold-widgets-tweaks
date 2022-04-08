@@ -116,6 +116,17 @@ if ( ! defined( 'WPINC' ) ) {
 
 	add_action( 'admin_enqueue_scripts', 'add_media_selector' );
 
+	// add generate_link script
+	function add_generate_link() {
+			wp_enqueue_script(
+					'generate_link', // name your script so that you can attach other scripts and de-register, etc.
+					//plugin_dir_path( __FILE__ ) . 'js/media_selector.js', // this is the location of your script file
+					'/wp-content/plugins/scaffold-widgets-tweaks/js/generate_link.js' // this is the location of your script file
+			);
+	}
+
+	add_action( 'admin_enqueue_scripts', 'add_generate_link' );
+
 	// Ajax action to refresh the user image
 	function hwbucks_get_preview_image() {
 	    if(isset($_GET['img_id']) and isset($_GET['img_preview_id'])){

@@ -10,6 +10,7 @@
 6. Modify text in the ADMIN FOOTER
 7. Register Editor CSS
 8. Custom dashboard widget
+9. Add Demographic URL tool
 
 */
 
@@ -141,5 +142,48 @@ echo '
 <p><span class="dashicons dashicons-tickets"></span> Requests? Problems? <a href="mailto:jason@kingjason.co.uk">Email a support ticket</a> to <strong>jason@kingjason.co.uk</strong></p>';
 }
 
+/* 9. Add Demographic URL tool
+-------------------------------------------------------- */
+
+function hwbucks_url_tool() {
+		add_management_page(
+			'Demographic URL Tool',
+			'Demographic URL Tool',
+			'manage_options',
+			'demographic-url-tool',
+			'hwbucks_url_tool_contents',
+		);
+	}
+
+	add_action( 'admin_menu', 'hwbucks_url_tool' );
+
+	function hwbucks_url_tool_contents() {
+		?>
+    <div id="hwbucks_url_tool">
+      <h1>Demographic Survey URL Tool</h1>
+      <div id="hwbucks_url_tool_intructions">
+        <p>If you need to complete a demographic survey over the phone, the results will need to be linked to a CiviCRM Contact. This tool can be used to generate a link to the demographic survey based on URLs from CiviCRM.</p>
+        <p>This tool will work with either:</p>
+          <ul>
+            <li>CiviCRM Client URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000</li>
+            <li>CiviCRM Case view URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view&context=case&selectedChild=case&key=somekey</li>
+          </ul>
+          <p>Copy the appropriate URL from your web browser and paste into the "CiviCRM URL" field and click "Generate Link". Once the link is generated, you can click through to the survey.</p>
+          <p>Click the "Reset" button before pasting a new URL.
+      </div>
+      <div id="form">
+        <form id="formularz">
+          <label for="civicrm_url" class="labelInline">CiviCRM URL</label>
+          <input type="text" name="civicrm_url" id="civicrm_url"/>
+          <button type="button" onclick="generateLink();">Generate Link</button>
+          <button type="button" onclick="window.location.reload(true)">Reset</button>
+        </form>
+      </div>
+      <div id="final">
+        <p><a href="https://www.surveymonkey.co.uk/r/HW_BUCKS_DEMO?src=signposting&id=id_value" target="_blank">https://www.surveymonkey.co.uk/r/HW_BUCKS_DEMO?src=signposting&id=id_value</a></p>
+      </div>
+    </div>
+		<?php
+	}
 
 ?>
