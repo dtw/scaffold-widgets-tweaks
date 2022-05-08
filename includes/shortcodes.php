@@ -679,6 +679,31 @@ function hwbucks_shortcode_expired_callout( $atts, $content = null ) {
 
 add_shortcode( 'callout_expired', 'hwbucks_shortcode_expired_callout' );
 
+/* Media object expired download
+
+This adds simple formatting to draw attention to key information with a alert icon
+
+------------------------ */
+
+function hwbucks_shortcode_download_removed( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'text' => 'This download has been removed', // content of the alert
+	), $atts );
+
+	if ( empty( $content ) ) {
+		$content = $a['text'];
+	}
+	$label = 'Warning';
+	$expired_object = '
+	<div class="media download-removed">
+		<p>'. $content . '</p>
+	</div>';
+
+	return $expired_object;
+}
+
+add_shortcode( 'download_removed', 'hwbucks_shortcode_download_removed' );
+
 /* Media object signpost
 
 This inserts the content of a signpost as a callout

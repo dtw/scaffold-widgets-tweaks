@@ -159,6 +159,37 @@
   padding: 0.6rem 1rem;
 }
 
+
+#content .media.download-removed {
+	background-color: var(--hw-pale-grey);
+	border-radius: 5px;
+	/* border-color: var(--hw-purple); */
+	border: 2px solid var(--hw-purple);
+	margin: 1rem 0 1rem 0;
+	padding: 1.6rem 2rem;
+	display: inline-block;
+	color: #333;
+	text-decoration: none;
+  font-weight: 700;
+}
+
+#content .media.download-removed p {
+  margin: 0px;
+}
+
+#content .media.download-removed p::before {
+	padding-right: 1.2rem;
+	display: block;
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: normal;
+	font-size: 2rem;
+	text-decoration: none;
+	float: left;
+	/*color: var(--hw-purple);*/
+	content: "\f05e";
+	font-weight: 900;
+}
+
 /* CSS for bootstrap tabs */
 ul.nav-tabs li::before{
   content:none !important;
