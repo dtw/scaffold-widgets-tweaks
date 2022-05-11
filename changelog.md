@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.39.0] - 2022-05-11
+### Added
+- subscriber_plus role
+
 ## [1.38.0] - 2022-05-08
 ### Added
 - add shortcode for [download_removed]
