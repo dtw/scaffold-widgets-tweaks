@@ -167,7 +167,7 @@
 	border: 2px solid var(--hw-purple);
 	margin: 1rem 0 1rem 0;
 	padding: 1.6rem 2rem;
-	display: inline-block;
+	max-width: 350px;
 	color: #333;
 	text-decoration: none;
   font-weight: 700;
