@@ -23,4 +23,26 @@
     remove_role( 'editor_plus', 'Editor Plus', get_role( 'editor' )->capabilities );
   }
   //add_action( 'init', 'remove_editor_plus_role' );
+
+  /**
+   * Register the "Subscriber Plus" role
+   */
+  function create_subscriber_plus_role() {
+    // add the new role
+    add_role( 'subscriber_plus', 'Subscriber Plus', get_role( 'subscriber' )->capabilities );
+    // gets the subscriber_plus role
+    $role = get_role( 'subscriber_plus' );
+    // add capabilities
+    $role->add_cap( 'read_private_posts' );
+  }
+  //add_action( 'init', 'create_subscriber_plus_role' );
+
+  function remove_subscriber_plus_role() {
+    // gets the subscriber_plus role
+    $role = get_role( 'subscriber_plus' );
+    // del capabilities
+    $role->remove_cap( 'read_private_posts' );
+    // remove the new role
+    remove_role( 'subscriber_plus', 'Subscriber Plus', get_role( 'subscriber' )->capabilities );
+  }
 ?>
