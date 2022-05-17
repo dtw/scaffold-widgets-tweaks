@@ -27,25 +27,25 @@
 
 .media.callout-signpost .media-body a,
 .signposts a {
-  color: var(--hw-blue);
+  color: var(--hw-hyperlink);
 }
 
 .media.callout-signpost .media-body a:hover,
 .media.callout-signpost .media-body a:focus,
 .signposts a:hover,
 .signposts a:focus {
-	color: var(--hw-grey);
-	background-color:	var(--hw-blue);
-	outline: 3px solid var(--hw-blue);
+	color: var(--hw-pale-grey);
+	background-color:	var(--hw-hyperlink);
+	outline: 3px solid var(--hw-hyperlink);
 }
 
 .panel-body .media-body a {
-  color: var(--url-blue);
+  /*color: var(--url-blue);*/
 }
 
 .panel-body .media-body a:hover,
 .panel-body .media-body a:focus  {
-  color: rgba(255,255,255,1.00) !important;
+  /*color: rgba(255,255,255,1.00) !important;*/
 }
 
 .post-edit-link {
