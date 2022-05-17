@@ -148,7 +148,7 @@
 
 .media.callout-review .city {
   color: #666;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .media.callout-review .media-left .fa-star {
@@ -170,7 +170,7 @@
 	max-width: 350px;
 	color: #333;
 	text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 #content .media.download-removed p {
