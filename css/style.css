@@ -34,7 +34,7 @@
 .media.callout-signpost .media-body a:focus,
 .signposts a:hover,
 .signposts a:focus {
-	color: var(--hw-grey);
+	color: var(--hw-pale-grey);
 	background-color:	var(--hw-blue);
 	outline: 3px solid var(--hw-blue);
 }
