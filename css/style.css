@@ -106,8 +106,8 @@
 }
 
 .media.callout-note {
-  border: 1px solid gold;
-  background-color: #fcf8e3;
+	border: 1px solid var(--hw-yellow);
+	background-color: var(--hw-yellow-50);
 }
 
 .media.callout-question {
