@@ -149,7 +149,7 @@ function hwbucks_url_tool() {
 		add_management_page(
 			'Demographic URL Tool',
 			'Demographic URL Tool',
-			'manage_options',
+			'read',
 			'demographic-url-tool',
 			'hwbucks_url_tool_contents',
 		);
