@@ -780,7 +780,7 @@ function hwbucks_shortcode_review_callout( $atts, $content = null ) {
 		if ( ! $a['hide_city'] ) {
 			$review_object .= '<p><span class="city">' . $city . '</span></p>';
 		}
-		$review_object .= '<p>' . feedbackstarrating($rating,array('colour' => 'green','size' => 'fa-lg'));
+		$review_object .= '<p>' . hw_feedback_star_rating($rating,array('colour' => 'green','size' => 'fa-lg'));
 		if ($rating == 1) $review_object .= '<span class="screen-reader-text">'.$rating.' star</span>';
 		else $review_object .= '<span class="screen-reader-text">'.$rating.' stars</span>';
 		$review_object .= ' (<a class="review-link" href="' . get_the_permalink($content_post->ID) . '" rel="bookmark">Leave your own rating</a>)</p>';
