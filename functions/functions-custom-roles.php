@@ -39,7 +39,7 @@
     $role = get_role( 'subscriber_plus' );
     // del capabilities
     $role->remove_cap( 'read_private_posts' );
-    // remove the subscriber_plus role role
+    // remove the subscriber_plus role 
     remove_role( 'subscriber_plus', 'Subscriber Plus', get_role( 'subscriber' )->capabilities );
   }
 ?>
