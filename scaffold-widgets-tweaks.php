@@ -93,7 +93,7 @@ if ( ! defined( 'WPINC' ) ) {
 	function add_accordion_scroll() {
 	    wp_enqueue_script(
 	        'accordion_scroll', // name your script so that you can attach other scripts and de-register, etc.
-	        //plugin_dir_path( __FILE__ ) . 'js/accordion_scroll.js', // this is the location of your script file
+	        //plugin_dir_url( __FILE__ ) . 'js/accordion_scroll.js', // this is the location of your script file
 					'/wp-content/plugins/scaffold-widgets-tweaks/js/accordion_scroll.js', // this is the location of your script file
 	        array('jquery') // this array lists the scripts upon which your script depends
 	    );
@@ -105,7 +105,7 @@ if ( ! defined( 'WPINC' ) ) {
 	function add_media_selector() {
 			wp_enqueue_script(
 					'media_selector', // name your script so that you can attach other scripts and de-register, etc.
-					//plugin_dir_path( __FILE__ ) . 'js/media_selector.js', // this is the location of your script file
+					//plugin_dir_url( __FILE__ ) .  'js/media_selector.js', // this is the location of your script file
 					'/wp-content/plugins/scaffold-widgets-tweaks/js/media_selector.js', // this is the location of your script file
 					array('jquery'), // this array lists the scripts upon which your script depends
 					'0.1'
@@ -120,8 +120,8 @@ if ( ! defined( 'WPINC' ) ) {
 	function add_generate_link() {
 			wp_enqueue_script(
 					'generate_link', // name your script so that you can attach other scripts and de-register, etc.
-					//plugin_dir_path( __FILE__ ) . 'js/media_selector.js', // this is the location of your script file
-					'/wp-content/plugins/scaffold-widgets-tweaks/js/generate_link.js' // this is the location of your script file
+					plugin_dir_url( __FILE__ ) . 'js/generate_link.js', // this is the location of your script file
+					//'/wp-content/plugins/scaffold-widgets-tweaks/js/generate_link.js', // this is the location of your script file
 			);
 	}
 
