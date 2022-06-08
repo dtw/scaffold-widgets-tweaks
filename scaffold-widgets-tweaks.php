@@ -120,7 +120,7 @@ if ( ! defined( 'WPINC' ) ) {
 	function add_generate_link() {
 			wp_enqueue_script(
 					'generate_link', // name your script so that you can attach other scripts and de-register, etc.
-					plugin_dir_url( __FILE__ ) . 'js/media_selector.js', // this is the location of your script file
+					plugin_dir_url( __FILE__ ) . 'js/generate_link.js', // this is the location of your script file
 					//'/wp-content/plugins/scaffold-widgets-tweaks/js/generate_link.js', // this is the location of your script file
 			);
 	}
