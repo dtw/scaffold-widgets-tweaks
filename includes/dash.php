@@ -69,9 +69,21 @@ function scaffold_admin_css() {
 -------------------------------------------------------- */
 
 
+/* 6. Tidy
+https://developer.wordpress.org/reference/hooks/default_hidden_meta_boxes/
+-------------------------------------------------------- */
 
+add_filter('hidden_meta_boxes','hide_meta_box',10,2);
 
-
+function hide_meta_box($hidden, $screen) {
+    //make sure we are dealing with the correct screen
+    if ('post' == $screen->base){
+      //
+      $hidden = array('slugdiv','postcustom','commentstatusdiv','authordiv','yarpp_relatedposts','asp_metadata');
+      //$hidden[] ='my_custom_meta_box';//for custom meta box, enter the id used in the add_meta_box() function.
+    }
+    return $hidden;
+  }
 
 
 
