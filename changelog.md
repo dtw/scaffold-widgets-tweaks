@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - add shortcode for [download_removed]
 
+## [1.38.2] - 2022-04-08
+### Added
+- Demographic URL tool
+
 ## [1.37.1] - 2022-03-19
 ### Changed
 - replace hex colours with var
