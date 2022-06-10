@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.40.0] - 2022-06-09
+### Changed
+- The Great Function Rename 2022 (renamed functions in line with plugin name)
+- Demographic URL tool accessible to anyone
+- URL in Demographic URL tool to _S
+- try to hide some unneeded meta-boxes in admin
+
+## [1.39.1] - 2022-05-11
+### Changed
+- fix references to --hw-grey
+
 ## [1.39.0] - 2022-05-11
 ### Added
 - subscriber_plus role
@@ -13,6 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.38.0] - 2022-05-08
 ### Added
 - add shortcode for [download_removed]
+
+## [1.38.2] - 2022-04-08
+### Added
+- Demographic URL tool
 
 ## [1.37.1] - 2022-03-19
 ### Changed
