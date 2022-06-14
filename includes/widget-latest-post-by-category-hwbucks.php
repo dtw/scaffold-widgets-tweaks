@@ -47,6 +47,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$border_colour = ! empty( $instance['border_colour'] ) ? $instance['border_colour'] : 'none';
 		$show_btn = $instance['show_btn'];
 		$btn_text = $instance['btn_text'];
+		$btn_colour = ! empty( $instance['btn_colour'] ) ? $instance['btn_colour'] : 'blue';
 		?>
 
 		<p>
@@ -117,6 +118,23 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text (optional):</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'btn_text' ); ?>" name="<?php echo $this->get_field_name( 'btn_text' ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
 		</p>
+		<!-- Button colour -->
+		<p>
+			<label for="<?php echo $this->get_field_id('btn_colour'); ?>">Button colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('btn_colour'); ?>"
+						 name="<?php echo $this->get_field_name('btn_colour'); ?>" type="text">
+					<?php
+					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						$colourArray = ["Blue", "Light-Blue", "Gold", "Teal"];
+						foreach ($colourArray as $colour)  {
+							echo "<option value='" . strtolower($colour) . "'";
+							echo ($btn_colour==strtolower($colour))?'selected':'';
+							echo ">" . $colour . "</option>";
+						}
+					?>
+				</select>
+			</label>
+		</p>
 		<?php
 	}
 
@@ -133,6 +151,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$instance['border_colour'] = wp_strip_all_tags( $new_instance['border_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
+		$instance['btn_colour'] = wp_strip_all_tags( $new_instance['btn_colour'] );
 
 		return $instance;
 
@@ -158,6 +177,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$border_colour = $instance['border_colour'] ;
 		$show_btn = ( $instance['show_btn'] === 1 ) ? true : false;
 		$btn_text = $instance['btn_text'] ;
+		$btn_colour = $instance['btn_colour'] ;
 
 		// Check if there is a sticky post
 		$sticky = get_option( 'sticky_posts' );
@@ -211,7 +231,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 									<?php	}
 									if ( $show_btn ) { ?>
 										<p class="clear-both">
-											<a class="btn btn-primary" href="<?php echo get_category_link($category); ?>">
+											<?php echo '<a class="btn btn-primary btn-' . $btn_colour . '" href="' . get_category_link($category) . '">'; ?>
 												<?php if ( empty( $btn_text ) ) {
 														echo 'Read all ' . strtolower(get_cat_name($category));
 													} else {
