@@ -23,7 +23,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Featured_Post_Widget',
+		parent::__construct( 'SF_HWBucks_Featured_Post_Widget',
 		$name = 'HW Featured Post',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_featured_post widget_featured_post',

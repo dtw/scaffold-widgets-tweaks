@@ -23,7 +23,7 @@ class SF_HWBucks_Latest_DIC_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Latest_DIC_Widget',
+		parent::__construct( 'SF_HWBucks_Latest_DIC_Widget',
 		$name = 'HW Latest DIC Visit',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_latest_dic widget_latest_dic',

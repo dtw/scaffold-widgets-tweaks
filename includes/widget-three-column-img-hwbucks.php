@@ -24,7 +24,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Three_Col_Img_Widget',
+		parent::__construct( 'SF_HWBucks_Three_Col_Img_Widget',
 			$name = 'HW Three Column w. Images',
 			array(
 				'classname'   => 'scaffold_widget_hwbucks_three_col_img widget_three_col_img',

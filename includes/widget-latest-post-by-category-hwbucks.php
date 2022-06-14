@@ -22,7 +22,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Latest_Post_Widget',
+		parent::__construct( 'SF_HWBucks_Latest_Post_Widget',
 		$name = 'HW Latest Post by Category',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_latest_post widget_latest_post',
