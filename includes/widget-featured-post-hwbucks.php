@@ -49,7 +49,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			$post_id = (int) $instance['post'];
 			$title = $instance['title'] ;
 			$show_excerpt = $instance['show_excerpt'];
-			$panel_colour = $instance['panel_colour'] ;
+			$bg_colour = $instance['bg_colour'] ;
 			$show_btn = $instance['show_btn'];
 			$btn_text = $instance['btn_text'] ;
 			$show_last_updated = $instance['show_last_updated'];
@@ -62,7 +62,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 				echo $before_widget;
 				?>
 
-				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $panel_colour . '">'?>
+				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $bg_colour . '">'?>
 					<div class="row">
 						<div class="col-md-8 col-sm-6 col-xs-12 panel-text">
 							<div class="row">
@@ -114,7 +114,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$instance['post'] = (int)( $new_instance['post'] );
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
-		$instance['panel_colour'] = wp_strip_all_tags( $new_instance['panel_colour'] );
+		$instance['bg_colour'] = wp_strip_all_tags( $new_instance['bg_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
 		$instance['show_last_updated'] = isset( $new_instance['show_last_updated'] ) ? 1 : 0;
@@ -125,7 +125,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$post = isset( $instance['post'] ) ? (int) $instance['post'] : -1;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		$show_excerpt = $instance['show_excerpt'];
-		$panel_colour = ! empty( $instance['panel_colour'] ) ? $instance['panel_colour'] : 'orange';
+		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'blue';
 		$show_btn = $instance['show_btn'];
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
 		$show_last_updated = $instance['show_last_updated'];
