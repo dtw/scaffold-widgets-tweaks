@@ -24,7 +24,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Three_Column_Widget',
+		parent::__construct( 'SF_HWBucks_Three_Column_Widget',
 		$name = 'HW Three Column',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_three_column widget_three_column',

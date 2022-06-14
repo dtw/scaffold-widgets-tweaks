@@ -24,7 +24,7 @@ class scaffold_widget_cat_recent_posts extends WP_Widget {
 
 		);
 
-		$this->WP_Widget( 'scaffold_widget_cat_recent_posts', 'SF Recent Posts', $widget_ops );
+		parent::__construct( 'scaffold_widget_cat_recent_posts', 'SF Recent Posts', $widget_ops );
 
 	}
 

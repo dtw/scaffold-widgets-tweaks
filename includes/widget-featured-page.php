@@ -22,7 +22,7 @@ class SF_Featured_Page_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_Featured_Page_Widget',
+		parent::__construct( 'SF_Featured_Page_Widget',
 		$name = 'SF Featured Page',
 		array(
 			'classname'   => 'scaffold_widget_featured_page widget_featured_page',

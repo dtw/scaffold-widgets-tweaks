@@ -23,7 +23,7 @@ class SF_HWBucks_Recent_Feedback_Widget extends WP_Widget {
 	 * @access public
 	 */
 	function __construct() {
-		parent::WP_Widget( 'SF_HWBucks_Recent_Feedback_Widget',
+		parent::__construct( 'SF_HWBucks_Recent_Feedback_Widget',
 		$name = 'HW Recent Feedback',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_recent_feedback widget_recent_feedback',
