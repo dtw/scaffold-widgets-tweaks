@@ -44,6 +44,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$show_excerpt = $instance['show_excerpt'];
 		$show_extra = $instance['show_extra'];
 		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'light-blue';
+		$border_colour = ! empty( $instance['border_colour'] ) ? $instance['border_colour'] : 'none';
 		$show_btn = $instance['show_btn'];
 		$btn_text = $instance['btn_text'];
 		?>
@@ -91,6 +92,23 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 				</select>
 			</label>
 		</p>
+		<!-- Image border colour -->
+		<p>
+			<label for="<?php echo $this->get_field_id('border_colour'); ?>">Border colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('border_colour'); ?>"
+						 name="<?php echo $this->get_field_name('border_colour'); ?>" type="text">
+					<?php
+					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						$colourArray = ["None", "Pink", "Blue", "Gold", "Teal"];
+						foreach ($colourArray as $colour)  {
+							echo "<option value='" . strtolower($colour) . "'";
+							echo ($border_colour==strtolower($colour))?'selected':'';
+							echo ">" . $colour . "</option>";
+						}
+					?>
+				</select>
+			</label>
+		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_btn' ); ?>" name="<?php echo $this->get_field_name( 'show_btn' ); ?>" <?php checked( $show_btn, 1 ); ?> />
 			<label for="<?php echo $this->get_field_id( 'show_btn' ); ?>">Display category link button?</label>
@@ -112,6 +130,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
 		$instance['show_extra'] = isset( $new_instance['show_extra'] ) ? 1 : 0;
 		$instance['bg_colour'] = wp_strip_all_tags( $new_instance['bg_colour'] );
+		$instance['border_colour'] = wp_strip_all_tags( $new_instance['border_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
 
@@ -136,6 +155,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$show_excerpt = ( $instance['show_excerpt'] === 1 ) ? true : false;
 		$show_extra = ( $instance['show_extra'] === 1 ) ? true : false;
 		$bg_colour = $instance['bg_colour'] ;
+		$border_colour = $instance['border_colour'] ;
 		$show_btn = ( $instance['show_btn'] === 1 ) ? true : false;
 		$btn_text = $instance['btn_text'] ;
 
@@ -214,7 +234,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 					?>
 							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img')); ?>
+								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img border-colour-'.$border_colour)); ?>
 							</a>
 						</div>
 					</div>
