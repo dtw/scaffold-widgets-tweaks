@@ -83,7 +83,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 						 name="<?php echo $this->get_field_name('bg_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
-					$colourArray = ["Orange", "Blue", "Green", "Pink", "Turquoise","Coronavirus"];
+						$colourArray = ["Light-Blue", "Pink", "Gold", "Teal"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
 							echo ($bg_colour==strtolower($colour))?'selected':'';
