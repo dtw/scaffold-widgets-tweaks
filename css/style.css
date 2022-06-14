@@ -125,11 +125,18 @@
   background-color: #F4F4F4;
 }
 
-.media.callout-expired .media-body.callout a {
+.media.callout-new-service {
+  border: 1px solid #d6e9c6;;
+  background-color: #dff0d8;
+}
+
+.media.callout-expired .media-body.callout a,
+.media.callout-new-service .media-body.callout a {
   color: var(--hw-blue);
 }
 
-.media.callout-expired .media-body.callout a:hover{
+.media.callout-expired .media-body.callout a:hover,
+.media.callout-new-service .media-body.callout a:hover{
   color: #F4F4F4;
   background-color: var(--hw-blue);
   outline: 3px solid var(--hw-blue);

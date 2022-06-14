@@ -812,7 +812,7 @@ function hwbucks_shortcode_new_service_callout( $atts, $content = null ) {
 	$new_service_object = '
 	<div class="media callout callout-new-service">
 		<div class="media-left callout">
-				<i class="media-object fas fa-calendar-times fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
+				<i class="media-object fas fa-plus-square fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
 		</div>
 		<div class="media-body callout"><p>There is a new service at this location <a href="' . $cleaned_url . '">' . $display_url . '</a></p></div>
 	</div>';
