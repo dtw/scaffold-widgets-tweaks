@@ -50,8 +50,10 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			$title = $instance['title'] ;
 			$show_excerpt = $instance['show_excerpt'];
 			$bg_colour = $instance['bg_colour'] ;
+			$border_colour = $instance['border_colour'] ;
 			$show_btn = $instance['show_btn'];
 			$btn_text = $instance['btn_text'] ;
+			$btn_colour = $instance['btn_colour'] ;
 			$show_last_updated = $instance['show_last_updated'];
 			$last_updated_text = $instance['last_updated_text'];
 			$p = new WP_Query( array( 'p' => $post_id ) );
@@ -84,7 +86,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 									<?php	}
 									if ( $show_btn ) { ?>
 										<p class="clear-both">
-											<a class="btn btn-primary" href="<?php echo get_the_permalink(); ?>">
+											<?php echo '<a class="btn btn-primary btn-' . $btn_colour . '" href="' . get_the_permalink() . '">'; ?>
 												<?php echo $btn_text; ?>
 											</a>
 										</p>
@@ -95,7 +97,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 						<div class="col-md-4 col-sm-6 hidden-xs panel-icon">
 							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img')); ?>
+								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img border-colour-'.$border_colour)); ?>
 							</a>
 						</div>
 					</div>
@@ -115,8 +117,10 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
 		$instance['bg_colour'] = wp_strip_all_tags( $new_instance['bg_colour'] );
+		$instance['border_colour'] = wp_strip_all_tags( $new_instance['border_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
+		$instance['btn_colour'] = wp_strip_all_tags( $new_instance['btn_colour'] );
 		$instance['show_last_updated'] = isset( $new_instance['show_last_updated'] ) ? 1 : 0;
 		$instance['last_updated_text'] = wp_strip_all_tags( $new_instance['last_updated_text'] );
 		return $instance;
@@ -126,7 +130,9 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		$show_excerpt = $instance['show_excerpt'];
 		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'blue';
+		$border_colour = ! empty( $instance['border_colour'] ) ? $instance['border_colour'] : 'none';
 		$show_btn = $instance['show_btn'];
+		$btn_colour = ! empty( $instance['btn_colour'] ) ? $instance['btn_colour'] : 'blue';
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
 		$show_last_updated = $instance['show_last_updated'];
 		$last_updated_text = ! empty( $instance['last_updated_text'] ) ? $instance['last_updated_text'] : 'Last updated: ';
@@ -139,16 +145,33 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_excerpt' ); ?>" name="<?php echo $this->get_field_name( 'show_excerpt' ); ?>" <?php checked( $show_excerpt, 1 ); ?> />
 			<label for="<?php echo $this->get_field_id( 'show_excerpt' ); ?>">Display excerpt?</label>
 		</p>
+		<!-- Background colour -->
 		<p>
-			<label for="<?php echo $this->get_field_id('panel_colour'); ?>">Panel colour:
-				<select class='widefat' id="<?php echo $this->get_field_id('panel_colour'); ?>"
-						 name="<?php echo $this->get_field_name('panel_colour'); ?>" type="text">
+			<label for="<?php echo $this->get_field_id('bg_colour'); ?>">Background colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('bg_colour'); ?>"
+						 name="<?php echo $this->get_field_name('bg_colour'); ?>" type="text">
+					<?php
+					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						foreach ($colourArray as $colour)  {
+							echo "<option value='" . strtolower($colour) . "'";
+							echo ($bg_colour==strtolower($colour))?'selected':'';
+							echo ">" . $colour . "</option>";
+						}
+					?>
+				</select>
+			</label>
+		</p>
+		<!-- Image border colour -->
+		<p>
+			<label for="<?php echo $this->get_field_id('border_colour'); ?>">Border colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('border_colour'); ?>"
+						 name="<?php echo $this->get_field_name('border_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
 					$colourArray = ["Orange", "Blue", "Green", "Pink", "Turquoise","Coronavirus"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
-							echo ($panel_colour==strtolower($colour))?'selected':'';
+							echo ($border_colour==strtolower($colour))?'selected':'';
 							echo ">" . $colour . "</option>";
 						}
 					?>
@@ -162,6 +185,22 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'btn_text' ); ?>">Button text:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'btn_text' ); ?>" name="<?php echo $this->get_field_name( 'btn_text' ); ?>" value="<?php echo esc_attr( $btn_text ); ?>" />
+		</p>
+		<!-- Button colour -->
+		<p>
+			<label for="<?php echo $this->get_field_id('btn_colour'); ?>">Button colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('btn_colour'); ?>"
+						 name="<?php echo $this->get_field_name('btn_colour'); ?>" type="text">
+					<?php
+					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						foreach ($colourArray as $colour)  {
+							echo "<option value='" . strtolower($colour) . "'";
+							echo ($btn_colour==strtolower($colour))?'selected':'';
+							echo ">" . $colour . "</option>";
+						}
+					?>
+				</select>
+			</label>
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_last_updated' ); ?>" name="<?php echo $this->get_field_name( 'show_last_updated' ); ?>" <?php checked( $show_last_updated, 1 ); ?> />
