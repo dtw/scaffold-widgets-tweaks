@@ -129,7 +129,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$post = isset( $instance['post'] ) ? (int) $instance['post'] : -1;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : 'Hot news';
 		$show_excerpt = $instance['show_excerpt'];
-		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'blue';
+		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'light-blue';
 		$border_colour = ! empty( $instance['border_colour'] ) ? $instance['border_colour'] : 'none';
 		$show_btn = $instance['show_btn'];
 		$btn_colour = ! empty( $instance['btn_colour'] ) ? $instance['btn_colour'] : 'blue';
