@@ -43,7 +43,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$category  = $instance['category'];
 		$show_excerpt = $instance['show_excerpt'];
 		$show_extra = $instance['show_extra'];
-		$panel_colour = $instance['panel_colour'];
+		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'light-blue';
 		$show_btn = $instance['show_btn'];
 		$btn_text = $instance['btn_text'];
 		?>
@@ -74,16 +74,17 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'show_extra' ); ?>" name="<?php echo $this->get_field_name( 'show_extra' ); ?>" <?php checked( $show_extra, 1 ); ?> />
 			<label for="<?php echo $this->get_field_id( 'show_extra' ); ?>">Display optional posts?</label>
 		</p>
+		<!-- Background colour -->
 		<p>
-			<label for="<?php echo $this->get_field_id('panel_colour'); ?>">Panel colour:
-				<select class='widefat' id="<?php echo $this->get_field_id('panel_colour'); ?>"
-						 name="<?php echo $this->get_field_name('panel_colour'); ?>" type="text">
+			<label for="<?php echo $this->get_field_id('bg_colour'); ?>">Background colour:
+				<select class='widefat' id="<?php echo $this->get_field_id('bg_colour'); ?>"
+						 name="<?php echo $this->get_field_name('bg_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
 					$colourArray = ["Orange", "Blue", "Green", "Pink", "Turquoise","Coronavirus"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
-							echo ($panel_colour==strtolower($colour))?'selected':'';
+							echo ($bg_colour==strtolower($colour))?'selected':'';
 							echo ">" . $colour . "</option>";
 						}
 					?>
@@ -110,7 +111,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$instance['category']  = wp_strip_all_tags( $new_instance['category'] );
 		$instance['show_excerpt'] = isset( $new_instance['show_excerpt'] ) ? 1 : 0;
 		$instance['show_extra'] = isset( $new_instance['show_extra'] ) ? 1 : 0;
-		$instance['panel_colour'] = $new_instance['panel_colour'];
+		$instance['bg_colour'] = wp_strip_all_tags( $new_instance['bg_colour'] );
 		$instance['show_btn'] = isset( $new_instance['show_btn'] ) ? 1 : 0;
 		$instance['btn_text'] = wp_strip_all_tags( $new_instance['btn_text'] );
 
@@ -134,7 +135,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 		$category  = $instance['category'];
 		$show_excerpt = ( $instance['show_excerpt'] === 1 ) ? true : false;
 		$show_extra = ( $instance['show_extra'] === 1 ) ? true : false;
-		$panel_colour = $instance['panel_colour'] ;
+		$bg_colour = $instance['bg_colour'] ;
 		$show_btn = ( $instance['show_btn'] === 1 ) ? true : false;
 		$btn_text = $instance['btn_text'] ;
 
@@ -164,7 +165,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			$cat_recent_posts->the_post();
 			// start the panel
 			?>
-				<div class="col-md-12 col-sm-12 col-xs-12 panel panel-<?php echo $panel_colour ?>"><!-- start panel -->
+				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $bg_colour . '">'?><!-- start panel -->
 					<div class="row">
 					<?php $img_orient = orientation_check(get_post_thumbnail_id());
 					if ( $img_orient == 'ls') {
