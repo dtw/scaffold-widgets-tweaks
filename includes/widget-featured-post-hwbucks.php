@@ -137,9 +137,6 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$show_last_updated = $instance['show_last_updated'];
 		$last_updated_text = ! empty( $instance['last_updated_text'] ) ? $instance['last_updated_text'] : 'Last updated: ';
 
-		// create an array of colours to use below
-		$colourArray = ["Orange", "Blue", "Green", "Pink", "Turquoise","Coronavirus","Gold","Teal"];
-
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Content title:</label>
@@ -156,6 +153,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 						 name="<?php echo $this->get_field_name('bg_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						$colourArray = ["Light-Blue", "Pink", "Gold", "Teal"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
 							echo ($bg_colour==strtolower($colour))?'selected':'';
@@ -172,6 +170,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 						 name="<?php echo $this->get_field_name('border_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						$colourArray = ["None", "Pink", "Blue", "Gold", "Teal"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
 							echo ($border_colour==strtolower($colour))?'selected':'';
@@ -196,6 +195,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 						 name="<?php echo $this->get_field_name('btn_colour'); ?>" type="text">
 					<?php
 					/* This array and loop generates the rows for the dropdown menu. Blue results in panel-blue. Matching styles required in CSS */
+						$colourArray = ["Blue", "Light-Blue", "Gold", "Teal"];
 						foreach ($colourArray as $colour)  {
 							echo "<option value='" . strtolower($colour) . "'";
 							echo ($btn_colour==strtolower($colour))?'selected':'';
