@@ -132,8 +132,8 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$bg_colour = ! empty( $instance['bg_colour'] ) ? $instance['bg_colour'] : 'light-blue';
 		$border_colour = ! empty( $instance['border_colour'] ) ? $instance['border_colour'] : 'none';
 		$show_btn = $instance['show_btn'];
-		$btn_colour = ! empty( $instance['btn_colour'] ) ? $instance['btn_colour'] : 'blue';
 		$btn_text = ! empty( $instance['btn_text'] ) ? $instance['btn_text'] : 'Read more';
+		$btn_colour = ! empty( $instance['btn_colour'] ) ? $instance['btn_colour'] : 'blue';
 		$show_last_updated = $instance['show_last_updated'];
 		$last_updated_text = ! empty( $instance['last_updated_text'] ) ? $instance['last_updated_text'] : 'Last updated: ';
 
