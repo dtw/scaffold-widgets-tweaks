@@ -111,23 +111,23 @@
 }
 
 .media.callout-question {
-  border: 1px solid #bce8f1;
-  background-color: #d9edf7;
+  border: 1px solid var(--hw-light-blue);
+  background-color: var(--hw-light-blue-50);
 }
 
 .media.callout-warning {
-  border: 1px solid #ebccd1;
-  background-color: #f2dede;
+  border: 1px solid var(--hw-pink);
+  background-color: var(--hw-pink-50);
 }
 
 .media.callout-expired {
-  border: 1px solid rgba(127,127,127,0.1);
-  background-color: #F4F4F4;
+  border: 1px solid var(--hw-dark-grey);
+  background-color: var(--hw-pale-grey);
 }
 
 .media.callout-new-service {
-  border: 1px solid #d6e9c6;;
-  background-color: #dff0d8;
+  border: 1px solid var(--hw-teal);
+  background-color: var(--hw-teal-30);
 }
 
 .media.callout-expired .media-body.callout a,
