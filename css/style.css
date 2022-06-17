@@ -136,8 +136,10 @@
 }
 
 .media.callout-expired .media-body.callout a:hover,
-.media.callout-new-service .media-body.callout a:hover{
-  color: #F4F4F4;
+.media.callout-new-service .media-body.callout a:hover,
+.media.callout-expired .media-body.callout a:active,
+.media.callout-new-service .media-body.callout a:active{
+  color: white;
   background-color: var(--hw-blue);
   outline: 3px solid var(--hw-blue);
 }
