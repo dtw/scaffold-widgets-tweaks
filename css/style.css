@@ -49,14 +49,14 @@
 }
 
 .post-edit-link {
-  color: var(--url-blue) !important;
+  color: var(--hw-blue) !important;
 }
 
 .post-edit-link:hover,
 .post-edit-link:focus  {
   color: rgba(255,255,255,1.00) !important;
-  background-color: var(--url-blue) !important;
-  outline: 3px solid var(--url-blue) !important;
+  background-color: var(--hw-blue) !important;
+  outline: 3px solid var(--hw-blue) !important;
 }
 
 .callout-note .media-body a {
