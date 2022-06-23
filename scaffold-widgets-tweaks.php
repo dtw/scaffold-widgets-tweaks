@@ -66,16 +66,16 @@ if ( ! defined( 'WPINC' ) ) {
 	// g. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-featured-post-hwbucks.php');
 
-	// h. WIDGET for displaying RECENT FEEDBACK - moved to hw-feedback
+	// h. WIDGET for displaying RECENT FEEDBACK - MOVED to hw-feedback
 	//require_once('includes/widget-recent-feedback-hwbucks.php');
 
 	// i. WIDGET for displaying a three-column content
 	require_once('includes/widget-three-column-hwbucks.php');
 
-	// x. WIDGET for displaying a DIC VISIT - moved to hw-feedback
+	// x. WIDGET for displaying a DIC VISIT - MOVED to hw-feedback
 	// require_once('includes/widget-latest-dic-visit-hwbucks.php');
 
-	// y. WIDGET for displaying a FEATURED POST
+	// y. WIDGET for displaying a FEATURED POST w. optional children
 	require_once('includes/widget-latest-post-by-category-hwbucks.php');
 
 	// z. WIDGET for displaying a FEATURED POST
