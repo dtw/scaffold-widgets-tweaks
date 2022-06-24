@@ -48,17 +48,17 @@ if ( ! defined( 'WPINC' ) ) {
 	// a. WIDGET for listing CHILD PAGES
 	require_once('includes/widget-list-child-pages.php');
 
-	// b. WIDGET for displaying a FEATURED PAGE
-	require_once('includes/widget-featured-page.php');
+	// b. WIDGET for displaying a FEATURED PAGE - REPLACED by widget-featured-page-hwbucks.php
+	// require_once('includes/widget-featured-page.php');
 
 	// c. WIDGET for listing CHILD PAGES plus FEATURED IMAGES
 	// moved to shortcodes.php
 
-	// d. WIDGET for displaying RECENT POSTS by CATEGORY
-	require_once('includes/widget-recent-posts-by-category.php');
+	// d. WIDGET for displaying RECENT POSTS by CATEGORY - REPLACED by widget-latest-post-by-category-hwbucks.php
+	// require_once('includes/widget-recent-posts-by-category.php');
 
-	// e. WIDGET for link buttons
-	require_once('includes/widget-bootstrap-button.php');
+	// e. WIDGET for link buttons - DELETED
+	// require_once('includes/widget-bootstrap-button.php');
 
 	// f. WIDGET for displaying a FEATURED PAGE
 	require_once('includes/widget-featured-page-hwbucks.php');
@@ -66,16 +66,16 @@ if ( ! defined( 'WPINC' ) ) {
 	// g. WIDGET for displaying a FEATURED POST
 	require_once('includes/widget-featured-post-hwbucks.php');
 
-	// h. WIDGET for displaying RECENT FEEDBACK
-	require_once('includes/widget-recent-feedback-hwbucks.php');
+	// h. WIDGET for displaying RECENT FEEDBACK - MOVED to hw-feedback
+	//require_once('includes/widget-recent-feedback-hwbucks.php');
 
 	// i. WIDGET for displaying a three-column content
 	require_once('includes/widget-three-column-hwbucks.php');
 
-	// x. WIDGET for displaying a FEATURED POST
-	require_once('includes/widget-latest-dic-visit-hwbucks.php');
+	// x. WIDGET for displaying a DIC VISIT - MOVED to hw-feedback
+	// require_once('includes/widget-latest-dic-visit-hwbucks.php');
 
-	// y. WIDGET for displaying a FEATURED POST
+	// y. WIDGET for displaying a FEATURED POST w. optional children
 	require_once('includes/widget-latest-post-by-category-hwbucks.php');
 
 	// z. WIDGET for displaying a FEATURED POST
