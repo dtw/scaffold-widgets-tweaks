@@ -80,7 +80,7 @@ class SF_HWBucks_Three_Column_Widget extends WP_Widget {
 			$body_text = ! empty( $instance['body_text_'.$i] ) ? $instance['body_text_'.$i] : 'Some text.';
 			$btn_text = ! empty( $instance['btn_text_'.$i] ) ? $instance['btn_text_'.$i] : 'Read more';
 		?>
-		<div id="hwbucks_three_column_<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
+		<div id="hwbucks-three-column-<?php echo $i ?>" style="margin-top:0.5rem;border:1px solid rgb(221, 221, 221);padding:0.5rem;">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h3>
 				<p>
 					<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Content title:</label>

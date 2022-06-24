@@ -90,7 +90,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 			$img_id = ! empty( $instance['img_id_'.$i] ) ? $instance['img_id_'.$i] : '52016';
 
 		?>
-		<div id="hwbucks_three_col_img_<?php echo $i ?>" class="hwbucks-three-col-img-container">
+		<div id="hwbucks-three-col-img-<?php echo $i ?>" class="hwbucks-three-col-img-container">
 			<h4 style="margin: 0;">Column <?php echo $i ?></h4>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'title_'.$i ); ?>">Title:</label>
