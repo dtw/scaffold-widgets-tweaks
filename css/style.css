@@ -128,3 +128,8 @@ ul.nav-tabs li::before{
 .last-update p, .first-pub p {
   font-weight: 900;
 }
+
+/* kill the yarpp-review-notice */
+.notice.notice-info.is-dismissible.yarpp-review-notice {
+	display: none;
+}
