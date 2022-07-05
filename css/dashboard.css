@@ -136,3 +136,9 @@ span.dashicons-small {
    list-style-type: disc;
    list-style-position: inside;
 }
+
+/* kill the yarpp-review-notice */
+.notice.notice-info.is-dismissible.yarpp-review-notice,
+.yarpp-review-notice {
+	display: none !important;
+}
