@@ -124,7 +124,7 @@ span.dashicons-small {
 
 /* URL Tool */
 
-#hwbucks_url_tool_intructions {
+#hwbucks-url-tool-intructions,
 	background: white;
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(211,211,211,0.35);
@@ -132,7 +132,7 @@ span.dashicons-small {
 	margin-bottom:1rem;
 }
 
-#hwbucks_url_tool_intructions ul {
+#hwbucks-url-tool-intructions ul {
    list-style-type: disc;
    list-style-position: inside;
 }

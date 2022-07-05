@@ -170,9 +170,9 @@ function hwbucks_url_tool() {
 
 	function hwbucks_url_tool_contents() {
 		?>
-    <div id="hwbucks_url_tool">
+    <div id="hwbucks-url-tool">
       <h1>Demographic Survey URL Tool</h1>
-      <div id="hwbucks_url_tool_intructions">
+      <div id="hwbucks-url-tool-intructions">
         <p>If you need to complete a demographic survey over the phone, the results will need to be linked to a CiviCRM Contact. This tool can be used to generate a link to the demographic survey based on URLs from CiviCRM.</p>
         <p>This tool will work with either:</p>
           <ul>
