@@ -125,6 +125,7 @@ span.dashicons-small {
 /* URL Tool */
 
 #hwbucks-url-tool-intructions,
+#hwbucks-data-import-tool-instructions {
 	background: white;
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(211,211,211,0.35);
@@ -135,6 +136,19 @@ span.dashicons-small {
 #hwbucks-url-tool-intructions ul {
    list-style-type: disc;
    list-style-position: inside;
+}
+
+/* Import Tool */
+.hw-feedback-cqc-form .hw-feedback-cqc-import-form-row {
+	margin: 0.5rem 0;
+}
+
+#hw-feedback-import-alert {
+	display: none;
+}
+
+#hw-feedback-preview-only-row {
+	display: inline-block;
 }
 
 /* kill the yarpp-review-notice */
