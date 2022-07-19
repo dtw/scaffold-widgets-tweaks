@@ -191,7 +191,7 @@ function hwbucks_url_tool() {
         </form>
       </div>
       <div id="final">
-        <p><a href="https://www.surveymonkey.co.uk/r/HW_BUCKS_DEMO_S?src=signposting&id=id_value" target="_blank">https://www.surveymonkey.co.uk/r/HW_BUCKS_DEMO_S?src=signposting&id=id_value</a></p>
+        <p><a href="https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=signposting&id=id_value" target="_blank">https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=signposting&id=id_value</a></p>
       </div>
     </div>
 		<?php
