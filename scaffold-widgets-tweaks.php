@@ -25,16 +25,16 @@ if ( ! defined( 'WPINC' ) ) {
 ------------------------------------------- */
 
 	// 1. POST EDITOR modifications
-	require_once('includes/post-editor.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/post-editor.php');
 
 	// 2. SHORTCODES
-	require_once('includes/shortcodes.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/shortcodes.php');
 
 	// 3. MEDIA LIBRARY
-	require_once('includes/media-library.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/media-library.php');
 
 	// 4. DASHBOARD
-	require_once('includes/dash.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/dash.php');
 
 	// 5. Add custom functions
 	require_once('functions/functions-orientation-check.php');
@@ -46,40 +46,40 @@ if ( ! defined( 'WPINC' ) ) {
 ------------------------------------------- */
 
 	// a. WIDGET for listing CHILD PAGES
-	require_once('includes/widget-list-child-pages.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-list-child-pages.php');
 
 	// b. WIDGET for displaying a FEATURED PAGE - REPLACED by widget-featured-page-hwbucks.php
-	// require_once('includes/widget-featured-page.php');
+	// require_once(plugin_dir_path( __FILE__ ).'/includes/widget-featured-page.php');
 
 	// c. WIDGET for listing CHILD PAGES plus FEATURED IMAGES
 	// moved to shortcodes.php
 
 	// d. WIDGET for displaying RECENT POSTS by CATEGORY - REPLACED by widget-latest-post-by-category-hwbucks.php
-	// require_once('includes/widget-recent-posts-by-category.php');
+	// require_once(plugin_dir_path( __FILE__ ).'/includes/widget-recent-posts-by-category.php');
 
 	// e. WIDGET for link buttons - DELETED
-	// require_once('includes/widget-bootstrap-button.php');
+	// require_once(plugin_dir_path( __FILE__ ).'/includes/widget-bootstrap-button.php');
 
 	// f. WIDGET for displaying a FEATURED PAGE
-	require_once('includes/widget-featured-page-hwbucks.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-featured-page-hwbucks.php');
 
 	// g. WIDGET for displaying a FEATURED POST
-	require_once('includes/widget-featured-post-hwbucks.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-featured-post-hwbucks.php');
 
 	// h. WIDGET for displaying RECENT FEEDBACK - MOVED to hw-feedback
-	//require_once('includes/widget-recent-feedback-hwbucks.php');
+	//require_once(plugin_dir_path( __FILE__ ).'/includes/widget-recent-feedback-hwbucks.php');
 
 	// i. WIDGET for displaying a three-column content
-	require_once('includes/widget-three-column-hwbucks.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-three-column-hwbucks.php');
 
 	// x. WIDGET for displaying a DIC VISIT - MOVED to hw-feedback
-	// require_once('includes/widget-latest-dic-visit-hwbucks.php');
+	// require_once(plugin_dir_path( __FILE__ ).'/includes/widget-latest-dic-visit-hwbucks.php');
 
 	// y. WIDGET for displaying a FEATURED POST w. optional children
-	require_once('includes/widget-latest-post-by-category-hwbucks.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-latest-post-by-category-hwbucks.php');
 
 	// z. WIDGET for displaying a FEATURED POST
-	require_once('includes/widget-three-column-img-hwbucks.php');
+	require_once(plugin_dir_path( __FILE__ ).'/includes/widget-three-column-img-hwbucks.php');
 
 	// Add CUSTOM CSS to the SHORTCODES
 
