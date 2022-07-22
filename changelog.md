@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.41.1] - 2022-07-19
+### Changed
+- minor tweaks and changes
+
+## [1.41.0] - 2022-06-24
+### Added
+- new_service callout shortcode - used when a new service begins at a previously registered location
+
+### Changed
+- fixed PHP contructors
+- updated styles and colours in-line with Healthwatch England rebrand
+- updated demographic survey handling
+
+## Removed
+- some widgets and shortcode moved to hw-feedback and hw-signposting
+- some old and out-date widgets removed
+
 ## [1.40.0] - 2022-06-09
 ### Changed
 - The Great Function Rename 2022 (renamed functions in line with plugin name)
