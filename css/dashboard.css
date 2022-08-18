@@ -82,9 +82,20 @@ span.dashicons-small {
 
 /* Comment columns
 ----------------------------------------*/
+.fixed .column-categories,
+.fixed .column-rel,
+.fixed .column-response,
+.fixed .column-role,
+.fixed .column-tags {
+ width: auto !important;
+}
 
-#author {
-	width: 15% !important;
+#thumb {
+  width: 80px;
+}
+
+.fixed .column-date {
+  width: 10% !important;
 }
 
 .comment.column-comment.has-row-actions.column-primary p {
