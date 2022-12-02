@@ -261,19 +261,19 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 	}
 
 	$args=array(
-	  'post_parent' => $page_id,
-	  'post_type' => 'page',
-	  'post_status' => 'publish',
-	  'posts_per_page' => -1,
-	  'order' => 'ASC',
-	  'orderby' => 'menu_order'
+		'post_parent' => $page_id,
+		'post_type' => 'page',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'order' => 'ASC',
+		'orderby' => 'menu_order'
 	);
 	$my_query = null;
 	$my_query = new WP_Query($args);
 	if( $my_query->have_posts() ) {
 		$output = "";
 		$output .= '<!-- start container --><div id="children-selector" class="child-nav row">';
-	  while ($my_query->have_posts()) : $my_query->the_post();
+		while ($my_query->have_posts()) : $my_query->the_post();
 			// check if the post has a Post Thumbnail assigned to it.
 			if ( has_post_thumbnail() ) {
 				$featured_image = get_the_post_thumbnail_url($page->ID, 'medium');
@@ -281,20 +281,20 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 				$featured_image = plugins_url('../images/default.png', __FILE__);
 				}
 
-      $output = $output .
-      '<div class="col-md-3 col-sm-4 col-xs-6">
-        <div class="children-container">
-          <a class="child-img-a" href="' . get_permalink() . '">
-            <img class="child-img" src="' . $featured_image . '" alt="' . get_the_title() . '" />
-          </a>
-          <a class="child-details" "href="' . get_permalink() . '">
-            <p>' . get_the_title() . '</p>
-            <div class="hover-content">
-              <p>' . get_the_excerpt() . '</p>
-            </div>
-          </a>
-        </div>
-      </div>';
+			$output = $output .
+			'<div class="col-md-3 col-sm-4 col-xs-6">
+				<div class="children-container">
+					<a class="child-img-a" href="' . get_permalink() . '">
+						<img class="child-img" src="' . $featured_image . '" alt="' . get_the_title() . '" />
+					</a>
+					<a class="child-details" "href="' . get_permalink() . '">
+						<p>' . get_the_title() . '</p>
+						<div class="hover-content">
+							<p>' . get_the_excerpt() . '</p>
+						</div>
+					</a>
+				</div>
+			</div>';
 		endwhile;
 		$output .= "</div><!-- end of container -->";
 		return $output;
