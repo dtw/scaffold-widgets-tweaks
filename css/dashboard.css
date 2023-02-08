@@ -45,6 +45,10 @@ label[for="hw_services_website"]:before {
 	content: "\f504 ";
 	}
 
+label[for="hw_services_contact_email"]:before {
+	content: "\f465 ";
+}
+
 label[for="hw_services_cqc_location"]:before {
 	content: "\f112 ";
 	}

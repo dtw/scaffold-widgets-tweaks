@@ -261,19 +261,19 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 	}
 
 	$args=array(
-	  'post_parent' => $page_id,
-	  'post_type' => 'page',
-	  'post_status' => 'publish',
-	  'posts_per_page' => -1,
-	  'order' => 'ASC',
-	  'orderby' => 'menu_order'
+		'post_parent' => $page_id,
+		'post_type' => 'page',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'order' => 'ASC',
+		'orderby' => 'menu_order'
 	);
 	$my_query = null;
 	$my_query = new WP_Query($args);
 	if( $my_query->have_posts() ) {
 		$output = "";
 		$output .= '<!-- start container --><div id="children-selector" class="child-nav row">';
-	  while ($my_query->have_posts()) : $my_query->the_post();
+		while ($my_query->have_posts()) : $my_query->the_post();
 			// check if the post has a Post Thumbnail assigned to it.
 			if ( has_post_thumbnail() ) {
 				$featured_image = get_the_post_thumbnail_url($page->ID, 'medium');
@@ -281,20 +281,20 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 				$featured_image = plugins_url('../images/default.png', __FILE__);
 				}
 
-      $output = $output .
-      '<div class="col-md-3 col-sm-4 col-xs-6">
-        <div class="children-container">
-          <a class="child-img-a" href="' . get_permalink() . '">
-            <img class="child-img" src="' . $featured_image . '" alt="' . get_the_title() . '" />
-          </a>
-          <a class="child-details" "href="' . get_permalink() . '">
-            <p>' . get_the_title() . '</p>
-            <div class="hover-content">
-              <p>' . get_the_excerpt() . '</p>
-            </div>
-          </a>
-        </div>
-      </div>';
+			$output = $output .
+			'<div class="col-md-3 col-sm-4 col-xs-6">
+				<div class="children-container">
+					<a class="child-img-a" href="' . get_permalink() . '">
+						<img class="child-img" src="' . $featured_image . '" alt="' . get_the_title() . '" />
+					</a>
+					<a class="child-details" "href="' . get_permalink() . '">
+						<p>' . get_the_title() . '</p>
+						<div class="hover-content">
+							<p>' . get_the_excerpt() . '</p>
+						</div>
+					</a>
+				</div>
+			</div>';
 		endwhile;
 		$output .= "</div><!-- end of container -->";
 		return $output;
@@ -528,17 +528,18 @@ function scaffold_shortcode_mailchimp_signup() {
 			<h2>Subscribe to the Healthwatch Bucks newsletter</h2>
 		</div>
 		<div id="mailchimp-form-inline">
-			<form action="//healthwatchbucks.us3.list-manage.com/subscribe/post?u=b3e99f9452fa226631c515b62&amp;id=bc05bac5eb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin:0;" target="_blank" novalidate>
+			<form action="https://healthwatchbucks.us3.list-manage.com/subscribe/post?u=b3e99f9452fa226631c515b62&amp;id=bc05bac5eb&amp;f_id=00febfe2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin:0;" target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
-					<label class="hidden" for="mce-EMAIL">Email Address </label>
-					<input placeholder="Your email address" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+					<label for="mce-EMAIL">Email Address </label>
+					<input placeholder="" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 				</div>
-				<div id="mce-responses" class="clear">
-					<div class="response" id="mce-error-response" style="display:none"></div>
-					<div class="response" id="mce-success-response" style="display:none"></div>
-				</div>
-				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3e99f9452fa226631c515b62_bc05bac5eb" tabindex="-1" value=""></div>
+				<div id="mce-responses" class="clear foot">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<!-- <div id="mce-previous-newsletter"><i class="mc-icons far fa-lg fa-newspaper" aria-hidden="true"></i><a target="_blank" href="https://us3.campaign-archive.com/home/?u=b3e99f9452fa226631c515b62&id=bc05bac5eb" title="View previous campaigns">Read previous newsletters &raquo;</a></div> -->
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3e99f9452fa226631c515b62_bc05bac5eb" tabindex="-1" value="" style="padding:0px;"></div>
 			</form>
 		</div>
 	</div>

@@ -254,7 +254,7 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 					?>
 							<a class="img-anchor" href="
 								<?php the_permalink(); ?>" rel="bookmark">
-								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img border-colour-'.$border_colour)); ?>
+								<?php the_post_thumbnail('medium', array('class' => 'panel-icon-img border-colour-'.$border_colour, 'alt' => esc_html (get_the_title()) )); ?>
 							</a>
 						</div>
 					</div>
