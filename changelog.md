@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.42] - 2023-04-20
+### Changed
+- Featured Post widget now allows Scheduled ('future' status) posts. Logged in users will see a warning on widgets showing a scheduled post.
+- Minor CSS changes
+
 ## [1.41.3] - 2023-02-17
 ### Changed
 - styles for improved accessibility
