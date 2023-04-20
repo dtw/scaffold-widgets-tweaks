@@ -49,6 +49,10 @@ label[for="hw_services_contact_email"]:before {
 	content: "\f465 ";
 }
 
+label[for="hw_services_contact_optout"]:before {
+	content: "\f153 ";
+}
+
 label[for="hw_services_cqc_location"]:before {
 	content: "\f112 ";
 	}
