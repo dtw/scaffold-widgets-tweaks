@@ -1,14 +1,5 @@
 /* CSS for changes to plugin */
 
-.panel-body .media-body a {
-  /*color: var(--url-blue);*/
-}
-
-.panel-body .media-body a:hover,
-.panel-body .media-body a:focus  {
-  /*color: rgba(255,255,255,1.00) !important;*/
-}
-
 .post-edit-link {
   color: var(--hw-blue) !important;
 }
