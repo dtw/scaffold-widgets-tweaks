@@ -114,6 +114,11 @@
 	font-weight: 900;
 }
 
+.media.callout.callout-warning.callout-future {
+  margin: 1rem 0rem;
+  max-width: 2000px;
+}
+
 /* CSS for bootstrap tabs */
 ul.nav-tabs li::before{
   content:none !important;
