@@ -27,7 +27,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 		$name = 'HW Featured Post',
 		array(
 			'classname'   => 'scaffold_widget_hwbucks_featured_post widget_featured_post',
-			'description' => 'Display a specific post title, excerpt and featured image (choose most recent 10 posts)'
+			'description' => 'Display a specific post title, excerpt and featured image (choose from most recent 10 posts)'
 	)
 		);
 	}
@@ -61,10 +61,25 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			if ( $p->have_posts() ) {
 				$p->the_post();
 
+				// if the post scheduled and the user is not logged in, just do nothing
+				if ( get_post_status() === 'future' && ! is_user_logged_in() ) {
+					return;
+				}
+				// post is published or user logged in, so output widget
 				echo $before_widget;
 				?>
 
 				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $bg_colour . '">'?>
+					<?php if ( get_post_status() === 'future' ) { ?>
+						<div class="row">
+							<div class="media callout callout-warning callout-future">
+								<div class="media-left callout">
+										<i class="media-object fas fa-exclamation fa-2x shortcode-icon" aria-hidden="true" title="Scheduled post warning"></i>
+								</div>
+								<div class="media-body callout"><p>This panel is currently hidden from non-admin users because it directs to a scheduled post.</p></div>
+							</div>
+						</div>
+					<?php } ?>
 					<div class="row">
 						<div class="col-md-8 col-sm-6 col-xs-12 panel-text">
 							<div class="row">
@@ -223,7 +238,7 @@ class SF_HWBucks_Featured_Post_Widget extends WP_Widget {
 			 		$args = array(
 							'post_type' => 'post',
 							'numberposts' => '20',
-							'post_status' => 'publish',
+							'post_status' => array( 'publish', 'future' )
 							//'order' => 'asc' // rather than changing the sort order, this gets the oldest x posts first!
 	        );
 	        $recent_posts = wp_get_recent_posts($args);
