@@ -496,7 +496,7 @@ add_shortcode( 'download_removed', 'hwbucks_shortcode_download_removed' );
 
 function hwbucks_shortcode_new_service_callout( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'website' => 'https://healthwatchbucks.co.uk/', // website for the callout
+		'website' => get_site_url(), // website for the callout
 	), $atts );
 
 	if ( empty( $content ) ) {

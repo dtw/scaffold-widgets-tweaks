@@ -85,7 +85,7 @@ class SF_HWBucks_Three_Col_Img_Widget extends WP_Widget {
 	function form( $instance ) {
 		for ($i = 1; $i <= 3; $i++) {
 			$title = ! empty( $instance['title_'.$i] ) ? $instance['title_'.$i] : 'Title' . $i;
-			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : 'https://www.healthwatchbucks.co.uk/';
+			$url = ! empty( $instance['url_'.$i] ) ? $instance['url_'.$i] : get_site_url();
 			$excerpt_text = ! empty( $instance['excerpt_text_'.$i] ) ? $instance['excerpt_text_'.$i] : 'A blurb.';
 			$img_id = ! empty( $instance['img_id_'.$i] ) ? $instance['img_id_'.$i] : '52016';
 
