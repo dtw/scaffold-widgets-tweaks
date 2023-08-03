@@ -76,6 +76,9 @@
 .media.callout-expired .media-body.callout a:hover,
 .media.callout-new-service .media-body.callout a:hover,
 .media.callout-dual-reg .media-body.callout a:hover,
+.media.callout-expired .media-body.callout a:focus,
+.media.callout-new-service .media-body.callout a:focus,
+.media.callout-dual-reg .media-body.callout a:focus,
 .media.callout-expired .media-body.callout a:active,
 .media.callout-new-service .media-body.callout a:active,
 .media.callout-dual-reg .media-body.callout a:active {
