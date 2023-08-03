@@ -107,6 +107,7 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 function my_custom_dashboard_widgets() {
   global $wp_meta_boxes;
   wp_add_dashboard_widget('scaffold_custom_help_widget', 'Get website support', 'scaffold_custom_dashboard_help');
+  wp_add_dashboard_widget('scaffold_custom_shortcode_guide_widget', 'Shortcodes Guide', 'scaffold_custom_dashboard_shortcode_guide');
 }
 
 function scaffold_custom_dashboard_help() {
@@ -140,6 +141,18 @@ function scaffold_custom_dashboard_help() {
   <hr />
 
   <p><span class="dashicons dashicons-welcome-learn-more"></span> Getting started? <a href="'. $rtfm .'" target="_blank">READ THE MANUAL</a> on Google Drive</p>';
+
+}
+
+function scaffold_custom_dashboard_shortcode_guide() {
+
+  $rtfm = 'https://healthwatchbucks.sharepoint.com/:w:/r/sites/staff/Shared%20Documents/General/04%20Operations/Processes/Using%20WordPress%20Shortcodes.docx?d=wbf9067ffef854592a91cfe9d1f86af10&csf=1&web=1&e=8JUEUV';
+
+  echo '
+
+  <p>This plugin contains a number of custom <a href="https://developer.wordpress.org/plugins/shortcodes/" target="_blank">WordPress shortcodes</a>, which are invalauble in maintaining a consistent visual design.</p>
+
+  <p><span class="dashicons dashicons-welcome-learn-more"></span> You can read the <a href="'. $rtfm .'" target="_blank">Using WordPress Shortcodes</a> guide on SharePoint.</p>';
 
 }
 
