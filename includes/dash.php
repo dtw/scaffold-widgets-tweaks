@@ -133,24 +133,14 @@ function custom_dashboard_help() {
 
   <p><span class="dashicons dashicons-awards"></span>This theme meets  <a href="' . $url . '/wp-admin/themes.php?page=themecheck">WordPress quality standards</a></p>
 
+  <hr />
+
+  <p>This theme was originally built by <strong>Jason King</strong>.</p>
 
   <hr />
 
-  <p><img src="https://pbs.twimg.com/profile_images/446240204962013184/bPy0WSrL_400x400.jpeg" width="120" style="float:right; " />This theme is built and supported by <strong>Jason King</strong>, please contact him with any problems or questions.</p>
+  <p><span class="dashicons dashicons-welcome-learn-more"></span> Getting started? <a href="'. $rtfm .'" target="_blank">READ THE MANUAL</a> on Google Drive</p>';
 
-  <p><span class="dashicons dashicons-admin-links"></span> <a href="http://www.kingjason.co.uk">www.kingjason.co.uk</a></p>
-
-  <p><span class="dashicons dashicons-email-alt"></span> <a href="mailto:jason@kingjason.co.uk">jason@kingjason.co.uk</a></p>
-
-  <p><span class="dashicons dashicons-phone"></span> <strong>07414 755 856</strong>.</p>
-
-  <p><span class="dashicons dashicons-twitter"></span> <a href="' . $twitter_url . '" target="_blank">@jasoncsking</a></p>
-
-  <hr />
-
-  <p><span class="dashicons dashicons-welcome-learn-more"></span> Getting started? <a href="'. $rtfm .'" target="_blank">READ THE MANUAL</a> on Google Drive</p>
-
-  <p><span class="dashicons dashicons-tickets"></span> Requests? Problems? <a href="mailto:jason@kingjason.co.uk">Email a support ticket</a> to <strong>jason@kingjason.co.uk</strong></p>';
 }
 
 /* 9. Add Demographic URL tool
