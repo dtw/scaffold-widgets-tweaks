@@ -106,10 +106,10 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 
 function my_custom_dashboard_widgets() {
   global $wp_meta_boxes;
-  wp_add_dashboard_widget('custom_help_widget', 'Get website support', 'custom_dashboard_help');
+  wp_add_dashboard_widget('scaffold_custom_help_widget', 'Get website support', 'scaffold_custom_dashboard_help');
 }
 
-function custom_dashboard_help() {
+function scaffold_custom_dashboard_help() {
 
   $url = home_url('');
 
