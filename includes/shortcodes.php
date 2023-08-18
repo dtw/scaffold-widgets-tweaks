@@ -491,34 +491,6 @@ function hwbucks_shortcode_download_removed( $atts, $content = null ) {
 
 add_shortcode( 'download_removed', 'hwbucks_shortcode_download_removed' );
 
-/* Media object NEW SERVICE
------------------------- */
-
-function hwbucks_shortcode_new_service_callout( $atts, $content = null ) {
-	$a = shortcode_atts( array(
-		'website' => get_site_url(), // website for the callout
-	), $atts );
-
-	if ( empty( $content ) ) {
-		$cleaned_url = wp_strip_all_tags($a['website']);
-	} else {
-		$cleaned_url = wp_strip_all_tags($content);
-	}
-	$display_url = preg_replace("(^https?://)", "", $cleaned_url );
-	$label = 'New service';
-	$new_service_object = '
-	<div class="media callout callout-new-service">
-		<div class="media-left callout">
-				<i class="media-object fas fa-plus-square fa-2x shortcode-icon" aria-hidden="true" title="' . $label . '"></i>
-		</div>
-		<div class="media-body callout"><p>There is a new service at this location <a href="' . $cleaned_url . '">' . $display_url . '</a></p></div>
-	</div>';
-
-	return $new_service_object;
-}
-
-add_shortcode( 'new_service', 'hwbucks_shortcode_new_service_callout' );
-
 /* Add a mailchimp sign-up form */
 function scaffold_shortcode_mailchimp_signup() {
 	$form_output = '
