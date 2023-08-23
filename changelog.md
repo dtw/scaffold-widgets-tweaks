@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.43.1] - 2023-08-18
+### Changed
+- syntax changes to suppress PHP Notices
+
+### Deleted
+- CSS rules, moved to hw-feedback
+
 ## [1.43] - 2023-06-02
 ### Changed
 - hard-code domain strings
