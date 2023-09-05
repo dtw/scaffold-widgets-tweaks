@@ -118,7 +118,7 @@ function scaffold_custom_dashboard_help() {
 
   $twitter_url = 'http://www.twitter.com/jasoncsking';
 
-  $rtfm = 'https://docs.google.com/document/d/1Vdji4IOJnPP8akjGdVGLP_i6je165qBg_rZbWkr05I8/edit?usp=sharing';
+  $scaffold_manual = 'https://docs.google.com/document/d/1Vdji4IOJnPP8akjGdVGLP_i6je165qBg_rZbWkr05I8/edit?usp=sharing';
 
   $my_theme = wp_get_theme();
   $my_theme_name = $my_theme->get( 'Name' );
@@ -140,7 +140,7 @@ function scaffold_custom_dashboard_help() {
 
   <hr />
 
-  <p><span class="dashicons dashicons-welcome-learn-more"></span> Getting started? <a href="'. $rtfm .'" target="_blank">READ THE MANUAL</a> on Google Drive</p>';
+  <p><span class="dashicons dashicons-welcome-learn-more"></span> Getting started? <a href="'. $scaffold_manual .'" target="_blank">READ THE MANUAL</a> on Google Drive</p>';
 
 }
 
