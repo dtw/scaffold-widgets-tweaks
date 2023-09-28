@@ -148,22 +148,22 @@ if ( ! defined( 'WPINC' ) ) {
 	/**
 	 * Activate the plugin.
 	 */
-	function swt_activate() {
+	function scaffold_widget_tweaks_activate() {
 	    // Trigger our function that registers the custom role
 	    create_editor_plus_role();
 	    create_subscriber_plus_role();
 	}
-	register_activation_hook( __FILE__, 'swt_activate' );
+	register_activation_hook( __FILE__, 'scaffold_widget_tweaks_activate' );
 
 	/**
 	 * Deactivate the plugin.
 	 */
-	function swt_deactivate() {
+	function scaffold_widget_tweaks_deactivate() {
 	    // Trigger our function that remove the custom role
 	    remove_editor_plus_role();
 	    remove_subscriber_plus_role();
 	}
-	register_deactivation_hook( __FILE__, 'swt_deactivate' );
-	register_uninstall_hook( __FILE__, 'swt_deactivate' );
+	register_deactivation_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );
+	register_uninstall_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );
 
 ?>
