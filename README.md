@@ -6,6 +6,8 @@ For support please contact Phil Thiselton (dtw) at phil@healthwatchbucks.co.uk
 
 ## Description
 
+The companion plug-in to the Scaffold Theme.
+
 ## Features
 
 * adds "Editor Plus" and "Subscriber Plus" roles
@@ -17,6 +19,12 @@ For support please contact Phil Thiselton (dtw) at phil@healthwatchbucks.co.uk
 * adds many shortcodes including several "callouts" (warnings, notes, etc) and complex accordions using Bootstrap
 
 See this document for more information (https://healthwatchbucks.sharepoint.com/:w:/g/EUddNnm6oVdOu-LEm0P3zn0BfCApNSHQ_PAgWCoe7wmJbg)
+
+## Installation
+
+1. Upload the 'scaffold-widgets-tweaks' folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Do not delete it.
 
 ## License
 Unless otherwise specified, all the plugin files, scripts and images are licensed under GNU General Public License version 2, see http://www.gnu.org/licenses/gpl-2.0.html.
