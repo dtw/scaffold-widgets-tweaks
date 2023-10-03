@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Scaffold Widgets and Tweaks
  * Description:       Improves how the post editor and admin screens work in WordPress, and adds widgets for the Scaffold WordPress theme.  <strong>DO NOT DELETE !</strong>
- * Version:           1.43.2
+ * Version:           1.43.3
  * Author:            Phil Thiselton & Jason King
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -41,6 +41,9 @@ if ( ! defined( 'WPINC' ) ) {
 
 	// 6. Add custom roles
 	require_once('functions/functions-custom-roles.php');
+
+	// 7. SiteGround Tweaks
+	require_once(plugin_dir_path(__FILE__) . '/includes/siteground-tweaks.php');
 
 /* Widgets
 ------------------------------------------- */
