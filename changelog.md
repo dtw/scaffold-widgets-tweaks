@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.43.3] - 2022-10-02
+### Added
+- support for Siteground Security plugin (sg-security) 2FA to custom roles
+
 ## [1.43.2] - 2023-09-28
 ### Removed
 - many CSS rules to hw-feedback
