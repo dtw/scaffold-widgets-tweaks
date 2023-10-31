@@ -43,4 +43,12 @@ function generateLink()
       {
         // show error
       }
+    
+    // second string to replace
+    var second_target_string = 'src_value'
+    //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
+    var selected_src = document.getElementById('civicrm-src').value;
+    // replace second_target_string with civicrm-src
+    var re_second_target_string = new RegExp(second_target_string, 'gi');
+    div.innerHTML = div.innerHTML.replace(re_second_target_string, selected_src);
    }
