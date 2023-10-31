@@ -183,6 +183,11 @@ function hwbucks_url_tool_contents()
       <form id="hwbucks-url-tool-form">
         <label for="civicrm-url">CiviCRM URL</label>
         <input required="required" type="text" name="civicrm-url" id="civicrm-url" />
+        <label for="civicrm-src">Feedback Source</label>
+        <select required="required" class="widefat" name="civicrm-src" id="civicrm-src" tabindex="0" size="1">
+          <option value="signposting" selected="selected">Signposting</option>
+          <option value="hwe">Healthwatch England</option>
+        </select>
         <button type="button" onclick="generateLink();">Generate Link</button>
         <button type="button" onclick="window.location.reload(true)">Reset</button>
       </form>
