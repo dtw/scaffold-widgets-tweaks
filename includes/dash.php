@@ -197,6 +197,8 @@ function hwbucks_url_tool_contents()
           <select required="required" name="hwbucks-url-tool-form-civicrm-src" id="hwbucks-url-tool-form-civicrm-src" tabindex="0" size="1">
             <option value="signposting" selected="selected">Signposting</option>
             <option value="hwe">Healthwatch England</option>
+            <option value="tap">The Advocacy People</option>
+            <option value="cab">Citizen's Advice Bucks</option>
           </select>
         </div>
         <div class="hwbucks-url-tool-form-row">
