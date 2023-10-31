@@ -173,8 +173,10 @@ function hwbucks_url_tool_contents()
       <p>If you need to complete a demographic survey over the phone, the results will need to be linked to a CiviCRM Contact. This tool can be used to generate a link to the demographic survey based on URLs from CiviCRM.</p>
       <p>This tool will work with either:</p>
       <ul>
-        <li>CiviCRM Client URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000</li>
-        <li>CiviCRM Case view URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view&context=case&selectedChild=case&key=somekey</li>
+        <li>CiviCRM Client URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?action=view&reset=1&cid=2000&context=advanced&key=somekey</li>
+        <li>CiviCRM Case view URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case%3Freset%3D1%26id%3D488%26cid%3D2000%26action%3Dview</li>
+        <!-- https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view -->
+        <!-- https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view&context=case&selectedChild=case&key=somekey -->
       </ul>
       <p>
         To generate a link:
@@ -191,7 +193,7 @@ function hwbucks_url_tool_contents()
         <div class="hwbucks-url-tool-form-row">
           <label for="hwbucks-url-tool-form-civicrm-url">CiviCRM URL</label>
           <input required="required" type="text" name="hwbucks-url-tool-form-civicrm-url" id="hwbucks-url-tool-form-civicrm-url" />
-          <div id="hwbucks-url-tool-form-alert" class="hw-feedback-alert" role="alert" style="display: none;"><strong>This field cannot be be blank</strong></div>
+          <div id="hwbucks-url-tool-form-alert" class="hw-feedback-alert" role="alert" style="display: none;">This does not look like a URL from bucks.healthwatchcrm.co.uk</div>
         </div>
         <div class="hwbucks-url-tool-form-row">
           <label for="hwbucks-url-tool-form-civicrm-src">Feedback Source</label>
