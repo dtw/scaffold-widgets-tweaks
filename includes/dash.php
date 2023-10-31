@@ -181,8 +181,8 @@ function hwbucks_url_tool_contents()
     </div>
     <div id="form">
       <form id="formularz">
-        <label for="civicrm_url" class="labelInline">CiviCRM URL</label>
-        <input type="text" name="civicrm_url" id="civicrm_url" />
+        <label for="civicrm-url" >CiviCRM URL</label>
+        <input type="text" name="civicrm-url" id="civicrm-url" />
         <button type="button" onclick="generateLink();">Generate Link</button>
         <button type="button" onclick="window.location.reload(true)">Reset</button>
       </form>

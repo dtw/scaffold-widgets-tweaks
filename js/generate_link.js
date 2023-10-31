@@ -5,7 +5,7 @@ function generateLink()
     // first string to replace
     var first_target_string = 'id_value'
     //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
-    var pasted_url = document.getElementById('civicrm_url').value;
+    var pasted_url = document.getElementById('civicrm-url').value;
 
     // check what URL has been pasted - CiviCRM Client URL
     regex_client = /https\:\/\/bucks\.healthwatchcrm\.co\.uk\/civicrm\/contact\/view\?reset=1&cid=([\d]{3,})(&.*)?/;
