@@ -180,9 +180,9 @@ function hwbucks_url_tool_contents()
       <p>Click the "Reset" button before pasting a new URL.
     </div>
     <div id="form">
-      <form id="formularz">
-        <label for="civicrm-url" >CiviCRM URL</label>
-        <input type="text" name="civicrm-url" id="civicrm-url" />
+      <form id="hwbucks-url-tool-form">
+        <label for="civicrm-url">CiviCRM URL</label>
+        <input required="required" type="text" name="civicrm-url" id="civicrm-url" />
         <button type="button" onclick="generateLink();">Generate Link</button>
         <button type="button" onclick="window.location.reload(true)">Reset</button>
       </form>
