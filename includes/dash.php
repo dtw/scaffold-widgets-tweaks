@@ -203,7 +203,7 @@ function hwbucks_url_tool_contents()
           </select>
         </div>
         <div class="hwbucks-url-tool-form-row">
-          <button type="button" class="button-primary" onclick="generateLink();">Generate Link</button>
+          <button id="hwbucks-url-tool-form-generate-button" type="button" class="button-primary" onclick="generateLink();">Generate Link</button>
           <button type="button" class="button-primary" onclick="window.location.reload(true)">Reset</button>
         </div>
       </form>

@@ -55,4 +55,8 @@ function generateLink()
     final_div.innerHTML = final_div.innerHTML.replace(re_second_target_string, selected_src);
     // show the the final URL in a div
     final_div.style.display = "inline-block";
+
+    // disable the generate button
+    generate_button = document.getElementById('hwbucks-url-tool-form-generate-button');
+    generate_button.setAttribute('disabled', '')
    }
