@@ -2,6 +2,8 @@ function generateLink()
   {
     // get the default URL string
     var final_div = document.getElementById('final');
+    // get the warning div
+    var warning_div = document.getElementById('hwbucks-url-tool-form-alert');
     // first string to replace
     var first_target_string = 'id_value'
     //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
