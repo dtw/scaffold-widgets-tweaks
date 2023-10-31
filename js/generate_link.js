@@ -1,36 +1,46 @@
 function generateLink()
   {
+    // get the default URL string
     var div = document.getElementById('final');
-    var find = 'id_value'
-    //var replace = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
-    var replace = document.getElementById('civicrm_url').value;
+    // first string to replace
+    var first_target_string = 'id_value'
+    //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
+    var pasted_url = document.getElementById('civicrm_url').value;
 
-    regex_1 = /https\:\/\/bucks\.healthwatchcrm\.co\.uk\/civicrm\/contact\/view\?reset=1&cid=([\d]{3,})(&.*)?/;
-    if (replace.match(regex_1))
+    // check what URL has been pasted - CiviCRM Client URL
+    regex_client = /https\:\/\/bucks\.healthwatchcrm\.co\.uk\/civicrm\/contact\/view\?reset=1&cid=([\d]{3,})(&.*)?/;
+    if (pasted_url.match(regex_client))
     {
-      id_1 = replace.match(regex_1)[1]; // id = '2000'
+      // if match, capture id
+      id_client = pasted_url.match(regex_client)[1]; // id = '2000'
     }
     else {
-      id_1 = false
+      id_client = false
     }
 
-    regex_2 = /https\:\/\/bucks\.healthwatchcrm\.co\.uk\/civicrm\/contact\/view\/case\?reset=1&id=([\d]{3,})&cid=([\d]{3,})(&.*)?/;
-    if (replace.match(regex_2))
+    // check what URL has been pasted - CiviCRM Case view URL
+    regex_case = /https\:\/\/bucks\.healthwatchcrm\.co\.uk\/civicrm\/contact\/view\/case\?reset=1&id=([\d]{3,})&cid=([\d]{3,})(&.*)?/;
+    if (pasted_url.match(regex_case))
     {
-      id_2 = replace.match(regex_2)[2]; // id = '2000'
+      // if match, capture id
+      id_case = pasted_url.match(regex_case)[2]; // id = '2000'
     }
     else {
-      id_2 = false
+      id_case = false
     }
 
-    var re_Find = new RegExp(find, 'gi');
-
-    if (id_1)
+    var re_first_target_string = new RegExp(first_target_string, 'gi');
+    // replace first_target_string with id_
+    if (id_client)
       {
-        div.innerHTML = div.innerHTML.replace(re_Find, id_1);
+      div.innerHTML = div.innerHTML.replace(re_first_target_string, id_client);
       }
-    else (id_2)
+    else if (id_case)
       {
-        div.innerHTML = div.innerHTML.replace(re_Find, id_2);
+      div.innerHTML = div.innerHTML.replace(re_first_target_string, id_case);
+      }
+    else // there URL didn't match either expected format
+      {
+        // show error
       }
    }
