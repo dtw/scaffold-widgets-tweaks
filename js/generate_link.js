@@ -59,4 +59,6 @@ function generateLink()
     // disable the generate button
     generate_button = document.getElementById('hwbucks-url-tool-form-generate-button');
     generate_button.setAttribute('disabled', '')
+    reset_button = document.getElementById('hwbucks-url-tool-form-reset-button');
+    reset_button.style.display = "inline-block";
    }
