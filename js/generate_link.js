@@ -53,4 +53,6 @@ function generateLink()
     // replace second_target_string with civicrm-src
     var re_second_target_string = new RegExp(second_target_string, 'gi');
     final_div.innerHTML = final_div.innerHTML.replace(re_second_target_string, selected_src);
+    // show the the final URL in a div
+    final_div.style.display = "inline-block";
    }
