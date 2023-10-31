@@ -205,6 +205,7 @@ function hwbucks_url_tool_contents()
           <button type="button" class="button-primary" onclick="generateLink();">Generate Link</button>
           <button type="button" class="button-primary" onclick="window.location.reload(true)">Reset</button>
         </div>
+        <div id="hwbucks-url-tool-form-alert" class="hw-feedback-alert" role="alert" style="display: none;"><strong>CiviCRM URL is blank!</strong></div>
       </form>
     </div>
     <div id="final">

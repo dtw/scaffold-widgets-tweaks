@@ -42,6 +42,8 @@ function generateLink()
     else // there URL didn't match either expected format
       {
         // show error
+        var warning_div = document.getElementById('hwbucks-url-tool-form-alert');
+        warning_div.style.display = "inline-block";
       }
     
     // second string to replace
