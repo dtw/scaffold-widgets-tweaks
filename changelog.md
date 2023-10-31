@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.44] - 2022-10-31
+### Added
+- new options for Demographic Survey URL Tool to set source
+
+### Changed
+- UI and intructions for Demographic Survey URL Tool to make it more user-friendly
+
 ## [1.43.4] - 2022-10-04
 ### Fixed
 - siteground-tweaks
@@ -55,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - updated styles and colours in-line with Healthwatch England rebrand
 - updated demographic survey handling
 
-## Removed
+### Removed
 - some widgets and shortcode moved to hw-feedback and hw-signposting
 - some old and out-date widgets removed
 
