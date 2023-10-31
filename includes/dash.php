@@ -181,15 +181,21 @@ function hwbucks_url_tool_contents()
     </div>
     <div id="form">
       <form id="hwbucks-url-tool-form">
-        <label for="civicrm-url">CiviCRM URL</label>
-        <input required="required" type="text" name="civicrm-url" id="civicrm-url" />
-        <label for="civicrm-src">Feedback Source</label>
-        <select required="required" class="widefat" name="civicrm-src" id="civicrm-src" tabindex="0" size="1">
-          <option value="signposting" selected="selected">Signposting</option>
-          <option value="hwe">Healthwatch England</option>
-        </select>
-        <button type="button" onclick="generateLink();">Generate Link</button>
-        <button type="button" onclick="window.location.reload(true)">Reset</button>
+        <div class="hwbucks-url-tool-form-row">
+          <label for=" civicrm-url">CiviCRM URL</label>
+          <input required="required" type="text" name="civicrm-url" id="civicrm-url" />
+        </div>
+        <div class="hwbucks-url-tool-form-row">
+          <label for="civicrm-src">Feedback Source</label>
+          <select required="required" name="civicrm-src" id="civicrm-src" tabindex="0" size="1">
+            <option value="signposting" selected="selected">Signposting</option>
+            <option value="hwe">Healthwatch England</option>
+          </select>
+        </div>
+        <div class="hwbucks-url-tool-form-row">
+          <button type="button" class="button-primary" onclick="generateLink();">Generate Link</button>
+          <button type="button" class="button-primary" onclick="window.location.reload(true)">Reset</button>
+        </div>
       </form>
     </div>
     <div id="final">

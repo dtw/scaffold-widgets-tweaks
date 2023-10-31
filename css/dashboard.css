@@ -66,3 +66,7 @@ span.dashicons-small {
 .yarpp-review-notice {
 	display: none !important;
 }
+
+#hwbucks-url-tool-form .hwbucks-url-tool-form-row {
+	margin: 0.5rem 0;
+}
