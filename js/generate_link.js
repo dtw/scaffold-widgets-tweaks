@@ -29,8 +29,8 @@ function generateLink()
       id_case = false
     }
 
+    // replace first_target_string with id_?
     var re_first_target_string = new RegExp(first_target_string, 'gi');
-    // replace first_target_string with id_
     if (id_client)
       {
       div.innerHTML = div.innerHTML.replace(re_first_target_string, id_client);
