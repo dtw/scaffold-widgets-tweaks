@@ -6,7 +6,7 @@ function generateLink()
     var warning_div = document.getElementById('hwbucks-url-tool-form-alert');
     // first string to replace
     var first_target_string = 'id_value'
-    //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
+    //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?action=view&reset=1&cid=2000"
     var pasted_url = document.getElementById('hwbucks-url-tool-form-civicrm-url').value;
 
     // check what URL has been pasted - CiviCRM Client URL
