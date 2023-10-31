@@ -176,8 +176,15 @@ function hwbucks_url_tool_contents()
         <li>CiviCRM Client URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000</li>
         <li>CiviCRM Case view URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view&context=case&selectedChild=case&key=somekey</li>
       </ul>
-      <p>Copy the appropriate URL from your web browser and paste into the "CiviCRM URL" field and click "Generate Link". Once the link is generated, you can click through to the survey.</p>
-      <p>Click the "Reset" button before pasting a new URL.
+      <p>
+        To generate a link:
+      <ol>
+        <li>Copy the appropriate URL from your web browser and paste into the <strong>CiviCRM URL</strong> field</li>
+        <li>Choose the Source of the feedback in the <strong>Feedback Source</strong> field</li>
+        <li>Click the <strong>Generate Link</strong> button. Once the link is generated, you can click through to the survey.</li>
+      </ol>
+      </p>
+      <p>Click the <strong>Reset</strong> button before pasting a new URL or changing the <strong>Feedback Source</strong></p>
     </div>
     <div id="form">
       <form id="hwbucks-url-tool-form">
