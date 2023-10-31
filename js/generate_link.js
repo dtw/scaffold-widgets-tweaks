@@ -1,7 +1,7 @@
 function generateLink()
   {
     // get the default URL string
-    var div = document.getElementById('final');
+    var final_div = document.getElementById('final');
     // first string to replace
     var first_target_string = 'id_value'
     //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?reset=1&cid=2000"
@@ -33,11 +33,11 @@ function generateLink()
     var re_first_target_string = new RegExp(first_target_string, 'gi');
     if (id_client)
       {
-      div.innerHTML = div.innerHTML.replace(re_first_target_string, id_client);
+      final_div.innerHTML = final_div.innerHTML.replace(re_first_target_string, id_client);
       }
     else if (id_case)
       {
-      div.innerHTML = div.innerHTML.replace(re_first_target_string, id_case);
+      final_div.innerHTML = final_div.innerHTML.replace(re_first_target_string, id_case);
       }
     else // there URL didn't match either expected format
       {
@@ -50,5 +50,5 @@ function generateLink()
     var selected_src = document.getElementById('hwbucks-url-tool-form-civicrm-src').value;
     // replace second_target_string with civicrm-src
     var re_second_target_string = new RegExp(second_target_string, 'gi');
-    div.innerHTML = div.innerHTML.replace(re_second_target_string, selected_src);
+    final_div.innerHTML = final_div.innerHTML.replace(re_second_target_string, selected_src);
    }
