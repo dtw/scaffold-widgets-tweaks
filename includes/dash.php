@@ -191,6 +191,7 @@ function hwbucks_url_tool_contents()
         <div class="hwbucks-url-tool-form-row">
           <label for="hwbucks-url-tool-form-civicrm-url">CiviCRM URL</label>
           <input required="required" type="text" name="hwbucks-url-tool-form-civicrm-url" id="hwbucks-url-tool-form-civicrm-url" />
+          <div id="hwbucks-url-tool-form-alert" class="hw-feedback-alert" role="alert" style="display: none;"><strong>CiviCRM URL is blank!</strong></div>
         </div>
         <div class="hwbucks-url-tool-form-row">
           <label for="hwbucks-url-tool-form-civicrm-src">Feedback Source</label>
@@ -205,7 +206,6 @@ function hwbucks_url_tool_contents()
           <button type="button" class="button-primary" onclick="generateLink();">Generate Link</button>
           <button type="button" class="button-primary" onclick="window.location.reload(true)">Reset</button>
         </div>
-        <div id="hwbucks-url-tool-form-alert" class="hw-feedback-alert" role="alert" style="display: none;"><strong>CiviCRM URL is blank!</strong></div>
       </form>
     </div>
     <div id="final">
