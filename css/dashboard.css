@@ -66,3 +66,17 @@ span.dashicons-small {
 .yarpp-review-notice {
 	display: none !important;
 }
+
+#hwbucks-url-tool-form div.hwbucks-url-tool-form-row label {
+	display: inline-block;
+	width: 10rem;
+	font-weight: bold;
+}
+
+#hwbucks-url-tool-form .hwbucks-url-tool-form-row {
+	margin: 0.5rem 0;
+}
+
+#hwbucks-url-tool-form-civicrm-url {
+	width: 50%;
+}
