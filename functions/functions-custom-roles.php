@@ -42,4 +42,27 @@
     // remove the subscriber_plus role 
     remove_role( 'subscriber_plus', 'Subscriber Plus', get_role( 'subscriber' )->capabilities );
   }
+
+  /**
+   * Register the "Moderator" role
+   */
+  function create_moderator_role()
+  {
+    // add the new role
+    add_role('moderator', 'Moderator', get_role('subscriber')->capabilities);
+    // gets the moderator role
+    $role = get_role('moderator');
+    // add capabilities
+    $role->add_cap('moderate_comments');
+  }
+
+  function remove_moderator_role()
+  {
+    // gets the moderator role
+    $role = get_role('moderator');
+    // del capabilities
+    $role->remove_cap('moderate_comments');
+    // remove the moderator role 
+    remove_role('moderator', 'Moderator', get_role('subscriber')->capabilities);
+  }
 ?>
