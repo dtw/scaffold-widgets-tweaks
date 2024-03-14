@@ -152,10 +152,10 @@ if ( ! defined( 'WPINC' ) ) {
 	 * Activate the plugin.
 	 */
 	function scaffold_widget_tweaks_activate() {
-	    // Trigger our function that registers the custom role
-	    create_editor_plus_role();
-	    create_subscriber_plus_role();
-			create_moderator_role();
+		// Trigger our function that registers the custom role
+		create_editor_plus_role();
+		create_subscriber_plus_role();
+		create_moderator_role();
 	}
 	register_activation_hook( __FILE__, 'scaffold_widget_tweaks_activate' );
 
@@ -163,10 +163,10 @@ if ( ! defined( 'WPINC' ) ) {
 	 * Deactivate the plugin.
 	 */
 	function scaffold_widget_tweaks_deactivate() {
-	    // Trigger our function that remove the custom role
-	    remove_editor_plus_role();
-	    remove_subscriber_plus_role();
-			remove_moderator_role();
+		// Trigger our function that remove the custom role
+		remove_editor_plus_role();
+		remove_subscriber_plus_role();
+		remove_moderator_role();
 	}
 	register_deactivation_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );
 	register_uninstall_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );
