@@ -276,7 +276,7 @@ function scaffold_list_child_pages_with_featured_images( $atts, $content = null 
 		while ($my_query->have_posts()) : $my_query->the_post();
 			// check if the post has a Post Thumbnail assigned to it.
 			if ( has_post_thumbnail() ) {
-				$featured_image = get_the_post_thumbnail_url($page->ID, 'medium');
+				$featured_image = get_the_post_thumbnail_url($page_id, 'medium');
 			} else {
 				$featured_image = plugins_url('../images/default.png', __FILE__);
 				}
