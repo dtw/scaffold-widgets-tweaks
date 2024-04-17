@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.45] - 2024-04-17
+### Added
+- new moderator role
+
+### Changed
+- minor fixes
+
 ## [1.44] - 2023-10-31
 ### Added
 - new options for Demographic Survey URL Tool to set source
