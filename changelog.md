@@ -6,18 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.44] - 2022-10-31
+## [1.44] - 2023-10-31
 ### Added
 - new options for Demographic Survey URL Tool to set source
 
 ### Changed
 - UI and intructions for Demographic Survey URL Tool to make it more user-friendly
 
-## [1.43.4] - 2022-10-04
+## [1.43.4] - 2023-10-04
 ### Fixed
 - siteground-tweaks
 
-## [1.43.3] - 2022-10-02
+## [1.43.3] - 2023-10-02
 ### Added
 - support for Siteground Security plugin (sg-security) 2FA to custom roles
 
