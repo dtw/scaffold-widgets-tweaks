@@ -53,6 +53,8 @@
     // gets the moderator role
     $role = get_role('moderator');
     // add capabilities
+    // moderate_comments requires edit_posts - Heaven's knows why...
+    $role->add_cap('edit_posts');
     $role->add_cap('moderate_comments');
   }
 
@@ -61,6 +63,7 @@
     // gets the moderator role
     $role = get_role('moderator');
     // del capabilities
+    $role->remove_cap('edit_posts');
     $role->remove_cap('moderate_comments');
     // remove the moderator role 
     remove_role('moderator', 'Moderator', get_role('subscriber')->capabilities);
