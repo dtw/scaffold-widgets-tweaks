@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Scaffold Widgets and Tweaks
  * Description:       Improves how the post editor and admin screens work in WordPress, and adds widgets for the Scaffold WordPress theme.  <strong>DO NOT DELETE !</strong>
- * Version:           1.44
+ * Version:           1.45
  * Author:            Phil Thiselton & Jason King
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -152,9 +152,10 @@ if ( ! defined( 'WPINC' ) ) {
 	 * Activate the plugin.
 	 */
 	function scaffold_widget_tweaks_activate() {
-	    // Trigger our function that registers the custom role
-	    create_editor_plus_role();
-	    create_subscriber_plus_role();
+		// Trigger our function that registers the custom role
+		create_editor_plus_role();
+		create_subscriber_plus_role();
+		create_moderator_role();
 	}
 	register_activation_hook( __FILE__, 'scaffold_widget_tweaks_activate' );
 
@@ -162,9 +163,10 @@ if ( ! defined( 'WPINC' ) ) {
 	 * Deactivate the plugin.
 	 */
 	function scaffold_widget_tweaks_deactivate() {
-	    // Trigger our function that remove the custom role
-	    remove_editor_plus_role();
-	    remove_subscriber_plus_role();
+		// Trigger our function that remove the custom role
+		remove_editor_plus_role();
+		remove_subscriber_plus_role();
+		remove_moderator_role();
 	}
 	register_deactivation_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );
 	register_uninstall_hook( __FILE__, 'scaffold_widget_tweaks_deactivate' );

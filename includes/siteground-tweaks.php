@@ -14,4 +14,11 @@ function add_user_roles_to_2fa($roles)
   return $roles;
 }
 
+add_filter('sg_security_2fa_setup_string', 'modify_2fa_setup_string');
+
+function modify_2fa_setup_string()
+{
+  return 'The administrator of this site has asked that you enable 2-factor authentication. To do that, use the Microsoft Authenticator app and scan the QR code below to add a token for this website.';
+}
+
 ?>
