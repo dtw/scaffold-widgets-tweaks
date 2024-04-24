@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.45.1] - 2024-04-17
+### Changed
+- add additional capabilities for moderator role
+
 ## [1.45] - 2024-04-17
 ### Added
 - new moderator role
