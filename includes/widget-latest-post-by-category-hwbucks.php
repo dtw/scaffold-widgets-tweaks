@@ -207,14 +207,19 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget {
 			?>
 				<?php echo '<div class="col-md-12 col-sm-12 col-xs-12 panel panel-' . $bg_colour . '">'?><!-- start panel -->
 					<div class="row">
-					<?php $img_orient = orientation_check(get_post_thumbnail_id());
-					if ( $img_orient == 'ls') {
-						echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
-					} elseif ( $img_orient == 'pt') {
-						echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text">';
-					} elseif ( $img_orient == 'sq') {
-						echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
-					}
+					<?php
+          if (has_post_thumbnail()) {
+            $img_orient = orientation_check(get_post_thumbnail_id());
+            if ( $img_orient == 'ls') {
+              echo '<!--ls--><div class="col-md-8 col-sm-6 col-xs-12 panel-text">';
+            } elseif ( $img_orient == 'pt') {
+              echo '<!--pt--><div class="col-md-10 col-sm-9 col-xs-12 panel-text">';
+            } elseif ( $img_orient == 'sq') {
+              echo '<!--sq--><div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
+            }
+          } else {
+            echo '<!--unknown--><div class="col-md-9 col-sm-8 col-xs-12 panel-text">';
+          }
 					?>
 							<div class="row">
 								<div class="col-md-12 panel-title">
