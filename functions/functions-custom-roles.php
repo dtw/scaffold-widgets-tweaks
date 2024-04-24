@@ -56,6 +56,10 @@
     // moderate_comments requires edit_posts - Heaven's knows why...
     $role->add_cap('edit_posts');
     $role->add_cap('moderate_comments');
+    // and you need to edit_others_posts otherwise you can only moderate comments on your own posts... this seems a tiny but outdated...
+    $role->add_cap('edit_others_posts');
+    // and you need to be able to edit_published_posts - so moderate_comments REALLY doesn't do what you think...
+    $role->add_cap('edit_published_posts');
   }
 
   function remove_moderator_role()
@@ -65,6 +69,8 @@
     // del capabilities
     $role->remove_cap('edit_posts');
     $role->remove_cap('moderate_comments');
+    $role->remove_cap('edit_others_posts');
+    $role->remove_cap('edit_published_posts');
     // remove the moderator role 
     remove_role('moderator', 'Moderator', get_role('subscriber')->capabilities);
   }

@@ -100,6 +100,7 @@ function my_custom_dashboard_widgets()
   global $wp_meta_boxes;
   wp_add_dashboard_widget('scaffold_custom_help_widget', 'Get website support', 'scaffold_custom_dashboard_help');
   wp_add_dashboard_widget('scaffold_custom_shortcode_guide_widget', 'Shortcodes Guide', 'scaffold_custom_dashboard_shortcode_guide');
+  wp_add_dashboard_widget('scaffold_custom_capabilities_widget', 'Custom Capabilities', 'scaffold_custom_dashboard_capabilities');
 }
 
 function scaffold_custom_dashboard_help()
@@ -146,6 +147,19 @@ function scaffold_custom_dashboard_shortcode_guide()
   <p>This plugin contains a number of custom <a href="https://developer.wordpress.org/plugins/shortcodes/" target="_blank">WordPress shortcodes</a>, which are invalauble in maintaining a consistent visual design.</p>
 
   <p><span class="dashicons dashicons-welcome-learn-more"></span> You can read the <a href="' . $rtfm . '" target="_blank">Using WordPress Shortcodes</a> guide on SharePoint.</p>';
+}
+
+function scaffold_custom_dashboard_capabilities()
+{
+  echo "<h2>Current User</h2>";
+  $data = get_userdata(get_current_user_id());
+
+  if (is_object($data)) {
+    $current_user_caps = $data->allcaps;
+
+    // print it to the screen
+    echo '<pre>' . print_r($current_user_caps, true) . '</pre>';
+  }
 }
 
 /* 9. Add Demographic URL tool
