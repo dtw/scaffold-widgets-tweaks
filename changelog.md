@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.45.1] - 2024-04-17
+## [1.45.2] - 2024-04-24
+### Changed
+- minor fixes for missing post thumbs
+
+## [1.45.1] - 2024-04-24
 ### Changed
 - add additional capabilities for moderator role
 
