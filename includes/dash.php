@@ -222,7 +222,7 @@ function hwbucks_url_tool_contents()
       </form>
     </div>
     <div id="final" style="display: none;">
-      <p><a href="https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=src_value&id=id_value" target="_blank">https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=src_value&id=id_value</a></p>
+      <p><a href="https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_2024_S/?src=src_value&id=id_value" target="_blank">https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_2024_S/?src=src_value&id=id_value</a></p>
     </div>
   </div>
 <?php
