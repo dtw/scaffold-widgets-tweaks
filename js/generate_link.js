@@ -4,8 +4,6 @@ function generateLink()
     var final_div = document.getElementById('final');
     // get the warning div
     var warning_div = document.getElementById('hwbucks-url-tool-form-alert');
-    // first string to replace
-    var first_target_string = 'id_value'
     //var pasted_url = "https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?action=view&reset=1&cid=2000"
     var pasted_url = document.getElementById('hwbucks-url-tool-form-civicrm-url').value;
 
@@ -22,6 +20,9 @@ function generateLink()
     } else {
       // parse the paramaters from the URL
       let parsed_url_params = new URLSearchParams(parsed_url.search);
+      // first string to replace in link to survey
+      var first_target_string = 'id_value'
+      // get the cid parameter from the CiviCRM URL
       var id_client = parsed_url_params.get("cid")
       console.log("cid: "+id_client);
 

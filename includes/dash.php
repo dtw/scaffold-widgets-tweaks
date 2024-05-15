@@ -184,19 +184,16 @@ function hwbucks_url_tool_contents()
   <div id="hwbucks-url-tool">
     <h1>Demographic Survey URL Tool</h1>
     <div id="hwbucks-url-tool-intructions">
-      <p>If you need to complete a demographic survey over the phone, the results will need to be linked to a CiviCRM Contact. This tool can be used to generate a link to the demographic survey based on URLs from CiviCRM.</p>
-      <p>This tool will work with either:</p>
-      <ul>
-        <li>CiviCRM Client URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?action=view&reset=1&cid=2000&context=advanced&key=somekey</li>
-        <li>CiviCRM Case view URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case%3Freset%3D1%26id%3D488%26cid%3D2000%26action%3Dview</li>
-        <!-- https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view -->
-        <!-- https://bucks.healthwatchcrm.co.uk/civicrm/contact/view/case?reset=1&id=488&cid=2000&action=view&context=case&selectedChild=case&key=somekey -->
+      <p>If you need to complete a demographic survey over the phone, the results will need to be linked to a CiviCRM Contact. This tool can be used to generate a link to the demographic survey based on CiviCRM Contact URL.</p>
+      <p>The URL should look something like this:</p>
+      <p>CiviCRM Contact URLs - https://bucks.healthwatchcrm.co.uk/civicrm/contact/view?action=view&reset=1&cid=2000&context=advanced&key=somekey</p>
       </ul>
       <p>
         To generate a link:
       <ol>
-        <li>Copy the appropriate URL from your web browser and paste into the <strong>CiviCRM URL</strong> field</li>
-        <li>Choose the Source of the feedback in the <strong>Feedback Source</strong> field</li>
+        <li>Go to the Contact record for the client in CiviCRM.</li>
+        <li>Copy the address from your web browser address bar and paste into the <strong>CiviCRM URL</strong> field below.</li>
+        <li>Choose the Source of the feedback in the <strong>Feedback Source</strong> field.</li>
         <li>Click the <strong>Generate Link</strong> button. Once the link is generated, you can click through to the survey.</li>
       </ol>
       </p>
@@ -225,7 +222,7 @@ function hwbucks_url_tool_contents()
       </form>
     </div>
     <div id="final" style="display: none;">
-      <p><a href="https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=src_value&id=id_value" target="_blank">https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_S/?src=src_value&id=id_value</a></p>
+      <p><a href="https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_2024_S/?src=src_value&id=id_value" target="_blank">https://www.smartsurvey.co.uk/s/HW_BUCKS_DEMO_2024_S/?src=src_value&id=id_value</a></p>
     </div>
   </div>
 <?php
