@@ -117,3 +117,11 @@ ul.nav-tabs li::before{
 .last-update p, .first-pub p {
   font-weight: 900;
 }
+
+/* CSS for sticky pin icon */
+
+#sticky_1 {
+  font-size: 2rem;
+  color: var(--hw-blue);
+  padding-right: 0.5rem;
+}

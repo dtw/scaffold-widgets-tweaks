@@ -235,6 +235,13 @@ class SF_HWBucks_Latest_Post_Widget extends WP_Widget
         </div>
         <div class="row">
           <div class="col-md-12 panel-content">
+            <?php // add a sticky icon
+            $user = wp_get_current_user();
+            $allowed_roles = array('editor_plus', 'administrator');
+            if (array_intersect($allowed_roles, $user->roles) && get_the_ID() == $first_sticky_post) {
+              echo '<i id="sticky_1" class="fas fa-thumbtack"></i>';
+            }
+            ?>
             <a class="title-link" href="<?php the_permalink(); ?>" rel="bookmark">
               <?php the_title(); ?>
             </a>
