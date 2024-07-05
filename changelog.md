@@ -6,10 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+## [1.45.4] - 2024-07-05
+### Added
+- front-end style to show logged in users a post is sticky
+
 ## [1.45.3] - 2024-05-15
 ### Changed
 - various helper text
-- demo survey taregt URL
+- demo survey target URL
 
 ## [1.45.2] - 2024-04-24
 ### Changed
